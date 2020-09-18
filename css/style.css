@@ -1,0 +1,82 @@
+* {
+    margin:0;
+    padding:0;
+    outline:none;
+}
+
+html {
+    font-family: Karla,Helvetica,Arial,sans-serif;
+    line-height: 1.5;
+}
+
+body {
+    margin:0;
+    padding:0;
+}
+
+header {
+    display:flex;
+    justify-content: space-around;
+    position: fixed;
+    width:100%;
+    top:5px;
+    z-index: 99999;
+}
+
+header a img{
+    padding-top:10px;
+}
+
+header ul{
+    display:flex;
+    width:500px;
+    justify-content: space-around;
+    list-style:none;
+    align-items:center;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: rgb(255, 89, 89);
+}
+
+div {
+    line-height:1.4em;
+}
+
+.first-el{
+    position: relative;
+    background-color: rgb(185, 219, 209);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    color: rgb(255, 89, 89);
+}
+
+.second-el{
+    position: relative;
+    background-color: rgb(22, 179, 145);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    color: white;
+}
+
+.third-el{
+    position: relative;
+    background-color: rgb(65, 65, 65);
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    color: rgb(130, 185, 176);
+}
+
+.first-el h1, .second-el h1, .third-el h1{
+    position: absolute;
+    top: 50%;
+    right: 70%;
+    text-align: center;
+}
