@@ -12,9 +12,11 @@ html {
 body {
     margin:0;
     padding:0;
+    background-color: rgb(185, 219, 209);
 }
 
 header {
+    margin-bottom: 150px;
     display:flex;
     justify-content: space-around;
     position: fixed;
@@ -35,26 +37,85 @@ header ul{
     align-items:center;
 }
 
+header ul li{
+    font-size: 11pt;
+    color: rgb(250, 64, 64);
+}
+
 header ul li a {
+    font-size: 11pt;
     text-decoration: none;
-    color: rgb(255, 89, 89);
+    color: rgb(250, 64, 64);
 }
 
-div {
-    line-height:1.4em;
+.first-0, .first-1,.first-2,.first-3{
+    width:100%;
+    max-height:100%;
 }
 
-.first-el{
-    position: relative;
+.test {
+    height: 100vh;
+}
+
+.first-section{
+    /* position: relative;
     background-color: rgb(185, 219, 209);
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
-    color: rgb(255, 89, 89);
+    color: rgb(250, 64, 64); */
+    top: 0px;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    box-sizing: border-box;
 }
 
-.second-el{
+blockquote {
+    font-size: 2em;
+    color: rgb(250, 64, 64);
+    font-weight: lighter;
+    position: absolute;
+    margin: 20% 0 0 5%;
+    z-index: 100;
+}
+
+blockquote span {
+    width:100%;
+    background: rgb(255, 255, 255);
+    display: block;
+    height: 5px;
+    margin-top: 10px;
+}
+
+.first-section .first-0{
+    position: absolute;
+    top:50px;
+    left: 0;
+}
+
+.first-section .first-1{
+    position: absolute;
+    top:50px;
+    left: 0;
+}
+
+.first-section .first-2{
+    max-width: 20%;
+    position: absolute;
+    top:10%;
+    right:10%;
+}
+
+.first-section .first-3{
+    max-width:10%;
+    position: absolute;
+    top:15%;
+    left:10%;
+}
+
+.second-section{
     position: relative;
     background-color: rgb(22, 179, 145);
     background-position: center center;
@@ -64,7 +125,7 @@ div {
     color: white;
 }
 
-.third-el{
+.third-section{
     position: relative;
     background-color: rgb(65, 65, 65);
     background-position: center center;
@@ -74,9 +135,9 @@ div {
     color: rgb(130, 185, 176);
 }
 
-.first-el h1, .second-el h1, .third-el h1{
-    position: absolute;
+.first-section h1, .second-section h1, .third-section h1{
+    /* position: absolute;
     top: 50%;
     right: 70%;
-    text-align: center;
+    text-align: center; */
 }
