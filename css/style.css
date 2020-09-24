@@ -22,7 +22,7 @@ header {
     position: fixed;
     width:100%;
     top:5px;
-    z-index: 99999;
+    z-index: 1000;
 }
 
 header a img{
@@ -46,39 +46,86 @@ header ul li a {
     font-size: 11pt;
     text-decoration: none;
     color: rgb(250, 64, 64);
+    position: relative;
 }
+
+header ul li a:after {
+    top:90%;
+    border-radius: 1em;
+    border-top: .1em solid rgb(250, 64, 64);
+    content: "";
+    position: absolute;
+    right: 100%;
+    bottom: .14em;
+    left: 0;
+    transition: right .4s cubic-bezier(0,.5,0,1);
+}
+
+header ul li a:hover:after {
+    right: 0;
+  }
 
 .first-0, .first-1,.first-2,.first-3{
     width:100%;
-    max-height:100%;
+    max-height:900%;
+}
+
+.second-0, .second-1,.second-2,.second-3,.second-4,.second-5,.second-6{
+    max-width:100%;
+    max-height:900%;
 }
 
 .test {
     height: 100vh;
 }
 
-.first-section{
-    /* position: relative;
-    background-color: rgb(185, 219, 209);
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
-    color: rgb(250, 64, 64); */
-    top: 0px;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    box-sizing: border-box;
-}
-
-blockquote {
+.test blockquote {
     font-size: 2em;
     color: rgb(250, 64, 64);
     font-weight: lighter;
     position: absolute;
     margin: 20% 0 0 5%;
     z-index: 100;
+}
+
+.first-section{
+    width: 100%;
+    height: 121vh;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.first-section blockquote {
+    font-size: 2em;
+    color: rgb(250, 64, 64);
+    font-weight: lighter;
+    position: absolute;
+    margin: 20% 0 0 5%;
+    z-index: 100;
+}
+
+.second-section blockquote {
+    font-size: 2em;
+    color: rgb(250, 64, 64);
+    font-weight: lighter;
+    position: absolute;
+    z-index: 100;
+}
+
+.second-section blockquote:nth-child(1) {
+    margin: 15% 0 0 10%;
+}
+
+.second-section blockquote:nth-child(2) {
+    margin: 15% 0 0 70%;
+}
+
+.second-section blockquote:nth-child(3) {
+    margin: 30% 0 0 10%;
+}
+
+.second-section blockquote:nth-child(4) {
+    margin: 30% 0 0 70%;
 }
 
 blockquote span {
@@ -116,28 +163,31 @@ blockquote span {
 }
 
 .second-section{
-    position: relative;
-    background-color: rgb(22, 179, 145);
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+    width: 100%;
     height: 100vh;
-    color: white;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.second-section .second-0,.second-section .second-1,.second-section .second-2,.second-section .second-3,.second-section .second-4,.second-section .second-5,.second-section .second-6{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.second-0 {
+    z-index:200;
+}
+
+.second-4 {
+    z-index:5;
 }
 
 .third-section{
-    position: relative;
-    background-color: rgb(65, 65, 65);
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+    width: 100%;
     height: 100vh;
-    color: rgb(130, 185, 176);
-}
-
-.first-section h1, .second-section h1, .third-section h1{
-    /* position: absolute;
-    top: 50%;
-    right: 70%;
-    text-align: center; */
+    position: relative;
+    box-sizing: border-box;
 }
