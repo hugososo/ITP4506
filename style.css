@@ -2,11 +2,19 @@
     margin:0;
     padding:0;
     outline:none;
+    scroll-behavior: smooth;
 }
 
 html {
     font-family: Karla,Helvetica,Arial,sans-serif;
     line-height: 1.5;
+    overflow-y:scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -52,7 +60,7 @@ header ul li a {
 header ul li a:after {
     top:90%;
     border-radius: 1em;
-    border-top: .1em solid rgb(250, 64, 64);
+    border-top: .1em solid rgb(255, 255, 255);
     content: "";
     position: absolute;
     right: 100%;

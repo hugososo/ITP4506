@@ -1,5 +1,5 @@
 function delay(n) {
-  n = n || 1000;
+  n = n || 500;
   return new Promise(done => {
     setTimeout(() => {
       done();
@@ -7,11 +7,22 @@ function delay(n) {
   });
 }
 
+
+$( document ).ready(function() {
+  $('#click').click(function () {
+    $('#eji28tuoi3pl2_to').css("animation-play-state", "running");
+    $('#eji28tuoi3pl18_tr').css("animation-play-state", "running")
+    $('#eji28tuoi3pl27_to').css("animation-play-state", "running")
+    $('#eji28tuoi3pl27_tr').css("animation-play-state", "running")
+  });
+});
+
+
+
 function indexAnimation() {
   let one = gsap.timeline({
     scrollTrigger: {
       trigger: '.first-section',
-      toggleActions: "restart resume resume resume"
     }
   });
 
@@ -46,10 +57,10 @@ function indexAnimation() {
     .from(".second-4", { x: 400, y: -20, ease: Expo.easeInOut })
     .from(".second-5", { x: -200, y: -80, ease: Expo.easeInOut })
     .from(".second-6", { x: 200, y: -80, ease: Expo.easeInOut })
-    .from(".second-section blockquote:nth-child(1)", { x: -200, opacity: 0, ease: Expo.easeInOut })
-    .from(".second-section blockquote:nth-child(2)", { x: 200, opacity: 0, ease: Expo.easeInOut })
-    .from(".second-section blockquote:nth-child(3)", { x: -200, opacity: 0, ease: Expo.easeInOut })
-    .from(".second-section blockquote:nth-child(4)", { x: 200, opacity: 0, ease: Expo.easeInOut })
+    .from(".second-section blockquote:nth-child(1)", { x: -150, opacity: 0, ease: Expo.easeInOut })
+    .from(".second-section blockquote:nth-child(2)", { x: 150, opacity: 0, ease: Expo.easeInOut })
+    .from(".second-section blockquote:nth-child(3)", { x: -150, opacity: 0, ease: Expo.easeInOut })
+    .from(".second-section blockquote:nth-child(4)", { x: 150, opacity: 0, ease: Expo.easeInOut })
   // .to(".second-0",{y:-16000,scale:100,ease:Expo.easeInOut})
 
   // const controller = new ScrollMagic.Controller();
@@ -74,7 +85,7 @@ barba.init({
       gsap.to(data.current.container, {
         opacity: 0
       });
-      await delay(1000);
+      await delay(500);
       done();
     },
     async enter(data) {
