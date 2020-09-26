@@ -25,7 +25,7 @@ function indexAnimation() {
     scrollTrigger: {
       trigger: '.second-section',
       start: 'top top',
-      end: '+=4100',
+      end: '+=4200',
       markers: true,
       scrub: 1,
       pin: true,
@@ -139,10 +139,31 @@ for (var i = 0; i < links.length; i++) {
   links[i].addEventListener('click', cbk);
 }
 
-function runAVG() {
-  console.log("clicked");
+function runChestAnimation() {
     $('#eji28tuoi3pl2_to').css("animation-play-state", "running");
     $('#eji28tuoi3pl18_tr').css("animation-play-state", "running");
     $('#eji28tuoi3pl27_to').css("animation-play-state", "running");
     $('#eji28tuoi3pl27_tr').css("animation-play-state", "running");
 }
+
+function runKeyAnimation(boo) {
+  if(boo == true)
+    $('#ew03y9km9ptr2_tr').css("animation-play-state", "running");
+  else
+    $('#ew03y9km9ptr2_tr').css("animation-play-state", "paused");
+}
+
+Draggable.create(".key", {
+  bounds:".third-section",
+  onDrag: function() {
+    runKeyAnimation(true);
+    if (this.hitTest("#eji28tuoi3pl21")) {
+      gsap.to(this.target, {duration: 0.6, opacity:0, scale:0.5});
+      runChestAnimation();
+    }
+  },
+  onDragEnd: function() {
+    runKeyAnimation(false);
+  }
+});
+
