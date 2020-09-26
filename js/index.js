@@ -25,8 +25,8 @@ function indexAnimation() {
     scrollTrigger: {
       trigger: '.second-section',
       start: 'top top',
-      end: '+=4000',
-      // markers: true,
+      end: '+=4100',
+      markers: true,
       scrub: 1,
       pin: true,
     }
@@ -45,10 +45,10 @@ function indexAnimation() {
     .from(".second-4", { x: 300, y: 30, ease: Expo.easeInOut })
     .from(".second-5", { x: -200, y: -80, ease: Expo.easeInOut })
     .from(".second-6", { x: 200, y: -80, ease: Expo.easeInOut })
-    .from(".second-section blockquote:nth-child(1)", { x: -150, opacity: 0, ease: Expo.easeInOut })
-    .from(".second-section blockquote:nth-child(2)", { x: 150, opacity: 0, ease: Expo.easeInOut })
-    .from(".second-section blockquote:nth-child(3)", { x: -150, opacity: 0, ease: Expo.easeInOut })
-    .from(".second-section blockquote:nth-child(4)", { x: 150, opacity: 0, ease: Expo.easeInOut })
+    .from(".blockquote2-div1 blockquote:nth-child(1)", { x: -150, opacity: 0, ease: Expo.easeInOut })
+    .from(".blockquote2-div1 blockquote:nth-child(2)", { x: 150, opacity: 0, ease: Expo.easeInOut })
+    .from(".blockquote2-div2 blockquote:nth-child(1)", { x: -150, opacity: 0, ease: Expo.easeInOut })
+    .from(".blockquote2-div2 blockquote:nth-child(2)", { x: 150, opacity: 0, ease: Expo.easeInOut })
   // .to(".second-0",{y:-16000,scale:100,ease:Expo.easeInOut})
 
   // const controller = new ScrollMagic.Controller();
