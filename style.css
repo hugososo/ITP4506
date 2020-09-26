@@ -179,10 +179,9 @@ blockquote span {
 
 .second-section .second-0,.second-section .second-1,.second-section .second-2,.second-section .second-3,.second-section .second-4,.second-section .second-5,.second-section .second-6{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 35%;
+    overflow: hidden;
 }
 
 .second-0 {

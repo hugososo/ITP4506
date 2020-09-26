@@ -7,18 +7,6 @@ function delay(n) {
   });
 }
 
-
-$( document ).ready(function() {
-  $('#click').click(function () {
-    $('#eji28tuoi3pl2_to').css("animation-play-state", "running");
-    $('#eji28tuoi3pl18_tr').css("animation-play-state", "running")
-    $('#eji28tuoi3pl27_to').css("animation-play-state", "running")
-    $('#eji28tuoi3pl27_tr').css("animation-play-state", "running")
-  });
-});
-
-
-
 function indexAnimation() {
   let one = gsap.timeline({
     scrollTrigger: {
@@ -30,8 +18,8 @@ function indexAnimation() {
     .from(".first-section blockquote span", { width: 0, opacity: 0, duration: 1 }, "-=0.5")
     .from(".first-0", { y: 100, opacity: 0, duration: 1 }, "-=1")
     .from(".first-1", { y: -100, opacity: 0, duration: 1 }, "-=1")
-    .from(".first-3", { x: -1000, y: 300, opacity: 0, duration: 1 }, "-=1")
-    .from(".first-2", { x: -1000, y: 300, opacity: 0, duration: 1 });
+    .from(".first-3", { x: -500, y: 300, opacity: 0, duration: 1 }, "-=1")
+    .from(".first-2", { x: -500, y: 300, opacity: 0, duration: 1 });
 
   let two = gsap.timeline({
     scrollTrigger: {
@@ -51,10 +39,10 @@ function indexAnimation() {
     .from(".second-2", { opacity: 0, ease: Expo.easeInOut, duration: 1 }, "-=1")
     .from(".second-1", { opacity: 0, ease: Expo.easeInOut, duration: 1 }, "-=1")
     .from(".second-0", { opacity: 0, ease: Expo.easeInOut })
-    .from(".second-1", { x: -400, y: 200, ease: Expo.easeInOut })
-    .from(".second-2", { x: 400, y: 200, ease: Expo.easeInOut })
-    .from(".second-3", { x: -400, y: -20, ease: Expo.easeInOut })
-    .from(".second-4", { x: 400, y: -20, ease: Expo.easeInOut })
+    .from(".second-1", { x: -350, y: 200, ease: Expo.easeInOut })
+    .from(".second-2", { x: 350, y: 200, ease: Expo.easeInOut })
+    .from(".second-3", { x: -300, y: 30, ease: Expo.easeInOut })
+    .from(".second-4", { x: 300, y: 30, ease: Expo.easeInOut })
     .from(".second-5", { x: -200, y: -80, ease: Expo.easeInOut })
     .from(".second-6", { x: 200, y: -80, ease: Expo.easeInOut })
     .from(".second-section blockquote:nth-child(1)", { x: -150, opacity: 0, ease: Expo.easeInOut })
@@ -89,10 +77,72 @@ barba.init({
       done();
     },
     async enter(data) {
+      // reload();
       indexAnimation();
     },
     async once(data) {
+      // reload();
       indexAnimation();
     }
-  }]
+  }],
+  // views:[{
+  //   namespace:'login',
+  //   beforeEnter(data){
+  //     $(document).ready(function() {
+  //       $('#click').click(function () {
+  //         $('#eji28tuoi3pl2_to').css("animation-play-state", "running");
+  //         $('#eji28tuoi3pl18_tr').css("animation-play-state", "running")
+  //         $('#eji28tuoi3pl27_to').css("animation-play-state", "running")
+  //         $('#eji28tuoi3pl27_tr').css("animation-play-state", "running")
+  //       });
+  //     });
+  //   }
+  // }]
 });
+
+function reload() {
+  // Barba.Dispatcher.on('newPageReady', function (currentStatus, oldStatus, container) {
+  //   $('html').find('script').each(function (i, script) {
+  //     var $script = $(script);
+  //     $.ajax({
+  //       url: $script.attr('src'),
+  //       cache: true,
+  //       dataType: 'script',
+  //       success: function () {
+  //         $script.trigger('load');
+  //       }
+  //     });
+  //   });
+  // });
+
+  // var links = document.querySelectorAll('a[href]');
+  // var cbk = function (e) {
+  //   if (e.currentTarget.href === window.location.href) {
+  //     e.preventDefault();
+  //     e.stopPropagation();
+  //   }
+  // };
+
+  // for (var i = 0; i < links.length; i++) {
+  //   links[i].addEventListener('click', cbk);
+}
+
+var links = document.querySelectorAll('a[href]');
+var cbk = function (e) {
+  if (e.currentTarget.href === window.location.href) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+};
+
+for (var i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', cbk);
+}
+
+function runAVG() {
+  console.log("clicked");
+    $('#eji28tuoi3pl2_to').css("animation-play-state", "running");
+    $('#eji28tuoi3pl18_tr').css("animation-play-state", "running");
+    $('#eji28tuoi3pl27_to').css("animation-play-state", "running");
+    $('#eji28tuoi3pl27_tr').css("animation-play-state", "running");
+}
