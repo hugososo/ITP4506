@@ -31,12 +31,12 @@ body {
     left:50%;
     transform: translate(-50%,-50%);
     z-index: 9999999;
+    /* overflow: hidden; */
     pointer-events: none;
 }
 
 .transition {
     border-radius: 100%;
-    position: relative;
     background: rgb(255, 229, 216);
     width: 100%;
     height: 100%;
@@ -319,6 +319,7 @@ blockquote span {
 }
 
 #wave {
+    min-width:1200px;
     bottom:0;
     position: absolute;
 }
@@ -328,70 +329,13 @@ blockquote span {
     transform-origin: bottom;
 }
 
-@keyframes animateWave1{
-    from{
-        transform: scale(1,1);
-    }
-
-    to{
-        transform: scale(2,3);
-    }
-}
-
-@keyframes animateWave2{
-    from{
-        transform: scale(2,3);
-    }
-
-    to{
-        transform: scale(3,6);
-    }
-}
-
-@keyframes animateWave3{
-    from{
-        transform: scale(3,6);
-    }
-
-    to{
-        transform: scale(5,15);
-    }
-}
-
-@keyframes reverseWave3{
-    from{
-        transform: scale(5,15);
-    }
-
-    to{
-        transform: scale(3,6);
-    }
-}
-
-@keyframes reverseWave2{
-    from{
-        transform: scale(4,8);
-    }
-
-    to{
-        transform: scale(2,3);
-    }
-}
-
-@keyframes reverseWave1{
-    from{
-        transform: scale(2,3);
-    }
-
-    to{
-        transform: scale(1,1);
-    }
-}
-
 .form-container {
-    max-width: 400px;
+    min-width: 400px;
     margin: 85px auto;
-    position: sticky;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-70%);
     z-index: 999;
 }
 
