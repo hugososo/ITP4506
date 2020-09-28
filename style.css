@@ -20,7 +20,26 @@ html::-webkit-scrollbar {
 body {
     margin:0;
     padding:0;
-    background-color: rgb(185, 219, 209);
+    background-color: rgb(215, 255, 248);
+}
+
+.transition-container {
+    position: fixed;
+    width:0.1px;
+    height:0.1px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999999;
+    pointer-events: none;
+}
+
+.transition {
+    border-radius: 100%;
+    position: relative;
+    background: rgb(255, 229, 216);
+    width: 100%;
+    height: 100%;
 }
 
 blockquote {
@@ -43,7 +62,7 @@ header {
     position: fixed;
     width:100%;
     top:5px;
-    z-index: 1000;
+    z-index: 99999;
 }
 
 header a img{
@@ -73,7 +92,7 @@ header ul li a {
 header ul li a:after {
     top:90%;
     border-radius: 1em;
-    border-top: .1em solid rgb(255, 255, 255);
+    border-top: .1em solid rgb(255, 98, 98);
     content: "";
     position: absolute;
     right: 100%;
@@ -97,14 +116,14 @@ header ul li a:hover:after {
 }
 
 .test blockquote {
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: lighter;
     position: absolute;
     margin: 20% 0 0 5%;
 }
 
 .first-section{
-    overflow: hidden;
+    /* overflow: hidden; */
     width:100%;
     height:120vh;
     position: relative;
@@ -190,7 +209,7 @@ blockquote span {
     max-width:100%;
     max-height:100%;
     position: absolute;
-    top:20%;
+    top:18%;
     left:0;
     right:0;
     margin-left:auto;
@@ -282,7 +301,7 @@ blockquote span {
     position: relative;
     width:100%;
     display: flex;
-    margin: 60px auto;
+    margin: auto;
     justify-content: space-around;
 }
 
@@ -291,3 +310,148 @@ blockquote span {
     right: 30%;
     position: absolute;
 }
+
+.sign-section {
+    widows: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#wave {
+    bottom:0;
+    position: absolute;
+}
+
+.sign-section > #wave {
+    display:block;
+    transform-origin: bottom;
+}
+
+@keyframes animateWave1{
+    from{
+        transform: scale(1,1);
+    }
+
+    to{
+        transform: scale(2,3);
+    }
+}
+
+@keyframes animateWave2{
+    from{
+        transform: scale(2,3);
+    }
+
+    to{
+        transform: scale(3,6);
+    }
+}
+
+@keyframes animateWave3{
+    from{
+        transform: scale(3,6);
+    }
+
+    to{
+        transform: scale(5,15);
+    }
+}
+
+@keyframes reverseWave3{
+    from{
+        transform: scale(5,15);
+    }
+
+    to{
+        transform: scale(3,6);
+    }
+}
+
+@keyframes reverseWave2{
+    from{
+        transform: scale(4,8);
+    }
+
+    to{
+        transform: scale(2,3);
+    }
+}
+
+@keyframes reverseWave1{
+    from{
+        transform: scale(2,3);
+    }
+
+    to{
+        transform: scale(1,1);
+    }
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 85px auto;
+    position: sticky;
+    z-index: 999;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 50px;
+    height: 100%;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 1px 2px 10px rgb(129, 129, 129);
+}
+
+input[type="text"],input[type="password"], input[type="email"]{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding: 12px 15px;
+    margin:8px 0;
+    width: 100%;
+    font-size: 10pt;
+}
+
+input[type="submit"]{
+    background-color: rgb(255, 98, 93);
+    border: none;
+    border-radius: 20px;
+    padding: 12px 15px;
+    margin:8px 0;
+    width: 50%;
+    color: white;
+    font-weight: bolder;
+    font-size: 10pt;
+}
+
+input::placeholder {
+    /* font-size: larger; */
+}
+
+form p {
+    color: #575757;
+    line-height: 2;
+}
+
+.link-p:hover , form a:hover{
+    color: #f55c03;
+}
+
+.check-password {
+    height:0;
+    overflow: hidden;
+}
+
+.check-password div span {
+    margin-left: 5px;
+    color: #5c5c5c;
+}
+
+input[type="password"]:focus + .check-password {
+    height: 100%;
+}
+

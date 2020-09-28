@@ -37,7 +37,7 @@
         </ul>
     </header>
 
-    <div data-barba="container" data-barba-namespace="login">
+    <div data-barba="container" data-barba-namespace="signup">
         <div class="sign-section">
             <svg xmlns="http://www.w3.org/2000/svg" id="wave" viewBox="0 0 1440 320">
                 <defs>
@@ -53,22 +53,23 @@
             </svg>
             <div class="form-container">
                 <form action="">
-                    <h1>SIGN IN</h1>
+                    <h1>Create Account</h1>
                     <p>with social media account</p>
                     <div class="icon-container">
-                        <img src="assets/google.png" width="50" />
-                        <img src="assets/facebook.png" width="50" />
+                        <img src="assets/google.png" width="50"/>
+                        <img src="assets/facebook.png" width="50"/>
                     </div>
-                    <p>or use your account</p>
-                    <input type="email" placeholder="Email" aria-placeholder="Email" />
-                    <input type="text" placeholder="Password" aria-placeholder="Password">
-                    <a href="">
-                        <p class="link-p">Sign Up an account</p>
-                    </a>
-                    <a href="">
-                        <p class="link-p">Forgot your password?</p>
-                    </a>
-                    <input type="submit" value="SIGN IN">
+                    <p>or use your email for registration</p>
+                    <input type="email" placeholder="Email" aria-placeholder="Email">
+                    <input type="text" placeholder="Name" aria-placeholder="Name">
+                    <input type="password" placeholder="Password" aria-placeholder="Password">
+                    <div class="check-password">
+                        <div><img src="assets/cross.png" width="10"><span>At least 1 uppercase letter</span></div>
+                        <div><img src="assets/cross.png" width="10"><span>At least 1 lowercase letter</span></div>
+                        <div><img src="assets/cross.png" width="10"><span>At least 1 number</span></div>
+                    </div>
+                    <a href=""><p class="link-p">Have account already?</p></a>
+                    <input type="submit" value="SIGN UP">
                 </form>
             </div>
         </div>
@@ -83,5 +84,4 @@
 <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
 <script src="js/account.js"></script>
 <script src="js/global.js"></script>
-
 </html>
