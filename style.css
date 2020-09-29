@@ -411,8 +411,7 @@ input[type="password"]:focus + .check-password {
 /*property management***************************/
 
 .container {
-/*      position: relative;*/
-  margin: 0 1%;
+  margin: 5% 1%;
   padding: 50px 0;
 }
 

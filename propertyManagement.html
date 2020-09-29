@@ -7,65 +7,62 @@
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
   <!-- Customized Css -->
-  <!--  <link rel="stylesheet" type="text/css" href="./propertyManagement.css">-->
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style.css" >
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
 </head>
-
 <body data-barba="wrapper">
-
   <div class="transition-container">
-    <div class="transition"></div>
-  </div>
-  <header>
-    <a href="index.html ">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150" height="30">
-    </a>
-    <ul>
-      <li><a href="">WORK</a></li>
-      <li>|</li>
-      <li><a href="propertyManagement.html">PROPERTY</a></li>
-      <li>|</li>
-      <li><a href="">CONTACT</a></li>
-      <li>|</li>
-      <li><a href="login.html">LOGIN</a></li>
-      <li>|</li>
-      <li><a href="signup.html">SIGN UP</a></li>
-    </ul>
-  </header>
+        <div class="transition"></div>
+    </div>
+
+    <header>
+        <a href="index.html ">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
+                height="30">
+        </a>
+        <ul>
+            <li><a href="">WORK</a></li>
+            <li>|</li>
+            <li><a href="propertyManagement.html" >PROPERTY</a></li>
+            <li>|</li>
+            <li><a href="">CONTACT</a></li>
+            <li>|</li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li>|</li>
+            <li><a href="signup.html">SIGN UP</a></li>
+        </ul>
+    </header>
+
+  <div class="container" data-barba="container" data-barba-namespace="property" >
 
   <br><br>
-
-  <div class="container" data-barba="container" data-barba-namespace="property">
-
-
     <nav class="main-content side_bar">
       <ul class="mcd-menu">
         <li>
-          <a href="#" class="active" data-page="p1">
+          <a href="#" class="active enable_a" data-page="p1">
             <i class="fa fa-home"></i>
             <strong>New Property</strong>
             <small>Sale / Rental</small>
           </a>
         </li>
         <li>
-          <a href="#" data-page="p2">
+          <a href="#" data-page="p2" class="enable_a">
             <i class="fa fa-edit"></i>
             <strong>Update Property</strong>
             <small>Update Property Info</small>
           </a>
         </li>
         <li>
-          <a href="#" data-page="p3">
+          <a href="#" data-page="p3" class="enable_a">
             <i class="fa fa-gift"></i>
             <strong>Pin Property</strong>
             <small>Promote Property</small>
           </a>
         </li>
         <li>
-          <a href="#" data-page="p4">
+          <a href="#" data-page="p4" class="enable_a">
             <i class="fa fa-globe"></i>
             <strong>Hide / Remove</strong>
             <small>Hide or Remove Property</small>
@@ -79,7 +76,7 @@
         <div class="form_bgc">
           <div class="form_status"></div>
           <div class="form_step">1 / 4</div>
-          <form action="" id="huge_form">
+          <form id="huge_form" >
             <ul class="fs-fields">
               <li class="activeForm" id="form1_list1" data-part="1">
                 <div class="radio_group">
@@ -124,7 +121,7 @@
 
             <button class="next property_form_btn" data-form="1">Continue</button>
 
-            <button class="back property_form_btn" type="submit">Back</button>
+            <button class="back property_form_btn" >Back</button>
           </form>
         </div>
       </div>

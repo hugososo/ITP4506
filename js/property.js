@@ -1,5 +1,4 @@
-$(function () {
-
+//$(function () {
   var background = $("#exchange_area"),
     background2 = $("#exchange_area > *"),
     side_background = $(".side_bar"),
@@ -35,10 +34,10 @@ $(function () {
   });
 
 
-
-
   $('ul.mcd-menu li a').on('click', function (e) {
-    e.preventDefault();
+//    e.preventDefault();
+    
+//    e. = false;
     var el = $(this);
     $(this).addClass("active");
     $('ul.mcd-menu li a').not(el).removeClass("active");
@@ -151,4 +150,4 @@ $(function () {
   });
 
 
-})
+//})
