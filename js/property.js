@@ -113,9 +113,8 @@ $(function () {
     var activeEl = $("#huge_form ul li.activeForm");
     var page = parseInt(activeEl.attr("data-part"));
     var progress = 100 / maxPage * page;
-    $("#form_status").css("width", progress + "%");
+    $(".form_status").css("width", progress + "%");
     if (page === 4) {
-      
       alert("Submitted");
       return;
     }else if(page === 3){
@@ -124,8 +123,8 @@ $(function () {
     
 
     activeEl.toggleClass("activeForm");
-    $("#form1_list" + (++page)).toggleClass("activeForm");
-    $("#form_step").html(page + " / 4");
+    $("#form1_list" +(++page)).toggleClass("activeForm");
+    $(".form_step").html(page + " / 4");
   });
 
 

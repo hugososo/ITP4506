@@ -1,3 +1,80 @@
+* {
+    margin:0;
+    padding:0;
+    outline:none;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-family: Karla,Helvetica,Arial,sans-serif;
+    line-height: 1.5;
+    overflow-y:scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin:0;
+    padding:0;
+    background-color: rgb(215, 255, 248);
+}
+
+
+header {
+    margin-bottom: 150px;
+    display:flex;
+    justify-content: space-around;
+    position: fixed;
+    width:100%;
+    top:5px;
+    z-index: 99999;
+}
+
+header a img{
+    padding-top:10px;
+}
+
+header ul{
+    display:flex;
+    width:500px;
+    justify-content: space-around;
+    list-style:none;
+    align-items:center;
+}
+
+header ul li{
+    font-size: 11pt;
+    color: rgb(250, 64, 64);
+}
+
+header ul li a {
+    font-size: 11pt;
+    text-decoration: none;
+    color: rgb(250, 64, 64);
+    position: relative;
+}
+
+header ul li a:after {
+    top:90%;
+    border-radius: 1em;
+    border-top: .1em solid rgb(255, 98, 98);
+    content: "";
+    position: absolute;
+    right: 100%;
+    bottom: .14em;
+    left: 0;
+    transition: right .4s cubic-bezier(0,.5,0,1);
+}
+
+header ul li a:hover:after {
+    right: 0;
+  }
+
+
 .container {
   /*    position: relative;*/
   margin: 0 1%;
@@ -356,7 +433,7 @@
   /*  overflow-y: scroll;*/
 }
 
-#form_status {
+.form_status{
   position: absolute;
   top: 0;
   height: 10px;
@@ -364,7 +441,7 @@
   width: 0;
 }
 
-#form_step {
+.form_step{
   margin: 10px;
   color: white;
   right: 0;
@@ -402,7 +479,6 @@
 .fs-fields li label {
   color: white;
   font-weight: 800;
-
 }
 
 .fs-fields input {
