@@ -9,8 +9,9 @@ function delay(n) {
 
 function pageTransition() {
   var tl = gsap.timeline();
-  tl.to('.transition-container', { duration: 0.5, scale: "100000", ease: "Expo.easeInOut" })
-    .to(".transition-container", { duration: 0.5, scale: "0", ease: "Expo.ease" }, "+=0.3")
+  tl.to('.transition', { duration: 0.5,width:"100%",left:"0%", ease: "Expo.easeInOut" });
+  tl.to(".transition", { duration: 0.5, width:"100%",left:"100%",ease: "Expo.ease",delay: 0.2});
+  tl.set(".transition",{left:"-100%"});
 }
 
 function indexAnimation() {
@@ -20,12 +21,15 @@ function indexAnimation() {
     }
   });
 
-  one.from(".first-section blockquote", { x: -200, opacity: 0, duration: 1 })
-    .from(".first-section blockquote span", { width: 0, opacity: 0, duration: 1 }, "-=0.5")
+  one.from(".first-section blockquote span", { width: 0, opacity: 0, duration: 1 }, "-=0.5")
     .from(".first-0", { y: 100, opacity: 0, duration: 1 }, "-=1")
     .from(".first-1", { y: -100, opacity: 0, duration: 1 }, "-=1")
-    .from(".first-3", { x: -500, y: 300, opacity: 0, duration: 1 }, "-=1")
-    .from(".first-2", { x: -500, y: 300, opacity: 0, duration: 1 });
+    .from(".first-section .title:nth-child(1)", { x:-700,opacity: 0,duration: 1 },"-=0.8")
+    .from(".first-section .title:nth-child(2)", { x:700, opacity: 0,duration: 1 },"-=1")
+    .from(".first-section .title:nth-child(3)", { x:-700, opacity: 0,duration: 1 },"-=1")
+    .from(".first-section .title .title-text-2", {opacity:0,duration: 1 })
+    .from(".first-3", { x: -500, y: 300, opacity: 0, duration: 1 }, "-=2")
+    .from(".first-2", { x: -500, y: 300, opacity: 0, duration: 1 },"-=1.5");
 
   let two = gsap.timeline({
     scrollTrigger: {
@@ -64,7 +68,7 @@ barba.init({
     async leave(data) {
       const done = this.async();
       pageTransition();
-      await delay(800);
+      await delay(600);
       done();
     },
     async enter(data) {
@@ -105,7 +109,7 @@ barba.init({
         .to("#wave", { scale: 5, duration: 1, ease: Back.easeOut.config(1.7), onComplete: function () { tl.pause(); } })
         .to("#wave", { scale: 7, duration: 1, ease: Back.easeOut.config(1.7), onComplete: function () { tl.pause(); } })
         .to("#wave", { scale: 12, duration: 1, ease: Back.easeOut.config(1.7), onComplete: function () { tl.pause(); } });
-
+      
       tl.pause();
 
       $(document).ready(function () {
