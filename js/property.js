@@ -1,8 +1,15 @@
-//$(function () {
+$(function () {
   var background = $("#exchange_area"),
     background2 = $("#exchange_area > *"),
     side_background = $(".side_bar"),
     tl = gsap.timeline();
+
+  $('#example').DataTable();
+
+//  $(".modal-window").click(function (e) {
+//    var url = $("#modal_down").attr("href");
+//    window.location = url;
+//  });
 
   tl.fromTo(side_background, {
     opacity: 0.5,
@@ -35,9 +42,9 @@
 
 
   $('ul.mcd-menu li a').on('click', function (e) {
-//    e.preventDefault();
-    
-//    e. = false;
+    //    e.preventDefault();
+
+    //    e. = false;
     var el = $(this);
     $(this).addClass("active");
     $('ul.mcd-menu li a').not(el).removeClass("active");
@@ -111,43 +118,43 @@
     var maxPage = $("#huge_form ul li").length;
     var activeEl = $("#huge_form ul li.activeForm");
     var page = parseInt(activeEl.attr("data-part"));
-    var progress = 100 / maxPage * (page+1);
+    var progress = 100 / maxPage * (page + 1);
     $(".form_status").css("width", progress + "%");
     if (page === 4) {
       alert("Submitted");
       return;
-    }else if(page === 3){
+    } else if (page === 3) {
       $(this).html("Submit");
     }
-    
+
 
     activeEl.toggleClass("activeForm");
-    $("#form1_list" +(++page)).toggleClass("activeForm");
+    $("#form1_list" + (++page)).toggleClass("activeForm");
     $(".form_step").html(page + " / 4");
   });
-  
+
   $(".back").click(function (e) {
     e.preventDefault();
     var maxPage = $("#huge_form ul li").length;
     var activeEl = $("#huge_form ul li.activeForm");
     var page = parseInt(activeEl.attr("data-part"));
-    
-    
+
+
     if (page === 4) {
       $(".next").html("Continue");
-    }else if (page === 1){
-//      $(this).disable = true;
+    } else if (page === 1) {
+      //      $(this).disable = true;
       return;
     }
-    console.log("page :"+page);
+    console.log("page :" + page);
     var progress = 100 / maxPage * (page - 1);
-    console.log("progress :"+progress);
+    console.log("progress :" + progress);
     $(".form_status").css("width", progress + "%");
 
     activeEl.toggleClass("activeForm");
-    $("#form1_list" +(--page)).toggleClass("activeForm");
+    $("#form1_list" + (--page)).toggleClass("activeForm");
     $(".form_step").html(page + " / 4");
   });
 
 
-//})
+})

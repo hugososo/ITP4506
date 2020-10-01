@@ -6,38 +6,43 @@
   <title>Property Management</title>
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+
   <!-- Customized Css -->
-  <link rel="stylesheet" type="text/css" href="style.css" >
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!--  datatable-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
   <!-- Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body data-barba="wrapper">
   <div class="transition-container">
-        <div class="transition"></div>
-    </div>
+    <div class="transition"></div>
+  </div>
 
-    <header>
-        <a href="index.html ">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
-                height="30">
-        </a>
-        <ul>
-            <li><a href="">WORK</a></li>
-            <li>|</li>
-            <li><a href="propertyManagement.html" >PROPERTY</a></li>
-            <li>|</li>
-            <li><a href="">CONTACT</a></li>
-            <li>|</li>
-            <li><a href="login.html">LOGIN</a></li>
-            <li>|</li>
-            <li><a href="signup.html">SIGN UP</a></li>
-        </ul>
-    </header>
+  <header>
+    <a href="index.html ">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150" height="30">
+    </a>
+    <ul>
+      <li><a href="">WORK</a></li>
+      <li>|</li>
+      <li><a href="propertyManagement.html">PROPERTY</a></li>
+      <li>|</li>
+      <li><a href="">CONTACT</a></li>
+      <li>|</li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li>|</li>
+      <li><a href="signup.html">SIGN UP</a></li>
+    </ul>
+  </header>
 
-  <div class="container" data-barba="container" data-barba-namespace="property" >
+  <div class="container" data-barba="container" data-barba-namespace="property">
 
-  <br><br>
+    <br><br>
     <nav class="main-content side_bar">
       <ul class="mcd-menu">
         <li>
@@ -72,64 +77,18 @@
     </nav>
 
     <div class="main-content" id="exchange_area">
-      <div id="p1" class="clicked">
-        <div class="form_bgc">
-          <div class="form_status"></div>
-          <div class="form_step">1 / 4</div>
-          <form id="huge_form" >
-            <ul class="fs-fields">
-              <li class="activeForm" id="form1_list1" data-part="1">
-                <div class="radio_group">
-                  <label class="fs-field-label fs-anim-upper" for="q1">Rental or Sale?</label>
-                  <select name="sell_type" id="sel_type">
-                    <option value="Sale">Sale</option>
-                    <option value="Rental">Rental</option>
-                  </select>
-                </div>
 
-                <label class="fs-field-label fs-anim-upper" for="q1">Price</label>
-                <input class="fs-anim-lower" id="q1" name="q1" type="number" placeholder="Dean Moriarty" />
-
-              </li>
-
-              <li data-part="2" id="form1_list2">
-                <label class="fs-field-label fs-anim-upper" for="q1">Client's Name?</label>
-                <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Dean Moriarty" />
-
-                <label class="fs-field-label fs-anim-upper" for="q1">Client's Phone?</label>
-                <input class="fs-anim-lower" id="q1" name="q1" type="number" placeholder="124124214" />
-                <label class="fs-field-label fs-anim-upper" for="q1">Client's Email?</label>
-                <input class="fs-anim-lower" id="q1" name="q1" type="email" placeholder="1231@14241" />
-              </li>
-
-              <li data-part="3" id="form1_list3">
-                <label class="fs-field-label fs-anim-upper " for="q5">Address</label>
-                <input class="address" id="q5" name="q5" type="text" placeholder="Street Address" />
-                <input class="address" id="q5" name="q5" type="text" placeholder="Street Address 2" />
-                <input class="address" id="q5" name="q5" type="text" placeholder="Region" />
-              </li>
-
-              <li data-part="4" id="form1_list4">
-                <label class="fs-field-label fs-anim-upper" for="q5">Size (Sq. ft)</label>
-                <input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1000" step="100" min="100" />
-
-                <label class="fs-field-label fs-anim-upper" for="q5">Year Building</label>
-                <input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="2000" step="100" min="100" />
-                <label class="fs-field-label fs-anim-upper" for="q5">No. of Rooms</label>
-                <input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="4" step="100" min="100" /></li>
-            </ul>
-
-            <button class="next property_form_btn" data-form="1">Continue</button>
-
-            <button class="back property_form_btn" >Back</button>
-          </form>
-        </div>
+      <div id="p1" class="">
       </div>
-      <div id="p2">222222222222222</div>
+
+      <div id="p2" class="clicked">
+      </div>
+
       <div id="p3">333333333333333333333333</div>
       <div id="p4">4444444444444444444444444444</div>
     </div>
   </div>
+
 
 
 </body>
@@ -141,4 +100,14 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
 <script type="text/javascript" src="./js/property.js"></script>
-<script type="text/javascript" src="js/global.js"></script></html>
+<script type="text/javascript" src="js/global.js"></script>
+
+<!--dbtable-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,136 @@
+<div id="proper1">
+  <div class="form_bgc">
+    <div class="form_status"></div>
+    <div class="form_step">1 / 4</div>
+    <form id="huge_form">
+      <ul class="fs-fields">
+
+        <li class="activeForm" id="form1_list1" data-part="1">
+          <div class="radio_group">
+            <label class="fs-field-label fs-anim-upper" for="q1">Rental or Sale?</label>
+            <select name="sell_type" id="sel_type">
+              <option value="Sale">Sale</option>
+              <option value="Rental">Rental</option>
+            </select>
+          </div>
+          <label class="fs-field-label fs-anim-upper" for="q1">Price</label>
+          <input class="fs-anim-lower" id="q1" name="q1" type="number" placeholder="Dean Moriarty" />
+        </li>
+
+        <li data-part="2" id="form1_list2">
+          <label class="fs-field-label fs-anim-upper" for="q1">Client's Name?</label>
+          <input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Dean Moriarty" />
+
+          <label class="fs-field-label fs-anim-upper" for="q1">Client's Phone?</label>
+          <input class="fs-anim-lower" id="q1" name="q1" type="number" placeholder="124124214" />
+          <label class="fs-field-label fs-anim-upper" for="q1">Client's Email?</label>
+          <input class="fs-anim-lower" id="q1" name="q1" type="email" placeholder="1231@14241" />
+        </li>
+
+        <li data-part="3" id="form1_list3">
+          <label class="fs-field-label fs-anim-upper " for="q5">Address</label>
+          <input class="address" id="q5" name="q5" type="text" placeholder="Street Address" />
+          <input class="address" id="q5" name="q5" type="text" placeholder="Street Address 2" />
+          <input class="address" id="q5" name="q5" type="text" placeholder="Region" />
+        </li>
+
+        <li data-part="4" id="form1_list4">
+          <label class="fs-field-label fs-anim-upper" for="q5">Size (Sq. ft)</label>
+          <input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1000" step="100" min="100" />
+
+          <label class="fs-field-label fs-anim-upper" for="q5">Year Building</label>
+          <input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="2000" step="100" min="100" />
+          <label class="fs-field-label fs-anim-upper" for="q5">No. of Rooms</label>
+          <input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="4" step="100" min="100" /></li>
+      </ul>
+
+      <button class="next property_form_btn" data-form="1">Continue</button>
+
+      <button class="back property_form_btn">Back</button>
+    </form>
+  </div>
+</div>
+
+<div id="proper2">
+  <table id="example" class="table table-dark table-hover table-responsive-sm table-responsive ">
+    <thead>
+      <tr>
+        <th>Client Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Tiger Nixon</td>
+        <td>85 Hing Shing Rd, Kwai Chung</td>
+        <td>admission@vtc.edu.hk</td>
+        <td>
+          <a class="table_btn" href="#open-modal">Update</a></td>
+      </tr>
+      <tr>
+        <td>Garrett Winters</td>
+        <td>13-19 San Kwai St, Kwai Fong</td>
+        <td>gaga@vtc.edu.hk</td>
+        <td>
+          <a class="table_btn" href="#open-modal">Update</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div>
+    <div id="open-modal" class="modal-window">
+      <form class="form-style-9">
+        <a href="#" title="Close" class="modal-close" id="modal_down">X</a>
+        <ul>
+          <fieldset>
+            <legend>Personal</legend>
+            <label for="field2"><span>Email <span class="required">*</span></span><input type="email" class="input-field" name="field2" value="" /></label>
+            <label for="field3"><span>Phone <span class="required">*</span></span><input type="number" class="input-field" name="field3" value="" /></label>
+
+          </fieldset>
+
+          <fieldset>
+            <legend>Business</legend>
+            <label for="field4"><span>Sale / Rental</span><select name="field4" class="select-field">
+                <option value="Sale">Sale</option>
+                <option value="Rental">Rental</option>
+              </select></label>
+            <label for="price"><span>Price <span class="required">*</span></span><input type="number" class="input-field" name="price" value="" /></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Address</legend>
+            <label for="address1"><span>Address Line 1 <span class="required">*</span></span><input type="text" class="input-field" name="address1" value="13-19" /></label>
+            <label for="address2"><span>Address Line 2 <span class="required">*</span></span><input type="text" class="input-field" name="address2" value="San Kwai St" /></label>
+            <label for="Region"><span>Region<span class="required">*</span></span><input type="text" class="input-field" name="Region" value=" Kwai Fong" /></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>House Info</legend>
+            <label for="year"><span>Year building <span class="required">*</span></span><input type="number" class="input-field" name="year" value="" />
+            </label>
+            <label for="room"><span>No. of room<span class="required">*</span></span><input type="number" class="input-field" name="room" value="" />
+            </label>
+            <label for="size"><span>Size (sq. ft)<span class="required">*</span></span><input type="number" class="input-field" name="size" value="" />
+            </label>
+          </fieldset>
+
+          <button type="submit">
+            Updated
+          </button>
+          <button type="reset">
+            Reset
+          </button>
+        </ul>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div id="proper3">
+
+</div>
