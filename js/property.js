@@ -4,7 +4,7 @@ $(function () {
     side_background = $(".side_bar"),
     tl = gsap.timeline();
 
-  $('#example').DataTable();
+//  $('#example').DataTable();
 
 //  $(".modal-window").click(function (e) {
 //    var url = $("#modal_down").attr("href");
