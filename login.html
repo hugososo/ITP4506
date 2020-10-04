@@ -31,6 +31,8 @@
             <li>|</li>
             <li><a href="">CONTACT</a></li>
             <li>|</li>
+            <li><a href="personalInfo.html">PERSONAL INFO</a></li>
+            <li>|</li>
             <li><a href="login.html">LOGIN</a></li>
             <li>|</li>
             <li><a href="signup.html">SIGN UP</a></li>
@@ -52,7 +54,7 @@
                 </path>
             </svg>
             <div class="form-container">
-                <form action="">
+                <form action="javascript:void(0)" method="POST">
                     <h1>SIGN IN</h1>
                     <p>with social media account</p>
                     <div class="icon-container">
@@ -60,8 +62,10 @@
                         <img src="assets/facebook.png" width="50" />
                     </div>
                     <p>or use your account</p>
-                    <input type="email" placeholder="Email" aria-placeholder="Email" />
-                    <input type="text" placeholder="Password" aria-placeholder="Password">
+                    <input type="email" id="loginEmail" placeholder="Email" aria-placeholder="Email" name="email" required/>
+                    <input type="password" name="pw" id="loginPw" placeholder="Password" aria-placeholder="Password" required>
+                    <div class="warning-msg" id="warning-msg2">Email/Password is wrong</div>
+                    <div class="success-msg" id="success-msg2">Login Successful!<br>You will redirect to Home Page</div>
                     <a href="signup.html">
                         <p class="link-p">Sign Up an account</p>
                     </a>

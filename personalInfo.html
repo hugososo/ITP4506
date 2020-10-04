@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream House</title>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <!-- Customized Css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body data-barba="wrapper">
+
+    <div class="transition-container">
+        <div class="transition"></div>
+    </div>
+
+    <header>
+        <a href="index.html ">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
+                height="30">
+        </a>
+        <ul>
+            <li><a href="">WORK</a></li>
+            <li>|</li>
+            <li><a href="propertyManagement.html">PROPERTY</a></li>
+            <li>|</li>
+            <li><a href="">CONTACT</a></li>
+            <li>|</li>
+            <li><a href="personalInfo.html">PERSONAL INFO</a></li>
+            <li>|</li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li>|</li>
+            <li><a href="signup.html">SIGN UP</a></li>
+        </ul>
+    </header>
+
+    <div data-barba="container" data-barba-namespace="user-info">
+        <div class="info-container">
+            <hr style="opacity: 0.5;">
+            <div style="background-color:antiquewhite; margin:30px auto; padding:8px 20px; border-radius: 12px;">
+                <img src="assets/personal-information.png" alt="" width="40" style="float:left;margin-right: 10px;">
+                <h1>Personal information</h1>
+            </div>
+            <h2>About You</h2>
+            <div class="input-container">
+                <div class="input-div">
+                    <label for="pname">
+                        <p>Full Name</p>
+                    </label>
+                    <input type="hidden" name="pname" id="pname" class="pinput" value="Hugo">
+                    <input type="text" name="pname" id="pname" class="pinput" value="Hugo">
+                </div>
+                <div class="input-div">
+                    <label for="pemail">
+                        <p>Email</p>
+                    </label>
+                    <input type="email" name="pemail" id="pemail" class="pinput" value="customer@email.com">
+                </div>
+                <div class="input-div">
+                    <label for="ppw">
+                        <p>Password</p>
+                    </label>
+                    <input type="password" name="ppw" id="ppw" class="pinput"
+                        placeholder="Modify here to change password">
+                </div>
+                <div class="input-div">
+                    <label for="ptel">
+                        <p>Phone Number</p>
+                    </label>
+                    <input type="text" name="ptel" id="ptel" class="pinput" placeholder="Please input" value="852-">
+                </div>
+                <div class="input-div">
+                    <label for="pgender">
+                        <p>Gender</p>
+                    </label>
+                    <select name="pgender" id="pgender" class="pselect">
+                        <option value="none">Please Select</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </div>
+                <div class="input-div">
+                    <label for="birthday">
+                        <p>Birthday</p>
+                    </label>
+                    <input type="date" id="pbirthday" name="pbirthday" class="pdate">
+                </div>
+                <div class="pbtn-div">
+                <button class="pbtn">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+<script src="js/account.js"></script>
+<script src="js/global.js"></script>
+
+</html>

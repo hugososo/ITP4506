@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream House</title>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    </link>
+    <!-- Customized Css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body data-barba="wrapper">
+
+    <div class="transition-container">
+        <div class="transition"></div>
+    </div>
+
+    <header>
+        <a href="index.html ">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
+                height="30">
+        </a>
+        <ul>
+            <li><a href="">WORK</a></li>
+            <li>|</li>
+            <li><a href="propertyManagement.html">PROPERTY</a></li>
+            <li>|</li>
+            <li><a href="">CONTACT</a></li>
+            <li>|</li>
+            <li><a href="personalInfo.html">PERSONAL INFO</a></li>
+            <li>|</li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li>|</li>
+            <li><a href="signup.html">SIGN UP</a></li>
+        </ul>
+    </header>
+
+    <div data-barba="container" data-barba-namespace="create-agent">
+        <div class="info-container">
+            <hr style="opacity: 0.5;">
+            <div style="background-color:antiquewhite; margin:30px auto; padding:8px 20px; border-radius: 12px;">
+                <img src="assets/personal-information.png" alt="" width="40" style="float:left;margin-right: 10px;">
+                <h1>Create Account</h1>
+            </div>
+            <h2>Basic Infomation</h2>
+            <div class="input-container">
+                <div class="input-div">
+                    <label for="pname">
+                        <p>Full Name</p>
+                    </label>
+                    <input type="hidden" name="pname" id="pname" class="pinput" value="Hugo">
+                    <input type="text" name="pname" id="pname" class="pinput" value="Agent Hugo">
+                </div>
+                <div class="input-div">
+                    <label for="pemail">
+                        <p>Email</p>
+                    </label>
+                    <input type="email" name="pemail" id="pemail" class="pinput" value="agent@email.com">
+                </div>
+                <div class="input-div">
+                    <label for="ppw">
+                        <p>Password</p>
+                    </label>
+                    <input type="password" name="ppw" id="ppw" class="pinput"
+                        placeholder="Modify here to change password">
+                </div>
+                <div class="input-div">
+                    <label for="ptel">
+                        <p>Phone Number</p>
+                    </label>
+                    <input type="text" name="ptel" id="ptel" class="pinput" placeholder="Please input"
+                        value="852-65432123">
+                </div>
+                <div class="input-div">
+                    <label for="pgender">
+                        <p>Gender</p>
+                    </label>
+                    <select name="pgender" id="pgender" class="pselect">
+                        <option value="none">Please Select</option>
+                        <option value="m" selected>Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </div>
+                <div class="input-div">
+                    <label for="birthday">
+                        <p>Birthday</p>
+                    </label>
+                    <input type="date" id="pbirthday" name="pbirthday" class="pdate" value="1995-07-22"
+                        pattern="\d{4}-\d{2}-\d{2}">
+                </div>
+
+                <label for="agentcb" class="cb-container">
+                    Create Agent Account
+                    <input type="checkbox" id="agentcb" name="agentcb" style="position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;">
+                    <span class="checkmark"></span>
+                </label>
+
+                <div class="input-container" id="agent-container">
+                    <div style="flex:0 0 100%">
+                        <h2>Agent Infomation</h2>
+                    </div>
+                    <div class="input-div">
+                        <label for="companyname">
+                            <p>Company Name</p>
+                        </label>
+                        <input type="text" id="companyname" name="pbirthdcompanynameay" class="pinput"
+                            value="Agent CC Ltd.">
+                    </div>
+                    <div class="input-div">
+                        <label for="companytel">
+                            <p>Company Phone</p>
+                        </label>
+                        <input type="text" id="companytel" name="companytel" class="pinput" value="3214-1234">
+                    </div>
+                    <div class="input-div">
+                        <label for="companyaddress">
+                            <p>Company Address</p>
+                        </label>
+                        <input type="text" id="companyaddress" style="border-bottom: 1px solid rgb(177, 177, 177);"
+                            name="companyaddress" class="pinput" value="Room 123">
+                        <input type="text" id="companyaddress" style="border-bottom: 1px solid rgb(177, 177, 177);"
+                            name="companyaddress2" class="pinput" value="ABC Street">
+                        <input type="text" id="companyaddress" style="border-bottom: 1px solid rgb(177, 177, 177);"
+                            name="companyaddress3" class="pinput" value="Kowloon">
+                    </div>
+                    <div class="input-div">
+                        <label for="companylicense">
+                            <p>Company Agent Licence</p>
+                        </label>
+                        <input type="text" id="companylicence" name="companylicence" class="pinput" value="C-024680">
+                    </div>
+                    <div class="input-div">
+                        <label for="agentlicense">
+                            <p>Agent Personal Licence</p>
+                        </label>
+                        <input type="text" id="agentlicense" name="agentlicense" class="pinput" value="A-024680">
+                    </div>
+                    <div class="input-div">
+                        <label for="agentsign">
+                            <p>Agent Sign</p>
+                        </label>
+                        <input type="text" id="agentsign" name="agentsign" class="pinput" value="Hugo">
+                    </div>
+                    <div style="flex: 0 0 100%" id="drop-area">
+                        <label for="agentcard">
+                            <div class="agentcard-img">
+                                <img id="card-img" src="#" alt="&#10011 Drag/Drop or Upload Your Estate-Agent-Card Here" />
+                            </div>
+                        </label>
+                        <input type="file" id="agentcard" name="agentcard" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                <div class="pbtn-div">
+                    <button class="pbtn">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+<script src="js/account.js"></script>
+<script src="js/global.js"></script>
+
+</html>

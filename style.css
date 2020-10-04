@@ -20,7 +20,7 @@ html::-webkit-scrollbar {
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(215, 255, 248);
+  background-color: rgb(217, 255, 252);
 }
 
 /* scale center */
@@ -127,7 +127,7 @@ header ul li a:hover:after {
 .first-section {
   /* overflow: hidden; */
   width: 100%;
-  height: 120vh;
+  height: 130vh;
   position: relative;
   box-sizing: border-box;
 }
@@ -152,7 +152,7 @@ header ul li a:hover:after {
     margin-top: 35px;
     position: relative;
     background-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 1px 3px 5px rgb(151, 151, 151);
+    box-shadow: 1px 3px 5px rgb(194, 194, 194);
     margin-bottom: 20px;
     max-width:50%;
     height: 120px;
@@ -353,15 +353,15 @@ header ul li a:hover:after {
 }
 
 .sign-section {
-  widows: 100%;
+  width: 100%;
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #wave {
   min-width: 1200px;
-  bottom: 0;
+  top:55%;
   position: absolute;
 }
 
@@ -372,11 +372,11 @@ header ul li a:hover:after {
 
 .form-container {
   min-width: 400px;
-  margin: 85px auto;
+  margin:auto;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -50%);
   z-index: 999;
 }
 
@@ -387,14 +387,14 @@ form {
   flex-direction: column;
   padding: 20px 50px;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 30px;
   text-align: center;
   box-shadow: 1px 2px 10px rgb(129, 129, 129);
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"] {
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
   background-color: rgb(255, 255, 255);
   border: none;
   padding: 12px 15px;
@@ -403,7 +403,7 @@ input[type="email"] {
   font-size: 10pt;
 }
 
-input[type="submit"] {
+.form-container input[type="submit"] {
   background-color: rgb(255, 98, 93);
   border: none;
   border-radius: 20px;
@@ -413,10 +413,7 @@ input[type="submit"] {
   color: white;
   font-weight: bolder;
   font-size: 10pt;
-}
-
-input::placeholder {
-  /* font-size: larger; */
+  cursor: pointer;
 }
 
 form p {
@@ -430,7 +427,7 @@ form a:hover {
 }
 
 .check-password {
-  height: 0;
+  display: none;
   overflow: hidden;
 }
 
@@ -439,9 +436,359 @@ form a:hover {
   color: #5c5c5c;
 }
 
-input[type="password"]:focus + .check-password {
+.warning-msg {
+  padding: 2px 30px;
+  background-color: rgb(253, 82, 82);
+  border-radius: 20px;
+  color:white;
+  display: none;
+  margin:5px;
+}
+
+.success-msg {
+  padding: 2px 30px;
+  background-color: rgb(5, 146, 24);
+  border-radius: 20px;
+  color:white;
+  display: none;
+  margin:5px;
+}
+
+.form-container input[type="password"]:focus + .check-password {
   height: 100%;
 }
+
+.form-container input[type="submit"]:hover {
+  background-color: #e70000;
+}
+
+.info-container {
+  position: relative;
+  margin: 100px 12vw;
+}
+
+.info-container h1 {
+  color: #fc5555;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.info-container h2{
+  margin:20px auto;
+  color: #ff8585;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-container {
+  position: relative;
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.input-container p {
+  font-size: 12pt;
+  color: #5a5a5a;
+}
+
+.input-container .input-div{
+  flex: 0 0 50%;
+  margin:20px auto;
+}
+
+.pinput{
+  border: none;
+  padding:8px 10px;
+  width: 80%;
+  /* outline: none; */
+  font-size: 11pt;
+}
+
+.pselect {
+  width:80%;
+  border: 1px solid var(--select-border);
+  border-radius: 0.25em;
+  padding: 7px 10px;
+  font-size: 11pt;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.pdate{
+  width:80%;
+}
+
+/* Removes the clear button from date inputs */
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+
+/* Removes the spin button */
+input[type="date"]::-webkit-inner-spin-button { 
+  display: none;
+}
+
+/* Always display the drop down caret */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #2c3e50;
+}
+
+/* A few custom styles for date inputs */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  color: #3a3a3a;
+  font-family: "Helvetica", arial, sans-serif;
+  font-size: 11pt;
+  border:1px solid #ecf0f1;
+  background:#ffffff;
+  padding:8px 12px;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+input[type="date"]:focus {
+  color: #888888;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+.pbtn-div {
+  flex: 0 0 100%;
+  margin:20px auto;
+  transition: flex .2s ease-in-out;
+}
+
+.pbtn {
+  background-color: rgb(255, 98, 93);
+  border: none;
+  border-radius: 20px;
+  padding: 12px 15px;
+  margin: 12px auto;
+  width: 200px;
+  color: white;
+  font-weight: bolder;
+  font-size: 10pt;
+  cursor: pointer;
+  transition: width .2s ease-in-out;
+}
+
+.pbtn:hover{
+  background-color: #fd4343;
+  width: 300px;
+}
+
+#agent-container{
+  display: none;
+}
+
+.agentcard-img{
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  border: 2px dashed rgb(94, 94, 94);
+  text-align: center;
+}
+.agentcard-img:hover{
+  cursor: crosshair;
+}
+
+#card-img {
+  object-fit: contain;
+  width:100%;
+  height: 100%;
+  line-height:50vh;
+  color: rgb(97, 97, 97);
+}
+
+.cb-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14pt;
+  color: #585858;
+  font-weight: bolder;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: rgb(235, 235, 235);
+}
+
+/* On mouse-over, add a grey background color */
+.cb-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.cb-container input:checked ~ .checkmark {
+  background-color: #ff7373;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.cb-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.cb-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.search-container {
+  margin-top: 100px;
+  height: 100%;
+  width: 100%;
+}
+
+.searchbar-container {
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  margin: 50px auto 0px auto;
+  background-color: white;
+  box-shadow: -1px 1px 10px rgb(175, 175, 175);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 70%;
+  overflow: hidden;
+}
+
+.searchbar {
+  flex-grow: 9;
+  border: none;
+  border-radius: 4px;
+  font-size: 14pt;
+  background-image: url('assets/searchicon.png');
+  background-position: 7px 0px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 16px 70px;
+  pointer-events: auto;
+  color: #4b4b4b;
+}
+
+.sbtn {
+  margin:7px 3px;
+  flex-grow: 1;
+  border: none;
+  border-radius: 5px;
+  padding:12px;
+  font-size: 10pt;
+  cursor: pointer;
+}
+
+.resetbtn {
+  background-color: transparent;
+  color: #8a8a8a;
+}
+
+.resetbtn:hover {
+  background-color: rgb(145, 145, 145);
+  color: #fcfcfc;
+}
+
+.searchbtn {
+  color: rgb(231, 231, 231);
+  background-color: rgb(255, 87, 75);
+}
+
+.searchbtn:hover {
+  background-color: rgb(252, 34, 18);
+}
+
+.advancebtn {
+  padding:9px;
+  flex-grow: 1;
+  font-size: 14pt;
+  margin-right: 10px;
+}
+
+.advancebtn:hover {
+  background-color: #1f3866;
+  color: white;
+}
+
+.filter-container {
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: -1px 1px 10px rgb(175, 175, 175);
+  width: 70%;
+  overflow: hidden;
+  display: none;
+}
+
+.filteeitem-container{
+  margin: 25px;
+}
+
+.filter-title {
+  color: #5e5e5e;
+  font-size: 12pt;
+  padding: 10px;
+  border-right: 1.5px solid rgb(179, 179, 179);
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+}
+
+.filter-container div input[type="checkbox"]{
+  visibility: hidden;
+}
+
+.filter-option{
+  font-size: 12pt;
+  color: #ffffff;
+  padding:5px  20px 5px 10px;
+  margin: 5px 0;
+  background-color: #fa6363;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.filter-option:hover {
+  background-color: #f88d8d;
+}
+
+#slider-range{
+  flex: 1 1 40%;
+  margin: 5px 10px;
+}
+
 
 /*property management***************************/
 
