@@ -210,7 +210,7 @@ barba.init({
 
       console.log(data.next.url);
 
-//      if(data.next.url.path === "propertyManagement.html"){
+
         var scriptt = document.createElement('script');
       scriptt.src = './js/property.js';
       data.next.container.appendChild(scriptt);
@@ -220,7 +220,7 @@ barba.init({
       linkt.href = 'style.css';
       data.next.container.appendChild(linkt);
       console.log(linkt);
-//      }
+
       
 
 
