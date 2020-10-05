@@ -4,14 +4,7 @@ $(function () {
     side_background = $(".side_bar"),
     tl = gsap.timeline();
 
-
-
-  //  getContent(1);
-  //  getContent();
-
-  //  function getContent() { $("#exchange_area").load("contentForProperty.html");
-  //
-  //  }
+$('#example').DataTable();
 
   tl.fromTo(side_background, {
     opacity: 0.5,

@@ -838,7 +838,7 @@ input[type="date"]:focus {
   width: 65%;
   /*  max-width: 800px;*/
   margin: 0px 3%;
-  min-height: 600px;
+  min-height: 550px;
 }
 
 #p1,
@@ -1164,7 +1164,7 @@ input[type="date"]:focus {
   background: #3b3f45;
   position: relative;
   width: 100%;
-  min-height: 600px;
+  min-height: 540px;
   height: 100%;
   margin: 0, auto;
   padding: 0;
@@ -1190,7 +1190,7 @@ input[type="date"]:focus {
 }
 
 #huge_form {
-  font-size: 2.5em;
+  font-size: 1.9em;
   /*  position: relative;*/
   border-radius: 0;
 }
@@ -1201,7 +1201,7 @@ input[type="date"]:focus {
   left: 0;
   top: 10%;
   display: inline-block;
-  padding: 0 5px 0 0;
+  padding: 10px 5px 0 0;
   font-weight: 700;
   z-index: -1;
   padding-left: 15px;
@@ -1230,7 +1230,7 @@ input[type="date"]:focus {
 .fs-fields input {
   display: block;
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 1em;
   padding: 0 0.15em;
   width: 90%;
   border: none;
@@ -1278,14 +1278,14 @@ input[type="date"]:focus {
   cursor: pointer;
   background-color: rgba(29, 239, 231, 0.88);
   ;
-  color: white;
+  color: black;
 }
 
 #sel_type {
   display: block;
   background-color: rgba(45, 59, 116, 0.72);
   color: #fffed8;
-  font-size: 1.5em;
+  font-size: 1em;
   margin-bottom: 1em;
 }
 
