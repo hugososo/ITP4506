@@ -14,6 +14,18 @@
   <!-- Customized Css -->
   <link rel="stylesheet" type="text/css" href="style.css">
 
+  <!--icon library-->
+  <script src="https://kit.fontawesome.com/91353110a6.js" crossorigin="anonymous"></script>
+  
+<!--  leftlet map-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
 </head>
 
 <body data-barba="wrapper">
@@ -41,10 +53,105 @@
     </ul>
   </header>
   <div data-barba="container" data-barba-namespace="house-detail" class="container">
-    <div id="house">
-      
+    <div class="hsep1">
+
+      <div class="hseheadingPart">
+        <h1 id="hseh1"></h1>
+        <div class="hseh1_sub">
+          <div>
+            <i class="fas fa-map-marked-alt"></i>
+            <span id="hse_span_Address"></span>
+            <br>
+            <span id="hse_span_Region"></span>
+          </div>
+
+
+          <div class="hseheadingContact">
+            <span id="hse_span_agent"></span>
+            <span>agent@email.com</span>
+            <button><i class="fas fa-phone"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hseMainInfoPart">
+        <div class="hsegallery">
+          <ul>
+            <li><a href="vr.html">VR</a></li>
+            <li><a href="#">Photo</a></li>
+            <li><a href="#">Floor Plan</a></li>
+<!--            <li><a href="#">Map</a></li>-->
+          </ul>
+          <div class="hseframe">
+            <div class="hseframephoto"><img src="assets/3-3.jpg" alt="">
+            </div>
+            <div class="hseframeselector">
+              <div class='hseframeselector1'>Pre</div>
+              <img src="assets/3-3.jpg" alt="">
+              <img src="assets/3-3.jpg" alt="">
+              <img src="assets/3-3.jpg" alt="">
+              <div class='hseframeselector2'>Next</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hseText">
+          <p><span class="hseText_cross">$10M</span><span class="hseText_dis">-14.5%</span></p>
+          <p><span id="hse_status"></span><span id="hse_actual_price">sdfasdfa</span></p>
+          <div class="hse_size_com">
+            <div id="hse_net_size"></div>
+            <div id="hse_cal_size"></div>
+          </div>
+          <div class="hseText_ul_con">
+            <ul>
+              <li id="hseage"></li>
+              <li>Age</li>
+            </ul>
+            <ul>
+              <li id="hselayout"></li>
+              <li>Layout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+     <div id="hse_map">
+     </div>
+     
+      <div id="hse_stat_past">
+        <h2>Related Transaction</h2>
+        <table class="table table-dark table-hover table-responsive-sm table-responsive ">
+          <thead>
+            <tr>
+              <th>Client Name</th>
+              <th>Address</th>
+              <th>Email</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tiger Nixon</td>
+              <td>85 Hing Shing Rd, Kwai Chung</td>
+              <td>admission@vtc.edu.hk</td>
+              <td>
+                <a class="table_btn" href="#open-modal">Update</a></td>
+            </tr>
+            <tr>
+              <td>Garrett Winters</td>
+              <td>13-19 San Kwai St, Kwai Fong</td>
+              <td>gaga@vtc.edu.hk</td>
+              <td>
+                <a class="table_btn" href="#open-modal">Update</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
-    <img src="" id="i1" alt="">
 
   </div>
 
