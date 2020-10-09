@@ -16,15 +16,11 @@
 
   <!--icon library-->
   <script src="https://kit.fontawesome.com/91353110a6.js" crossorigin="anonymous"></script>
-  
-<!--  leftlet map-->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+
+  <!--  leftlet map-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
 </head>
 
@@ -52,17 +48,21 @@
       <li><a href="signup.html">SIGN UP</a></li>
     </ul>
   </header>
-  <div data-barba="container" data-barba-namespace="house-detail" class="container">
+  <div data-barba="container" data-barba-namespace="house-detail" class="container scroll_con">
     <div class="hsep1">
 
       <div class="hseheadingPart">
         <h1 id="hseh1"></h1>
         <div class="hseh1_sub">
-          <div>
-            <i class="fas fa-map-marked-alt"></i>
-            <span id="hse_span_Address"></span>
-            <br>
-            <span id="hse_span_Region"></span>
+          <div class="hseh1_sub_1">
+            <div>
+              <i class="fas fa-map-marked-alt"></i>
+              <span id="hse_span_Address"></span>
+            </div>
+            <div id="hse_block">
+            </div>
+            <div id="hse_span_Region">
+            </div>
           </div>
 
 
@@ -78,21 +78,67 @@
       <div class="hseMainInfoPart">
         <div class="hsegallery">
           <ul>
-            <li><a href="vr.html">VR</a></li>
-            <li><a href="#">Photo</a></li>
-            <li><a href="#">Floor Plan</a></li>
-<!--            <li><a href="#">Map</a></li>-->
+            <li><a href="#hse_photo" id="photo_list_item">Photo</a></li>
+            <li><a href="#hse_vr" id="vr_list_item">VR</a></li>
+            <li><a href="#hse_floor" id="floor_list_item">Floor Plan</a></li>
+            <!--            <li><a href="#">Map</a></li>-->
           </ul>
-          <div class="hseframe">
-            <div class="hseframephoto"><img src="assets/3-3.jpg" alt="">
+          <div class="hse_media_list">
+
+            <div class="sp-slideshow" id="hse_vr">
+              <h2>Click Image for VR</h2>
+              <div>
+                <div class="circle"></div>
+              </div>
+
             </div>
-            <div class="hseframeselector">
-              <div class='hseframeselector1'>Pre</div>
-              <img src="assets/3-3.jpg" alt="">
-              <img src="assets/3-3.jpg" alt="">
-              <img src="assets/3-3.jpg" alt="">
-              <div class='hseframeselector2'>Next</div>
+
+            <div class="sp-slideshow" id="hse_photo">
+              <input id="button-1" type="radio" name="radio-set" class="sp-selector-1" checked="checked" />
+              <label for="button-1" class="button-label-1"></label>
+
+              <input id="button-2" type="radio" name="radio-set" class="sp-selector-2" />
+              <label for="button-2" class="button-label-2"></label>
+
+              <input id="button-3" type="radio" name="radio-set" class="sp-selector-3" />
+              <label for="button-3" class="button-label-3"></label>
+
+              <input id="button-4" type="radio" name="radio-set" class="sp-selector-4" />
+              <label for="button-4" class="button-label-4"></label>
+
+              <input id="button-5" type="radio" name="radio-set" class="sp-selector-5" />
+              <label for="button-5" class="button-label-5"></label>
+
+              <label for="button-1" class="sp-arrow sp-a1"></label>
+              <label for="button-2" class="sp-arrow sp-a2"></label>
+              <label for="button-3" class="sp-arrow sp-a3"></label>
+              <label for="button-4" class="sp-arrow sp-a4"></label>
+              <label for="button-5" class="sp-arrow sp-a5"></label>
+
+              <div class="sp-content">
+                <div class="sp-parallax-bg"></div>
+                <ul class="sp-slider clearfix" id="hse_slidelist">
+                  <li><img src="" alt="image01" width="500" height="600" /></li>
+                  <li><img src="" alt="image02" width="500" height="600" /></li>
+                  <li><img src="" alt="image03" width="500" height="600" /></li>
+                  <li><img src="assets/hseInfo/Disa_COURT.jpg" alt="image04" width="500" height="600" /></li>
+                  <li><img src="assets/hseInfo/HONG_WAH_COURT_1.jpg" alt="image05" width="500" height="600" /></li>
+                </ul>
+              </div><!-- sp-content -->
+            </div><!-- sp-slideshow -->
+
+            <div class="sp-slideshow" id="hse_floor">
+              <div class="hse_flip_plan">
+                <div class="front">
+                  <img src="assets/hseInfo/floor_plan.jpg" alt="">
+                </div>
+                <div class="back">
+                <img src="assets/hseInfo/overall_floor_plan.jpg" alt="">
+                </div>
+              </div>
+              
             </div>
+
           </div>
         </div>
 
@@ -117,40 +163,83 @@
       </div>
       <hr>
 
-     <div id="hse_map">
-     </div>
-     
+      <div class="hse_map_div">
+        <h2>Location</h2>
+        <div id="hse_map">
+        </div>
+      </div>
+
+
       <div id="hse_stat_past">
         <h2>Related Transaction</h2>
         <table class="table table-dark table-hover table-responsive-sm table-responsive ">
           <thead>
             <tr>
-              <th>Client Name</th>
+              <th>Reg. Date</th>
               <th>Address</th>
-              <th>Email</th>
-              <th>Edit</th>
+              <th>Layout</th>
+              <th>Price</th>
+              <th>Area</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Tiger Nixon</td>
-              <td>85 Hing Shing Rd, Kwai Chung</td>
-              <td>admission@vtc.edu.hk</td>
-              <td>
-                <a class="table_btn" href="#open-modal">Update</a></td>
+              <td>10-Sep-2020</td>
+              <td>Block A Flat 12 10/F</td>
+              <td>2 Rooms</td>
+              <td>12M</td>
+              <td>500</td>
             </tr>
             <tr>
-              <td>Garrett Winters</td>
-              <td>13-19 San Kwai St, Kwai Fong</td>
-              <td>gaga@vtc.edu.hk</td>
-              <td>
-                <a class="table_btn" href="#open-modal">Update</a>
-              </td>
+              <td>21-Jul-2020</td>
+              <td>Block A Flat 2 17/F</td>
+              <td>4 Rooms</td>
+              <td>18M</td>
+              <td>600</td>
+            </tr>
+            <tr>
+              <td>30-Jun-2020</td>
+              <td>Block D Flat 1 30/F</td>
+              <td>2 Rooms</td>
+              <td>10M</td>
+              <td>600</td>
+            </tr>
+            <tr>
+              <td>04-Jan-2020</td>
+              <td>Block B Flat 4 20/F</td>
+              <td>3 Rooms</td>
+              <td>9M</td>
+              <td>400</td>
             </tr>
           </tbody>
         </table>
       </div>
 
+      <div id="hse_est_info">
+        <h2>Estate Info</h2>
+        <div>
+          <div>
+            <p class="title">Estate</p>
+            <p id="est"></p>
+          </div>
+          <div>
+            <p class="title">Year Building</p>
+            <p id="yb"></p>
+          </div>
+          <div>
+            <p class="title">Developer</p>
+            <p id="dev"></p>
+          </div>
+          <div>
+            <p class="title">Term Of Years</p>
+            <p id="toy"></p>
+          </div>
+          <div>
+            <p class="title">Facilities</p>
+            <p id="fas"></p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
