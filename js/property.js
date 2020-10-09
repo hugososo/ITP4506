@@ -108,6 +108,16 @@ $('#example').DataTable();
     }
   });
 
+  $("button.prop_close_form1").on("click", function (e) {
+    alert("Submitted");
+  });
+  
+  $("#update_form2_up").on("click", function (e) {
+   e.preventDefault(); 
+    alert("Updated!");
+//   console.log($("#prop_update_form_email").text()); $("#prop_update_form_email").val($("#prop_update_form_email").html());
+//    $("#prop_update_form_phone").val($("#prop_update_form_phone").html());
+  });
 
   $(".next").on("click", function (e) {
     console.log(e);
@@ -120,10 +130,11 @@ $('#example').DataTable();
     var progress = 100 / maxPage * (page + 1);
     $(".form_status").css("width", progress + "%");
     if (page === 4) {
-      alert("Submitted");
+//      $("#form-sure").css("visibility","visible");
       return;
     } else if (page === 3) {
       $(this).html("Submit");
+      $(this).attr("href","#form-sure");
     }
 
 
@@ -142,6 +153,7 @@ $('#example').DataTable();
 
     if (page === 4) {
       $(".next").html("Continue");
+      
     } else if (page === 1) {
       //      $(this).disable = true;
       return;
