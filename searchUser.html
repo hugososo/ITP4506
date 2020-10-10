@@ -45,8 +45,9 @@
             <div style="padding:10px;
             background-color: #ffe0c6;
             color: rgb(85, 85, 85);">
-                <span style="margin-left: 14vw;">Home > </span>
-                <span style="color: rgb(129, 129, 129);">Search User</span>
+                <span style="margin-left: 14vw;"><a href="index.html" style="text-decoration:none;">Home</a></span>
+                <span>></span>
+                <span style="color: rgb(129, 129, 129);">Search User</span></a>
             </div>
             <div class="searchbar-container">
                 <input type="text" class="searchbar" name="search" placeholder="Search User">
@@ -54,28 +55,29 @@
                 <button class="sbtn searchbtn">Search now</button>
                 <button class="sbtn advancebtn">&#9776</button>
             </div>
+            <div class="filter-selected-container"></div>
             <div class="filter-container">
-                <div class="filteeitem-container">
+                <div class="filteritem-container" id="item-container-1">
                     <span class="filter-title">Type of user</span>
-                    <input type="checkbox" id="user" value="user"><label for="user"><span class="filter-option"
-                            id="user-option"> &#10011 Normal User</span></label>
-                    <input type="checkbox" id="agent" value="agent"><label for="agent"><span class="filter-option"
-                            id="agent-option"> &#10011 Property Agent</span></label>
+                    <span class="addfilter belongitem1"><input type="checkbox" id="user" value="customer"><label for="user"><span class="filter-option"
+                                id="user-option"> &#10011 Normal User</span></label></span>
+                    <span class="addfilter belongitem1"><input type="checkbox" id="agent" value="agent"><label for="agent"><span class="filter-option"
+                                id="agent-option"> &#10011 Property Agent</span></label></span>
                 </div>
-                <div class="filteeitem-container">
+                <div class="filteritem-container" id="item-container-2">
                     <span class="filter-title">Sex</span>
-                    <input type="checkbox" id="male" value="male"><label for="male"><span class="filter-option"
-                            id="male-option"> &#10011 Male</span></label>
-                    <input type="checkbox" id="female" value="female"><label for="female"><span class="filter-option"
-                            id="female-option"> &#10011 Female</span></label>
+                    <span class="addfilter belongitem2"><input type="checkbox" id="male" value="male"><label for="male"><span class="filter-option"
+                                id="male-option"> &#10011 Male</span></label></span>
+                    <span class="addfilter belongitem2"><input type="checkbox" id="female" value="female"><label for="female"><span
+                                class="filter-option" id="female-option"> &#10011 Female</span></label></span>
                 </div>
-                <div class="filteeitem-container" style="display: flex; flex-wrap: wrap;">
+                <div class="filteritem-container" id="item-container-3" style="display: flex; flex-wrap: wrap;">
                     <span class="filter-title">Join Date</span>
-                    <input type="checkbox" id="new2old" value="new2old"><label for="new2old"><span class="filter-option"
-                            id="new2old-option"> &#10011 Newest - Oldest</span></label>
-                    <input type="checkbox" id="old2new" value="old2new"><label for="old2new"><span class="filter-option"
-                            id="old2new-option"> &#10011 Oldest - Newest</span></label>
-                    <span class="filter-option"
+                    <span class="addfilter belongitem3"><input type="radio" id="new2old" name="radio" value="dateorder"><label for="new2old"><span
+                                class="filter-option" id="new2old-option"> &#10011 Newest - Oldest</span></label></span>
+                    <span class="addfilter belongitem3"><input type="radio" id="old2new" name="radio" value="dateorder"><label for="old2new"><span
+                                class="filter-option" id="old2new-option"> &#10011 Oldest - Newest</span></label></span>
+                    <span class="filter-option addfilter belongitem3" id="date-range-selector"
                         style="min-width: 50%; margin-left: 5px; display: flex; justify-content: start; align-items: center; flex-wrap: wrap;">
                         <label for="daterange">&#10011 Range:</label>
                         <input type="text" id="daterange" readonly
@@ -83,6 +85,13 @@
                         <div id="slider-range"></div>
                     </span>
                 </div>
+            </div>
+            <div style="width: 70%; margin:50px auto 30px auto; text-align: center;">
+                <span style="color: #5c5c5c;">A total of</span>
+                <span style="color: #f16e6e; font-weight: bolder;" id="total-result"></span>
+                <span style="color: #5c5c5c;">Results</span>
+            </div>
+            <div class="userresult-container">
             </div>
         </div>
     </div>

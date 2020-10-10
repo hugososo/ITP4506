@@ -6,22 +6,13 @@ tl.to("#wave", { scale: 3, duration: 0.5, ease: Back.easeOut.config(1.7), onComp
 
 tl.pause();
 
-let account = {
-    customer: [
-        { "email": "customer@email.com", "name": "Hugo", "pw": "Customer1" },
-        { "email": "customer2@email.com", "name": "Clark", "pw": "Customer2" },
-        { "email": "customer3@email.com", "name": "Thomas", "pw": "Customer3" }
-    ],
-    manager: [
-        { "email": "manager@email.com", "name": "Manager So", "pw": "Manager1" },
-        { "email": "manager2@email.com", "name": "Manager Chan", "pw": "Manager2" },
-    ],
-    agent: [
-        { "email": "agent@email.com", "name": "Agent Hugo", "pw": "Agent123" },
-        { "email": "agent2@email.com", "name": "Agent Clark", "pw": "Agent456" },
-        { "email": "agent3@email.com", "name": "Agent Thomas", "pw": "Agent789" }
-    ]
-};
+let account;
+
+fetch('js/account.json')
+  .then(response => response.json())
+  .then(data => {
+      account = data;
+});
 
 $(document).ready(function () {
     let pwpass = false;
@@ -88,12 +79,11 @@ $(document).ready(function () {
         }
         stack2 = stack;
     });
-    $(":submit").click(function (e) {
+    $(".register-submit").click(function (e) {
         // e.preventDefault();
         if ($("#cpw").val() == $("#pw").val() && stack2.length == 4) {
             pwpass = true;
-            account.customer.push({ "email": $("#email").val(), "name": $("#name").val(), "pw": $("#pw").val() });
-            console.log(account);
+            account.user.push({ "email": $("#email").val(), "name": $("#name").val(), "pw": $("#pw").val(), "role": "user" });
             $("#cpw").css("border", "none");
             $("#warning-msg").slideUp();
             $("#success-msg").slideDown();
@@ -104,16 +94,11 @@ $(document).ready(function () {
             $("#warning-msg").slideDown();
         }
 
-        for (i in account) {
-            console.log(i);
-            var result = account[i].find(function (item, index, array) {
+            var result = account["user"].find(function (item, index, array) {
                 console.log(item.email);
                 return item.email == $("#loginEmail").val() && item.pw == $("#loginPw").val();
             });
-            if (typeof result === 'object')
-                break;
-        }
-        console.log(result);
+
         if (typeof result === 'undefined') {
             if (tl.time() == 2)
                 tl.tweenFromTo(2, 0).timeScale(2);

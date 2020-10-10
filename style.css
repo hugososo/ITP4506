@@ -361,7 +361,7 @@ header ul li a:hover:after {
 
 #wave {
   min-width: 1200px;
-  top:55%;
+  bottom: 0;
   position: absolute;
 }
 
@@ -698,6 +698,12 @@ input[type="date"]:focus {
   color: #4b4b4b;
 }
 
+.checkbox-checked {
+  border: 2px solid #ffa136;
+  background-color: #f5f5f5 !important;
+  color: black !important;
+}
+
 .sbtn {
   margin:7px 3px;
   flex-grow: 1;
@@ -751,7 +757,13 @@ input[type="date"]:focus {
   display: none;
 }
 
-.filteeitem-container{
+.filter-selected-container {
+  width: 70%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.filteritem-container{
   margin: 25px;
 }
 
@@ -765,9 +777,15 @@ input[type="date"]:focus {
   text-align: center;
 }
 
-.filter-container div input[type="checkbox"]{
+.search-container input[type="checkbox"]{
   visibility: hidden;
 }
+
+.addfilter input[type="radio"]{
+  visibility: hidden;
+}
+
+
 
 .filter-option{
   font-size: 12pt;
@@ -789,6 +807,137 @@ input[type="date"]:focus {
   margin: 5px 10px;
 }
 
+.userresult-container{
+  position: relative;
+  width: 70%;
+  margin: 50px auto;
+}
+
+.user-card {
+  position: relative;
+  box-shadow: 2px 2px 10px rgb(189, 189, 189);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  min-height: 120px;
+  padding: 15px;
+  border-left: 6px solid rgb(83, 83, 255);
+  border-top: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-right: 1px solid rgb(255, 255, 255);
+  -webkit-user-select: initial;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.user-card:hover {
+  background-color: rgb(255, 242, 217,0.7);
+  border-left: 6px solid rgb(250, 185, 65);
+  border-top: 2px solid rgb(250, 185, 65);
+  border-bottom: 2px solid rgb(250, 185, 65);
+  border-right: 2px solid rgb(250, 185, 65);
+}
+
+.user-card-img {
+  flex: 1 1 20%;
+  text-align: center;
+}
+
+.user-card-content {
+  flex: 2 2 50%;
+  margin:10px 0;
+}
+
+.user-card-toggle {
+  flex: 1 1 20%;
+  text-align: center;
+  z-index: 2;
+}
+
+.user-card-text-1{
+  margin:5px 0;
+
+}
+
+.user-card-text-2{
+  margin:5px 0;
+  color: #4375ff;
+  font-size: 12pt;
+}
+
+.user-card-text-3{
+  color: #5c5c5c;
+  font-weight: 600;
+  font-size: 12pt;
+}
+
+ /* The switch - the box around the slider */
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 28px;
+  margin-top: 5px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(255, 96, 96);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #1edb66;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #1edb66;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+
+/* Hugo last */
 
 /*property management***************************/
 

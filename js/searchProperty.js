@@ -1,16 +1,16 @@
 $(document).ready(function () {
     $("#slider-range").slider({
         range: true,
-        min: new Date('2020-09-01').getTime() / 1000,
-        max: Date.now() / 1000,
-        step: 86400,
-        values: [new Date('2020-09-01').getTime() / 1000, Date.now() / 1000],
+        min: 500000,
+        max: 50000000,
+        step: 300000,
+        values: [500000,50000000],
         slide: function (event, ui) {
-            $("#daterange").val((new Date(ui.values[0] * 1000).toDateString().split(' ').slice(1).join(' ')) + " - " + (new Date(ui.values[1] * 1000)).toDateString().split(' ').slice(1).join(' '));
+            $("#pricerange").val(ui.values[0] + " - " + ui.values[1]);
         }
     });
-    $("#daterange").val((new Date($("#slider-range").slider("values", 0) * 1000).toDateString().split(' ').slice(1).join(' ')) +
-        " - " + (new Date($("#slider-range").slider("values", 1) * 1000)).toDateString().split(' ').slice(1).join(' '));
+    $("#pricerange").val($("#slider-range").slider("values", 0) +
+        " - " + $("#slider-range").slider("values", 1));
 
     $(".advancebtn").click(function () {
         $(".filter-container").slideToggle();
