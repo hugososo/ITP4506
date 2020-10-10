@@ -23,7 +23,8 @@
          "Club house",
          "Swimming pool",
          "Gym room"
-      ]
+      ],
+    "property_geo": [22.318455, 114.191612]
    },
   {
     "pid": 1,
@@ -48,7 +49,8 @@
     "Facilities": [
          "Club house",
          "Swimming pool"
-      ]
+      ],
+    "property_geo": [22.311500, 114.191812]
    },
   {
     "pid": 2,
@@ -74,7 +76,8 @@
          "Club house",
          "Swimming pool",
          "Playground"
-      ]
+      ],
+    "property_geo": [22.317500, 114.191812]
    },
   {
     "pid": 3,
@@ -100,7 +103,8 @@
          "Club house",
          "Swimming pool",
          "Playground"
-      ]
+      ],
+    "property_geo": [22.323500, 114.191812]
    },
   {
     "pid": 4,
@@ -126,7 +130,8 @@
          "Catering Facilities",
          "Swimming pool",
          "Playground"
-      ]
+      ],
+    "property_geo": [22.317500, 114.141812]
    },
   {
     "pid": 5,
@@ -152,7 +157,8 @@
          "Club house",
          "Catering Facilities",
          "Mall"
-      ]
+      ],
+    "property_geo": [22.312500, 114.111812]
    },
   {
     "pid": 6,
@@ -178,7 +184,8 @@
          "Club house",
          "Catering Facilities",
          "Mall"
-      ]
+      ],
+    "property_geo": [22.317500, 114.291812]
    },
   {
     "pid": 7,
@@ -204,7 +211,8 @@
          "Club house",
          "Swimming pool",
          "Mall"
-      ]
+      ],
+    "property_geo": [22.317500, 114.101812]
    },
   {
     "pid": 8,
@@ -230,7 +238,8 @@
          "Catering Facilities",
          "Swimming pool",
          "Mall"
-      ]
+      ],
+    "property_geo": [22.417500, 114.241812]
    },
   {
     "pid": 9,
@@ -256,7 +265,8 @@
          "Club house",
          "Swimming pool",
          "Catering Facilities"
-      ]
+      ],
+    "property_geo": [22.357500, 114.151812]
    },
   {
     "pid": 10,
@@ -282,7 +292,8 @@
          "Recreational Area",
          "Catering Facilities",
          "Mall"
-      ]
+      ],
+    "property_geo": [22.327500, 114.121812]
    },
   {
     "pid": 11,
@@ -307,6 +318,7 @@
     "Facilities": [
          "Catering Facilities",
          "Mall"
-      ]
+      ],
+    "property_geo": [22.347500, 114.201812]
    }
 ]
