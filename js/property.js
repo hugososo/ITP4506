@@ -4,14 +4,7 @@ $(function () {
     side_background = $(".side_bar"),
     tl = gsap.timeline();
 
-
-
-  //  getContent(1);
-  //  getContent();
-
-  //  function getContent() { $("#exchange_area").load("contentForProperty.html");
-  //
-  //  }
+$('#example').DataTable();
 
   tl.fromTo(side_background, {
     opacity: 0.5,
@@ -115,6 +108,16 @@ $(function () {
     }
   });
 
+  $("button.prop_close_form1").on("click", function (e) {
+    alert("Submitted");
+  });
+  
+  $("#update_form2_up").on("click", function (e) {
+   e.preventDefault(); 
+    alert("Updated!");
+//   console.log($("#prop_update_form_email").text()); $("#prop_update_form_email").val($("#prop_update_form_email").html());
+//    $("#prop_update_form_phone").val($("#prop_update_form_phone").html());
+  });
 
   $(".next").on("click", function (e) {
     console.log(e);
@@ -127,10 +130,11 @@ $(function () {
     var progress = 100 / maxPage * (page + 1);
     $(".form_status").css("width", progress + "%");
     if (page === 4) {
-      alert("Submitted");
+//      $("#form-sure").css("visibility","visible");
       return;
     } else if (page === 3) {
       $(this).html("Submit");
+      $(this).attr("href","#form-sure");
     }
 
 
@@ -149,6 +153,7 @@ $(function () {
 
     if (page === 4) {
       $(".next").html("Continue");
+      
     } else if (page === 1) {
       //      $(this).disable = true;
       return;
