@@ -6,7 +6,12 @@ $(function () {
 //  } else {
 //    linkEl.click();
 //  }
-  var proID = 0;
+  let proID;
+  let searchParams = new URLSearchParams(window.location.search);
+  if(searchParams.has('index')){
+    proID = searchParams.get('index');
+  }
+  
   $.getJSON("hseInfo.json", function (data) {
     $("#hseh1").html(data[proID].name + " Flat " + data[proID].flat + " " + data[proID].floor + "/F");
     $("#hse_span_Address").html(data[proID].address);

@@ -12,6 +12,11 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!--  leftlet map-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+
 </head>
 
 <body data-barba="wrapper">
@@ -43,13 +48,14 @@
     <div data-barba="container" data-barba-namespace="user-info">
         <div class="search-container">
             <div class="searchbar-container">
-                <input type="text" class="searchbar" name="search" placeholder="Search User">
+                <input type="text" class="searchbar" name="search" placeholder="Search Property">
                 <button class="sbtn resetbtn">Reset Filters</button>
                 <button class="sbtn searchbtn">Search now</button>
                 <button class="sbtn advancebtn">&#9776</button>
             </div>
             <div class="filter-selected-container"></div>
-            <div class="filter-container">
+            <div class="filter-container"
+                style="position: absolute; z-index: 99999;left:50%;transform: translate(-50%);">
                 <div class="filteritem-container" id="item-container-1">
                     <span class="filter-title">Type of Apartment</span>
                     <span class="addfilter belongitem1"><input type="checkbox" id="duplex" value="duplex"><label
@@ -90,54 +96,54 @@
                     <span class="filter-title">Gross Floor Area(sq.ft.)</span>
                     <span class="addfilter belongitem3"><input type="checkbox" id="200g" value="200g"><label
                             for="200g"><span class="filter-option" id="male-option"> &#10011 &lt; 200
-                                </span></label></span>
+                            </span></label></span>
                     <span class="addfilter belongitem3"><input type="checkbox" id="200to400g" value="200to400g"><label
                             for="200to400g"><span class="filter-option" id="female-option"> &#10011 200-400
-                                </span></label></span>
+                            </span></label></span>
                     <span class="addfilter belongitem3"><input type="checkbox" id="400to600g" value="400to600g"><label
                             for="400to600g"><span class="filter-option" id="female-option"> &#10011 400-600
-                                </span></label></span>
+                            </span></label></span>
                     <span class="addfilter belongitem3"><input type="checkbox" id="600to800g" value="600to800g"><label
                             for="600to800g"><span class="filter-option" id="female-option"> &#10011 600-800
-                                </span></label></span>
+                            </span></label></span>
                     <span class="addfilter belongitem3"><input type="checkbox" id="more800g" value="more800g"><label
                             for="more800g"><span class="filter-option" id="female-option"> &#10011 >800
-                                </span></label></span>
+                            </span></label></span>
                 </div>
                 <div class="filteritem-container" id="item-container-4">
                     <span class="filter-title">Saleable area(sq.ft.)</span>
                     <span class="addfilter belongitem2"><input type="checkbox" id="200s" value="200s"><label
-                        for="200s"><span class="filter-option" id="male-option"> &#10011 &lt; 200
+                            for="200s"><span class="filter-option" id="male-option"> &#10011 &lt; 200
                             </span></label></span>
-                <span class="addfilter belongitem4"><input type="checkbox" id="200to400s" value="200to400s"><label
-                        for="200to400s"><span class="filter-option" id="female-option"> &#10011 200-400
+                    <span class="addfilter belongitem4"><input type="checkbox" id="200to400s" value="200to400s"><label
+                            for="200to400s"><span class="filter-option" id="female-option"> &#10011 200-400
                             </span></label></span>
-                <span class="addfilter belongitem4"><input type="checkbox" id="400to600s" value="400to600s"><label
-                        for="400to600s"><span class="filter-option" id="female-option"> &#10011 400-600
+                    <span class="addfilter belongitem4"><input type="checkbox" id="400to600s" value="400to600s"><label
+                            for="400to600s"><span class="filter-option" id="female-option"> &#10011 400-600
                             </span></label></span>
-                <span class="addfilter belongitem4"><input type="checkbox" id="600to800s" value="600to800s"><label
-                        for="600to800s"><span class="filter-option" id="female-option"> &#10011 600-800
+                    <span class="addfilter belongitem4"><input type="checkbox" id="600to800s" value="600to800s"><label
+                            for="600to800s"><span class="filter-option" id="female-option"> &#10011 600-800
                             </span></label></span>
-                <span class="addfilter belongitem4"><input type="checkbox" id="more800s" value="more800s"><label
-                        for="more800s"><span class="filter-option" id="female-option"> &#10011 >800
+                    <span class="addfilter belongitem4"><input type="checkbox" id="more800s" value="more800s"><label
+                            for="more800s"><span class="filter-option" id="female-option"> &#10011 >800
                             </span></label></span>
                 </div>
                 <div class="filteritem-container" id="item-container-5">
                     <span class="filter-title">Building age</span>
-                    <span class="addfilter belongitem2"><input type="checkbox" id="1y" value="1y"><label
-                        for="1y"><span class="filter-option" id="male-option"> &#10011 1 year
+                    <span class="addfilter belongitem2"><input type="checkbox" id="1y" value="1y"><label for="1y"><span
+                                class="filter-option" id="male-option"> &#10011 1 year
                             </span></label></span>
-                <span class="addfilter belongitem5"><input type="checkbox" id="less10y" value="less10y"><label
-                        for="less10y"><span class="filter-option" id="female-option"> &#10011 &lt; 10 years
+                    <span class="addfilter belongitem5"><input type="checkbox" id="less10y" value="less10y"><label
+                            for="less10y"><span class="filter-option" id="female-option"> &#10011 &lt; 10 years
                             </span></label></span>
-                <span class="addfilter belongitem5"><input type="checkbox" id="10to25y" value="10to25y"><label
-                        for="10to25y"><span class="filter-option" id="female-option"> &#10011 10-25 years
+                    <span class="addfilter belongitem5"><input type="checkbox" id="10to25y" value="10to25y"><label
+                            for="10to25y"><span class="filter-option" id="female-option"> &#10011 10-25 years
                             </span></label></span>
-                <span class="addfilter belongitem5"><input type="checkbox" id="25to50y" value="25to50y"><label
-                        for="25to50y"><span class="filter-option" id="female-option"> &#10011 25-50 years
+                    <span class="addfilter belongitem5"><input type="checkbox" id="25to50y" value="25to50y"><label
+                            for="25to50y"><span class="filter-option" id="female-option"> &#10011 25-50 years
                             </span></label></span>
-                <span class="addfilter belongitem5"><input type="checkbox" id="more50y" value="more50y"><label
-                        for="more50y"><span class="filter-option" id="female-option"> &#10011 > 50 years
+                    <span class="addfilter belongitem5"><input type="checkbox" id="more50y" value="more50y"><label
+                            for="more50y"><span class="filter-option" id="female-option"> &#10011 > 50 years
                             </span></label></span>
                 </div>
                 <div class="filteritem-container" id="item-container-6" style="display: flex; flex-wrap: wrap;">
@@ -157,12 +163,21 @@
                     </span>
                 </div>
             </div>
-            <div style="width: 70%; margin:50px auto 30px auto; text-align: center;">
-                <span style="color: #5c5c5c;">A total of</span>
-                <span style="color: #f16e6e; font-weight: bolder;" id="total-result"></span>
-                <span style="color: #5c5c5c;">Results</span>
-            </div>
-            <div class="userresult-container">
+            <hr style="color: #cacaca;">
+            <div style="width: 100%; margin-top:0px;display:flex;flex-direction: row;">
+                <div style="flex:1 1 35%;border-right: 1.5px solid rgb(180, 180, 180);border-radius: 5px;">
+                    <div style="padding-top:10px;padding-bottom:10px">
+                        <span style="color: #5c5c5c;margin-left:20px;">Find</span>
+                        <span style="color: #f16e6e; font-weight: bolder;" id="total-result">1234</span>
+                        <span style="color: #5c5c5c;">Properties</span>
+                    </div>
+                    <hr style="color: #cacaca;margin-bottom: 10px;">
+                    <div id="property-result"
+                        style="height:70vh;overflow-y: scroll;position: relative;margin-left:1px;">
+                    </div>
+                </div>
+                <div id="map-container">
+                </div>
             </div>
         </div>
     </div>
@@ -175,6 +190,10 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 <script src="js/searchProperty.js"></script>
 <script src="js/account.js"></script>
 <script src="js/global.js"></script>
