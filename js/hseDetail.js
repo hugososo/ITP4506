@@ -1,17 +1,17 @@
 $(function () {
 
-//  var linkEl = $("#photo_list_item");
-//  if (linkEl.attr('onclick') === undefined) {
-//    window.location = linkEl.attr('href');
-//  } else {
-//    linkEl.click();
-//  }
+  //  var linkEl = $("#photo_list_item");
+  //  if (linkEl.attr('onclick') === undefined) {
+  //    window.location = linkEl.attr('href');
+  //  } else {
+  //    linkEl.click();
+  //  }
   let proID;
   let searchParams = new URLSearchParams(window.location.search);
-  if(searchParams.has('index')){
+  if (searchParams.has('index')) {
     proID = searchParams.get('index');
   }
-  
+
   $.getJSON("hseInfo.json", function (data) {
     $("#hseh1").html(data[proID].name + " Flat " + data[proID].flat + " " + data[proID].floor + "/F");
     $("#hse_span_Address").html(data[proID].address);
@@ -43,31 +43,31 @@ $(function () {
     }
 
     var mymap = L.map('hse_map').setView(data[proID].property_geo, 17);
-  
+
     var marker = L.marker(data[proID].property_geo).addTo(mymap);
-  
-    marker.bindPopup("This is <br><b>"+data[proID].name+"</b>.").openPopup();
-  
-  
+
+    marker.bindPopup("This is <br><b>" + data[proID].name + "</b>.").openPopup();
+
+
     L.tileLayer('https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/basemap/wgs84/{z}/{x}/{y}.png', {
       attribution: '<u href="https://api.portal.hkmapservice.gov.hk/disclaimer" target="_blank" class="copyrightDiv">&copy; The Government of the Hong Kong SAR</u><div style="width:28px;height:28px;display:inline-flex;background:url(https://api.hkmapservice.gov.hk/mapapi/landsdlogo.jpg);background-size:28px;"></div>',
       maxZoom: 17,
       id: 'APIKEY'
     }).addTo(mymap);
-  
+
     L.tileLayer('https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/label/hk/en/wgs84/{z}/{x}/{y}.png', {
       maxZoom: 17,
       id: 'APIKEY'
     }).addTo(mymap);
-  
+
     var counter = 1;
-  
+
     function onMapClick(e) {
       L.marker(e.latlng)
         .addTo(mymap)
-        .bindPopup("Popup "+(counter++)).openPopup();
+        .bindPopup("Popup " + (counter++)).openPopup();
     }
-  
+
     mymap.on('click', onMapClick);
   });
 
@@ -88,37 +88,70 @@ $(function () {
         rotationY: 0,
         rotationZ: 0
       });
-    $("#hse_photo").css("display","none");
+    $("#hse_photo").css("display", "none");
   });
 
   $("#hse_vr .circle").click(function () {
     window.location.href = "vr.html";
   });
-  
+
   $("#floor_list_item").click(function () {
-    $("#hse_photo").css("display","none");
+    $("#hse_photo").css("display", "none");
   });
-  
+
   $("#photo_list_item").click(function () {
-    $("#hse_photo").css("display","block");
+    $("#hse_photo").css("display", "block");
   });
-  
-gsap.set("#hse_floor", {perspective:800});
-gsap.set(".hse_flip_plan", {transformStyle:"preserve-3d"});
-gsap.set(".back", {rotationY:-180});
-gsap.set([".back", ".front"], {backfaceVisibility:"hidden"});
+
+  gsap.set("#hse_floor", {
+    perspective: 800
+  });
+  gsap.set(".hse_flip_plan", {
+    transformStyle: "preserve-3d"
+  });
+  gsap.set(".back", {
+    rotationY: -180
+  });
+  gsap.set([".back", ".front"], {
+    backfaceVisibility: "hidden"
+  });
 
   $("#hse_floor").hover(
-  function() {
-    gsap.to($(this).find(".hse_flip_plan"), {duration: 1.2, rotationY:180, ease:Back.easeOut});
-  },
-  function() {
-    gsap.to($(this).find(".hse_flip_plan"), {duration: 1.2, rotationY:0, ease:Back.easeOut});  
-  }
-);
-  
-  gsap.to($(".hse_flip_plan"), {duration: 1, rotationY:-180, repeat:1, yoyo:true, stagger: 0.1});
+    function () {
+      gsap.to($(this).find(".hse_flip_plan"), {
+        duration: 1.2,
+        rotationY: 180,
+        ease: Back.easeOut
+      });
+    },
+    function () {
+      gsap.to($(this).find(".hse_flip_plan"), {
+        duration: 1.2,
+        rotationY: 0,
+        ease: Back.easeOut
+      });
+    }
+  );
 
+  gsap.to($(".hse_flip_plan"), {
+    duration: 1,
+    rotationY: -180,
+    repeat: 1,
+    yoyo: true,
+    stagger: 0.1
+  });
+
+  $(".sp-slider > li img").click(function () {
+    console.log($("#hse_enlarge_img"));
     
+   var imgsrc = $(this).attr("src"); $("#hse_enlarge_img").addClass("hse_enlarge_img_click");
+    
+    $("#en_btn_hse").css({display:"block"});
+   $("#hse_enlarge_img img").attr("src", imgsrc);
+  });
 
+  $("#en_btn_hse").click(function () {
+   $("#en_btn_hse").css({display:"none"}); $("#hse_enlarge_img").removeClass("hse_enlarge_img_click");
+    $("#hse_enlarge_img img").attr("src", "");
+  })
 })
