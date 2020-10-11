@@ -337,6 +337,4 @@ $("#slideshow8 > div:gt(0)").hide();
     e.preventDefault();
     $(this).parent().parent().css("display", "none");
   });
-
-
 });

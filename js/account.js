@@ -14,6 +14,12 @@ fetch('js/account.json')
       account = data;
 });
 
+gsap.from(".form-container", {
+    scale: 0,
+    duration: 0.8,
+    ease:Bounce.easeOut
+});
+
 $(document).ready(function () {
     let pwpass = false;
 

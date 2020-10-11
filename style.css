@@ -223,7 +223,7 @@ header ul li a:hover:after {
   max-width: 100%;
   max-height: 100%;
   position: absolute;
-  bottom: 110px;
+  top:20%;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -231,14 +231,32 @@ header ul li a:hover:after {
   overflow: hidden;
 }
 
+#second-section-text{
+  position: absolute;
+  left: 100%;
+  width: 50%;
+  margin-top: 20px;
+  margin-left: 20px;
+  opacity: 0;
+}
+
+#second-section-text a:hover{
+  background-color: #232529;
+  color: white;
+}
+
+
 .second-0 {
   z-index: 200;
+}
+
+.second-3{
+  z-index: 6;
 }
 
 .second-4 {
   z-index: 5;
 }
-
 
 .arrows {
   width: 60px;

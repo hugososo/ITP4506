@@ -56,7 +56,7 @@ $(document).ready(function () {
             markers.addLayer(L.marker(item.property_geo).bindPopup("<h2>" + item.name + "</h2><p>" + item.address + "</p>").addTo(mymap));
         });
         markers.on('click', function (a) {
-            count=0;
+            count = 0;
             const geoData = Object.values(a.layer._latlng);
             property.filter(function (item, index, array) {
                 if (JSON.stringify(item.property_geo) == JSON.stringify(geoData)) {
@@ -79,6 +79,34 @@ $(document).ready(function () {
                     $("#total-result").html(count);
                 }
             });
+        });
+        markers.on('clusterclick', function (a) {
+            $("#property-result").html("");
+            count = 0;
+            for (var i in a.layer.getAllChildMarkers()) {
+                const geoData = Object.values(a.layer.getAllChildMarkers()[i]._latlng);
+                property.filter(function (item, index, array) {
+                    if (JSON.stringify(item.property_geo) == JSON.stringify(geoData)) {
+                        count++;
+                        $("#property-result").append(
+                            '<div class="user-card">' +
+                            '<div class="user-card-img">' +
+                            '<img src="' + item.img1 + '" alt="" width="150px" height="100px">' +
+                            '</div>' +
+                            '<div class="user-card-content" style="margin-left:10px">' +
+                            '<h3 class="user-card-text-1">' + item.name + '</h3>' +
+                            '<p class="user-card-text-2">' + item.address + '</p>' +
+                            '<p style="color: rgb(70, 70, 70);">' + item.numOfRoom + " Room | " + item.type + '</p>' +
+                            '<span class="user-card-text-3" style="color:rgb(255, 50, 93);font-size:20pt">$' + item.price + '</span>' +
+                            '<span style="margin-left:5px;font-size:12pt">' + item.size + " sq.ft." + '</span>' +
+                            '</div>' +
+                            '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="houseDetail.html?index=' + index + '"/>' +
+                            '</div>'
+                        );
+                    }
+                });
+            }
+            $("#total-result").html(count);
         });
         mymap.addLayer(markers);
     });
@@ -154,127 +182,4 @@ $(document).ready(function () {
                 $(this).appendTo("#item-container-6");
         }
     });
-
-    // $(".searchbtn").click(function () {
-    //     $(".userresult-container").html("");
-    //     const rolefilter = ac["user"].filter(function (item, index, array) {
-    //         if ($("#user").is(":checked"))
-    //             var customer = $("#user").val();
-    //         if ($("#agent").is(":checked"))
-    //             var agent = $("#agent").val();
-    //         if (!$("#agent").is(":checked") && !$("#user").is(":checked")) {
-    //             var agent = $("#agent").val();
-    //             var customer = $("#user").val();
-    //         }
-    //         return item.role == customer || item.role == agent;
-    //     });
-    //     const sexfilter = rolefilter.filter(function (item, index, array) {
-    //         if ($("#male").is(":checked"))
-    //             var male = $("#male").val();
-    //         if ($("#female").is(":checked"))
-    //             var female = $("#female").val();
-    //         if (!$("#male").is(":checked") && !$("#female").is(":checked")) {
-    //             return rolefilter;
-    //         }
-    //         return item.sex == male || item.sex == female;
-    //     });
-
-    //     let arr = [];
-    //     let min;
-    //     let max;
-
-    //     for (item of sexfilter) {
-    //         arr.push(new Date(item.date).getTime());
-    //     }
-
-    //     let dateArr = [...arr];
-    //     let orderedArr = [];
-
-    //     if (!$("#new2old").is(":checked") && !$("#old2new").is(":checked")) {
-    //         orderedArr = [...sexfilter];
-    //     } else {
-    //         if ($("#new2old").is(":checked")) {
-    //             for (item of dateArr) {
-    //                 min = arr.indexOf(Math.min.apply(null, arr));
-    //                 orderedArr.push(sexfilter[dateArr.indexOf(arr.splice(min, 1)[0])]);
-    //             }
-    //         }
-    //         if ($("#old2new").is(":checked")) {
-    //             for (item of dateArr) {
-    //                 max = arr.indexOf(Math.max.apply(null, arr));
-    //                 orderedArr.push(sexfilter[dateArr.indexOf(arr.splice(max, 1)[0])]);
-    //             }
-    //         }
-    //     }
-
-    //     let sliderleft = $(new Date($("#slider-range").slider("values", 0) * 1000).getTime());
-    //     let sliderright = $(new Date($("#slider-range").slider("values", 1) * 1000).getTime());
-    //     if ($("#daterange").parent().parent().attr("class") == 'filter-selected-container') {
-    //         let count = 0;
-    //         const dateRangeFilter = orderedArr.filter(function (item, index, array) {
-    //             let itemdate = new Date(item.date).getTime();
-    //             if (itemdate >= sliderleft[0] && itemdate <= sliderright[0]) {
-    //                 count++;
-    //                 $(".userresult-container").append(
-    //                     '<div class="user-card">' +
-    //                     '<div class="user-card-img">' +
-    //                     '<img src="assets/' + item.role + '.png" alt="" width="75px">' +
-    //                     '</div>' +
-    //                     '<div class="user-card-content">' +
-    //                     '<h3 class="user-card-text-1">' + item.email + '</h3>' +
-    //                     '<p class="user-card-text-2">Name : ' + item.name + '</p>' +
-    //                     '<p class="user-card-text-3">Join Date: ' + item.date + '</p>' +
-    //                     '</div>' +
-    //                     '<div class="user-card-toggle">' +
-    //                     '<p style="color: #5c5c5c;">Account Status</p>' +
-    //                     '<label class="switch">' +
-    //                     '<input type="checkbox" checked>' +
-    //                     '<span class="slider round"></span>' +
-    //                     '</label>' +
-    //                     '</div>' +
-    //                     '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="personalInfo.html?index=' + index + '"/>' +
-    //                     '</div>'
-    //                 );
-    //             }
-    //         });
-    //     } else {
-    //         const dateRangeFilter = orderedArr.filter(function (item, index, array) {
-    //             $(".userresult-container").append(
-    //                 '<div class="user-card">' +
-    //                 '<div class="user-card-img">' +
-    //                 '<img src="assets/' + item.role + '.png" alt="" width="75px">' +
-    //                 '</div>' +
-    //                 '<div class="user-card-content">' +
-    //                 '<h3 class="user-card-text-1">' + item.email + '</h3>' +
-    //                 '<p class="user-card-text-2">Name : ' + item.name + '</p>' +
-    //                 '<p class="user-card-text-3">Join Date: ' + item.date + '</p>' +
-    //                 '</div>' +
-    //                 '<div class="user-card-toggle">' +
-    //                 '<p style="color: #5c5c5c;">Account Status</p>' +
-    //                 '<label class="switch">' +
-    //                 '<input type="checkbox" checked>' +
-    //                 '<span class="slider round"></span>' +
-    //                 '</label>' +
-    //                 '</div>' +
-    //                 '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="personalInfo.html?index=' + index + '"/>' +
-    //                 '</div>'
-    //             );
-    //         });
-    //     }
-
-    //     var lowerCase = $(".searchbar").val().toLowerCase();
-
-    //     var searchText = $(".user-card");
-    //     var resultCount = searchText.length;
-    //     for(i=0;i<searchText.length;i++){
-    //         searchStr = searchText[i].innerText.toLowerCase();
-    //         if(searchStr.indexOf(lowerCase)> -1){
-    //             searchText.eq(i).show();
-    //         } else {
-    //             searchText.eq(i).hide();
-    //             resultCount--;
-    //         }
-    //     }
-    //     $("#total-result").html(resultCount);
-    // });
 });
