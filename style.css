@@ -2837,4 +2837,7 @@ input.sp-selector-5:checked ~ .sp-content .sp-slider > li:nth-child(5) {
   font-weight: 700;
 }
 
+.upload_procard{
+  margin: 3px 20px;
+}
 /**********done**************/
