@@ -42,6 +42,33 @@ $(function () {
       $("#hse_est_info #fas").append("<span>" + data[proID].Facilities[i] + "</span> ");
     }
 
+    var mymap = L.map('hse_map').setView(data[proID].property_geo, 17);
+  
+    var marker = L.marker(data[proID].property_geo).addTo(mymap);
+  
+    marker.bindPopup("This is <br><b>"+data[proID].name+"</b>.").openPopup();
+  
+  
+    L.tileLayer('https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/basemap/wgs84/{z}/{x}/{y}.png', {
+      attribution: '<u href="https://api.portal.hkmapservice.gov.hk/disclaimer" target="_blank" class="copyrightDiv">&copy; The Government of the Hong Kong SAR</u><div style="width:28px;height:28px;display:inline-flex;background:url(https://api.hkmapservice.gov.hk/mapapi/landsdlogo.jpg);background-size:28px;"></div>',
+      maxZoom: 17,
+      id: 'APIKEY'
+    }).addTo(mymap);
+  
+    L.tileLayer('https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/label/hk/en/wgs84/{z}/{x}/{y}.png', {
+      maxZoom: 17,
+      id: 'APIKEY'
+    }).addTo(mymap);
+  
+    var counter = 1;
+  
+    function onMapClick(e) {
+      L.marker(e.latlng)
+        .addTo(mymap)
+        .bindPopup("Popup "+(counter++)).openPopup();
+    }
+  
+    mymap.on('click', onMapClick);
   });
 
   $("#vr_list_item").click(function () {
@@ -92,32 +119,6 @@ gsap.set([".back", ".front"], {backfaceVisibility:"hidden"});
   
   gsap.to($(".hse_flip_plan"), {duration: 1, rotationY:-180, repeat:1, yoyo:true, stagger: 0.1});
 
-    var mymap = L.map('hse_map').setView([22.318455, 114.191612], 17);
-  
-    var marker = L.marker([22.318455, 114.191612]).addTo(mymap);
-  
-    marker.bindPopup("This is <br><b>Wyler Gardens</b>.").openPopup();
-  
-  
-    L.tileLayer('https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/basemap/wgs84/{z}/{x}/{y}.png', {
-      attribution: '<u href="https://api.portal.hkmapservice.gov.hk/disclaimer" target="_blank" class="copyrightDiv">&copy; The Government of the Hong Kong SAR</u><div style="width:28px;height:28px;display:inline-flex;background:url(https://api.hkmapservice.gov.hk/mapapi/landsdlogo.jpg);background-size:28px;"></div>',
-      maxZoom: 17,
-      id: 'APIKEY'
-    }).addTo(mymap);
-  
-    L.tileLayer('https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/label/hk/en/wgs84/{z}/{x}/{y}.png', {
-      maxZoom: 17,
-      id: 'APIKEY'
-    }).addTo(mymap);
-  
-    var counter = 1;
-  
-    function onMapClick(e) {
-      L.marker(e.latlng)
-        .addTo(mymap)
-        .bindPopup("Popup "+(counter++)).openPopup();
-    }
-  
-    mymap.on('click', onMapClick);
+    
 
 })
