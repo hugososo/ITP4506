@@ -179,7 +179,18 @@ function indexAnimation() {
       opacity:1,
       ease: Expo.easeInOut,
       duration:1
-    }, "-=0.5")
+    }, "-=0.5");
+
+    let three = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.third-section',
+      }
+    });
+    
+    three.from(".title-text", {x:-200,opacity: 0,duration: 1})
+    .from(".subtitle-text", {x:-200,opacity: 0,duration: 1},"-=0.5")
+    .from(".svg-container", {x:-200,opacity: 0,duration: 1},"-=0.5")
+    .from(".svg-container2",{opacity:0,yPercent:-1000,duration: 1,ease:Bounce.easeOut},"-=1");
 }
 
 
@@ -224,9 +235,6 @@ barba.init({
       linkt.href = 'style.css';
       data.next.container.appendChild(linkt);
       console.log(linkt);
-
-
-
 
       Draggable.create(".key", {
         bounds: ".third-section",

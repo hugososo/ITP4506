@@ -20,6 +20,15 @@ gsap.from(".form-container", {
     ease:Bounce.easeOut
 });
 
+let infotl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.info-container',
+    }
+  });
+  
+  infotl.from(".info-container", {x:-200,opacity: 0,duration: 1})
+  .from(".input-container", {x:-200,opacity: 0,duration: 1},"-=0.5");
+
 $(document).ready(function () {
     let pwpass = false;
 
