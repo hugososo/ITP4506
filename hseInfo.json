@@ -28,7 +28,7 @@
    },
   {
     "pid": 1,
-    "name": "HONG WAH COURT",
+    "name": "HONG WAH COURT Block E",
     "flat": 6,
     "floor": 21,
     "agent": "Agent Clark",
@@ -54,7 +54,7 @@
    },
   {
     "pid": 2,
-    "name": "LUNG POON COURT",
+    "name": "LUNG POON COURT Block F",
     "flat": 7,
     "floor": 23,
     "agent": "Agent Thomas",
@@ -81,7 +81,7 @@
    },
   {
     "pid": 3,
-    "name": "Disa COURT",
+    "name": "Disa COURT Block A",
     "flat": 2,
     "floor": 11,
     "agent": "Agent Hugo",
@@ -108,7 +108,7 @@
    },
   {
     "pid": 4,
-    "name": "Whale U Building",
+    "name": "Whale U Building Block W",
     "flat": 3,
     "floor": 12,
     "agent": "Agent Clark",
@@ -135,7 +135,7 @@
    },
   {
     "pid": 5,
-    "name": "VTC Estate",
+    "name": "VTC Estate Block D",
     "flat": 4,
     "floor": 24,
     "agent": "Agent Hugo",
@@ -162,7 +162,7 @@
    },
   {
     "pid": 6,
-    "name": "IFC Building Room A120",
+    "name": "IFC Building Block C",
     "flat": 5,
     "floor": 26,
     "agent": "Agent Thomas",
@@ -189,7 +189,7 @@
    },
   {
     "pid": 7,
-    "name": "The Great Wall",
+    "name": "Great Tee Block F",
     "flat": 7,
     "floor": 27,
     "agent": "Agent Clark",
@@ -216,7 +216,7 @@
    },
   {
     "pid": 8,
-    "name": "Tiananmen Square Estate",
+    "name": "BunTen Block A",
     "flat": 23,
     "floor": 12,
     "agent": "Agent Clark",
@@ -243,7 +243,7 @@
    },
   {
     "pid": 9,
-    "name": "MTR 831",
+    "name": "Taipei 101 Block B",
     "flat": 22,
     "floor": 11,
     "agent": "Agent Thomas",
@@ -270,7 +270,7 @@
    },
   {
     "pid": 10,
-    "name": "Yuen Long 721",
+    "name": "Degree c1.4 Block S",
     "flat": 28,
     "floor": 19,
     "agent": "Agent Thomas",
@@ -297,7 +297,7 @@
    },
   {
     "pid": 11,
-    "name": "TwelveHKer 823",
+    "name": "Holade Block Q",
     "flat": 21,
     "floor": 13,
     "agent": "Agent Hugo",
