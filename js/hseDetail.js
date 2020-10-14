@@ -6,12 +6,12 @@ $(function () {
   //  } else {
   //    linkEl.click();
   //  }
-  let proID;
+  var proID;
   let searchParams = new URLSearchParams(window.location.search);
   if (searchParams.has('index')) {
     proID = searchParams.get('index');
   }
-
+  $("#hse_photo #button-1").prop('checked', true);
   $.getJSON("hseInfo.json", function (data) {
     $("#hseh1").html(data[proID].name + " Flat " + data[proID].flat + " " + data[proID].floor + "/F");
     $("#hse_span_Address").html(data[proID].address);
@@ -116,22 +116,25 @@ $(function () {
     backfaceVisibility: "hidden"
   });
 
-  $("#hse_floor").hover(
-    function () {
+  var hse_flip_FP = false;
+  $("#hse_floor").click(function () {
+
+    if (hse_flip_FP) {
       gsap.to($(this).find(".hse_flip_plan"), {
         duration: 1.2,
         rotationY: 180,
         ease: Back.easeOut
       });
-    },
-    function () {
+      hse_flip_FP = false;
+    } else {
       gsap.to($(this).find(".hse_flip_plan"), {
         duration: 1.2,
         rotationY: 0,
         ease: Back.easeOut
       });
+      hse_flip_FP = true;
     }
-  );
+  });
 
   gsap.to($(".hse_flip_plan"), {
     duration: 1,
@@ -141,17 +144,30 @@ $(function () {
     stagger: 0.1
   });
 
+
   $(".sp-slider > li img").click(function () {
     console.log($("#hse_enlarge_img"));
-    
-   var imgsrc = $(this).attr("src"); $("#hse_enlarge_img").addClass("hse_enlarge_img_click");
-    
-    $("#en_btn_hse").css({display:"block"});
-   $("#hse_enlarge_img img").attr("src", imgsrc);
+
+    var imgsrc = $(this).attr("src");
+    $("#hse_enlarge_img").addClass("hse_enlarge_img_click");
+
+    $("#en_btn_hse").css({
+      display: "block"
+    });
+    $("#hse_enlarge_img img").css({
+      display: "block"
+    });
+    $("#hse_enlarge_img img").attr("src", imgsrc);
   });
 
   $("#en_btn_hse").click(function () {
-   $("#en_btn_hse").css({display:"none"}); $("#hse_enlarge_img").removeClass("hse_enlarge_img_click");
+    $("#en_btn_hse").css({
+      display: "none"
+    });
+    $("#hse_enlarge_img img").css({
+      display: "none"
+    });
+    $("#hse_enlarge_img").removeClass("hse_enlarge_img_click");
     $("#hse_enlarge_img img").attr("src", "");
   })
 })
