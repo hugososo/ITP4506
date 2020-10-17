@@ -37,7 +37,7 @@ $(document).ready(function () {
 
         var fileName = location.href.split("/").slice(-1);
         var link;
-        if(fileName=="ManagerApartmentSale.html")
+        if(fileName=="managerApartmentSale.html")
             link = "ManagerHouseDetail.html";
         else if(fileName=="CustomerApartmentSale.html")
             link = "CustomerHouseDetail.html";

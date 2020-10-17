@@ -24,20 +24,16 @@
   </div>
 
   <header>
-        <a href="indexManager.html">
+        <a href="indexAgent.html">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
                 height="30">
         </a>
-        <ul style="width:700px">
-            <li><a href="managerApartmentSale.html">PROPERTY</a></li>
+        <ul>
+            <li><a href="AgentApartmentSale.html">PROPERTY SALE</a></li>
             <li>|</li>
-            <li><a href="searchUser.html">SEARCH USER</a></li>
+            <li><a href="AgentPropertyManagement.html">PROPERTY MANAGEMENT</a></li>
             <li>|</li>
-            <li><a href="createAgentAc.html">CREATE AGENT</a></li>
-            <li>|</li>
-            <li><a href="managerInfo.html">PERSONAL INFO</a></li>
-            <li>|</li>
-            <li><a href="PropertyManagement.html">PROPERTY MANAGEMENT</a></li>
+            <li><a href="agentInfo.html">PERSONAL INFO</a></li>
             <li>|</li>
             <li><a href="index.html" id="logout">LOGOUT</a></li>
         </ul>
@@ -72,12 +68,6 @@
             <small>Hide or Remove Property</small>
           </a>
         </li>
-         <li>
-          <a href="viewUploadProperty.html" data-page="p4" class="enable_a">
-            <strong>View Uploaded Property</strong>
-            <small>View Status of  Uploaded Property</small>
-          </a>
-        </li>
       </ul>
     </nav>
 
@@ -97,7 +87,7 @@
                     <option value="Rental">Rental</option>
                   </select>
                 </div>
-                <label class="fs-field-label fs-anim-upper" for="q1">Price</label>
+                <label class="fs-field-label fs-anim-upper" id="price_or_rent">Price</label>
                 <input class="fs-anim-lower" id="q1" name="q1" type="number" placeholder="111" />
 
                 <label class="fs-field-label fs-anim-upper" for="q2">Condition</label>
@@ -118,7 +108,15 @@
                 <label class="fs-field-label fs-anim-upper ">Address</label>
                 <input class="address" id="q6" name="q5" type="text" placeholder="Street Address" />
                 <input class="address" id="q7" name="q5" type="text" placeholder="Street Address 2" />
-                <input class="address" id="q8" name="q5" type="text" placeholder="Region" style="width: 50%;" />
+                
+<!--                <input class="address" id="q8" name="q5" type="text" placeholder="Region" style="width: 50%;" />-->
+               <label class="fs-field-label fs-anim-upper ">Region</label>
+                <select name="sell_type" class="address add_region">
+                    <option value="kl">Kowloon</option>
+                    <option value="hk">Hong Kong Island</option>
+                    <option value="nt">
+New Territories</option>
+                  </select>
               </li>
 
               <li data-part="4" id="form1_list4">

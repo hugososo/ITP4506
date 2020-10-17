@@ -110,6 +110,7 @@ $(function () {
 
   $("button.prop_close_form1").on("click", function (e) {
     alert("Submitted");
+    $("#form-sure").css("visibility","hidden");
   });
 
   $("#update_form2_up").on("click", function (e) {
@@ -131,10 +132,11 @@ $(function () {
     $(".form_status").css("width", progress + "%");
     if (page === 4) {
       //      $("#form-sure").css("visibility","visible");
+      $(this).attr("href", "#form-sure");
       return;
     } else if (page === 3) {
       $(this).html("Submit");
-      $(this).attr("href", "#form-sure");
+      
     }
 
 
@@ -336,5 +338,13 @@ $(function () {
   $(".card .btn").on("click", function (e) {
     e.preventDefault();
     $(this).parent().parent().css("display", "none");
+  });
+  
+  $("#sel_type").change(function(){
+    if($(this).val() === "Sale"){
+      $("#price_or_rent").html("Price");
+    }else if($(this).val() === "Rental"){
+      $("#price_or_rent").html("Monthly Rent");
+    }
   });
 });

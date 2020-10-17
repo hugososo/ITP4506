@@ -170,4 +170,84 @@ $(function () {
     $("#hse_enlarge_img").removeClass("hse_enlarge_img_click");
     $("#hse_enlarge_img img").attr("src", "");
   });
+
+  var fw="normal",fs="normal",size="12",color="black";
+  $(".btn_bold").click(function () {
+    fw="bolder";
+    $("#cm_textarea").css({
+      fontWeight: "bolder"
+    })
+  });
+  
+  $(".btn_ital").click(function () {
+    fs="italic";
+    $("#cm_textarea").css({
+      fontStyle: "italic"
+    });
+  });
+  
+  $(".cm_fontsize").change(function () {
+    size = $(this).val();
+    console.log(size);
+    $("#cm_textarea").css({
+      fontSize: size+"px"
+    });
+  });
+  
+  $(".color_picker").change(function () {
+    color = $(this).val();
+    console.log(color);
+    $("#cm_textarea").css({
+      color: color
+    });
+  });
+  
+  $(".cm_reset").click(function (){
+    $("#cm_textarea").val("");
+  });
+  
+  $(".cm_agent_submit").click(function (){
+    var r = confirm("Submit?");
+    if(r === true){
+      var txt = $("#cm_textarea").val();
+//    console.log(txt);
+    $("#agent_cm_area").append(
+"      <div class=\"hse_card_cm\">"+   "<div class=\"card_cm_info\">"+
+ "<img src=\"assets/manager.png\" >"+
+                "<div>"+
+                  "<p>Agent Clark</p>"+
+                  "<p>Ac.email.com</p>"+
+                "</div>"+
+              "</div>"+
+              "<hr>"+
+              "<div class=\"hse_actual_cm\" style=\"color:"+color+";font-size:"+size+"px"+";font-style:"+fs+";font-weight:"+fw+";"+"\">"+
+                txt+"</div></div>");
+    }else{
+      return;
+    }
+    
+  });
+  
+  $(".cm_cust_submit").click(function (){
+    var r = confirm("Submit?");
+    if(r === true){
+    var txt = $("#cm_textarea").val();
+//    console.log(txt);
+    $("#cust_cm_area").append(
+"      <div class=\"hse_card_cm\">"+   "<div class=\"card_cm_info\">"+
+ "<img src=\"assets/customer.png\" >"+
+                "<div>"+
+                  "<p>Speedwagon</p>"+
+                  "<p>Speed.email.com</p>"+
+                "</div>"+
+              "</div>"+
+              "<hr>"+
+              "<div class=\"hse_actual_cm\" style=\"color:"+color+";font-size:"+size+"px"+";font-style:"+fs+";font-weight:"+fw+";"+"\">"+
+                txt+"</div></div>");
+    }else{
+      return;
+    }
+  });
+  
+  
 });

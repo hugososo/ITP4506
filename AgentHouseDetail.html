@@ -139,7 +139,7 @@
         </div>
 
         <div class="hseText">
-          <p><span class="hseText_cross">$10M</span><span class="hseText_dis">-14.5%</span></p>
+<!--          <p><span class="hseText_cross">$10M</span><span class="hseText_dis">-14.5%</span></p>-->
           <p><span id="hse_status"></span><span id="hse_actual_price">sdfasdfa</span></p>
           <div class="hse_size_com">
             <div id="hse_net_size"></div>
@@ -242,7 +242,7 @@
 
         <div class="cmbox">
 
-          <div>
+          <div id="agent_cm_area">
             <h3>Agent's Comment</h3>
 
             <div class="hse_card_cm">
@@ -337,6 +337,28 @@
           </div>
 
         </div>
+        
+        <div style="margin-top: 10px; border: 2px solid orange; border-radius: 5px; display: flex; flex-direction: column;">
+         <div style="margin: 5px;border: 1px solid grey;border-radius: 3px;  width:40%;align-self: center;display:flex;justify-content: space-around;">
+           <button style="margin:0px 5px; padding:10px;border-radius=5px;font-weight: 700;cursor: pointer" class="btn_bold">Bold</button>
+          <button style="margin:0px 5px; padding:10px;border-radius=5px;font-weight: 700; cursor: pointer" class="btn_ital">Italic</button>
+          <select name="cm_fontsize" class="cm_fontsize" style="margin:0px 5px; padding:10px;border-radius=5px;font-weight: 700; cursor: pointer">
+            <option value="14" selected>14</option>
+            <option value="18">18</option>
+            <option value="24">24</option>
+            <option value="36">36</option>
+            <option value="48">48</option>
+          </select>
+          <input type="color" name="" class="color_picker"  style="margin:0px 5px;padding:5px;border-radius=5px;cursor: pointer;height:44px;box-sizing: border-box;width:55px">
+         </div>
+          <textarea name="" id="cm_textarea" style="margin: 10px;height:200px "></textarea>
+          
+          <div  style="display:flex;justify-content: flex-end;">
+          <button style="margin:10px; padding:10px;border-radius=5px;color:white;background-color:black;cursor: pointer" class="cm_agent_submit">Submit</button>
+          <button style="margin:10px; padding:10px;border-radius=5px;color:white;background-color:black;cursor: pointer" class="cm_reset">Reset</button>
+          </div>
+        </div>
+        
       </div>
     </div>
 

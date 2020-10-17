@@ -1480,7 +1480,7 @@ input:checked + .slider:before {
   color: black;
 }
 
-#sel_type {
+#sel_type,.add_region {
   display: block;
   background-color: rgba(45, 59, 116, 0.72);
   color: #fffed8;
