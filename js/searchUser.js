@@ -192,7 +192,7 @@ $(document).ready(function () {
                         '<span class="slider round"></span>' +
                         '</label>' +
                         '</div>' +
-                        '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="personalInfo.html?index=' + index + '"/>' +
+                        '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="adminSearchUserInfo.html?index=' + index + '"/>' +
                         '</div>'
                     );
                 }
@@ -220,7 +220,7 @@ $(document).ready(function () {
                     '<span class="slider round"></span>' +
                     '</label>' +
                     '</div>' +
-                    '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="personalInfo.html?index=' + index + '"/>' +
+                    '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="adminSearchUserInfo.html?index=' + index + '"/>' +
                     '</div>'
                 );
             });

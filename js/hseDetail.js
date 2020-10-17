@@ -170,6 +170,21 @@ $(function () {
     $("#hse_enlarge_img").removeClass("hse_enlarge_img_click");
     $("#hse_enlarge_img img").attr("src", "");
   });
+  
+  $("#hse_enlarge_img img").click(function (){
+    $("#en_btn_hse").css({
+      display: "none"
+    });
+    $("#hse_enlarge_img img").css({
+      display: "none"
+    });
+    $("#hse_enlarge_img img").css({
+      cursor: "pointer"
+    });
+    
+    $("#hse_enlarge_img").removeClass("hse_enlarge_img_click");
+    $("#hse_enlarge_img img").attr("src", "");
+  })
 
   var fw="normal",fs="normal",size="12",color="black";
   $(".btn_bold").click(function () {
@@ -237,8 +252,8 @@ $(function () {
 "      <div class=\"hse_card_cm\">"+   "<div class=\"card_cm_info\">"+
  "<img src=\"assets/customer.png\" >"+
                 "<div>"+
-                  "<p>Speedwagon</p>"+
-                  "<p>Speed.email.com</p>"+
+                  "<p>Hugo</p>"+
+                  "<p>customer@email.com</p>"+
                 "</div>"+
               "</div>"+
               "<hr>"+
