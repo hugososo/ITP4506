@@ -37,7 +37,7 @@
             <li>|</li>
             <li><a href="managerInfo.html">PERSONAL INFO</a></li>
             <li>|</li>
-            <li><a href="PropertyManagement.html">PROPERTY MANAGEMENT</a></li>
+            <li><a href="propertyManagement.html">PROPERTY MANAGEMENT</a></li>
             <li>|</li>
             <li><a href="index.html" id="logout">LOGOUT</a></li>
         </ul>
@@ -106,19 +106,29 @@
 
               <li data-part="2" id="form1_list2">
                 <label class="fs-field-label fs-anim-upper" for="q3">Client's Name?</label>
-                <input class="fs-anim-lower" id="q3" name="q1" type="text" placeholder="Dean Moriarty" />
+                <input class="fs-anim-lower" id="q3" name="q1" type="text" placeholder="Dean Moriarty"  style="margin-bottom: 5px" />
 
                 <label class="fs-field-label fs-anim-upper" for="q4">Client's Phone?</label>
-                <input class="fs-anim-lower" id="q4" name="q1" type="number" placeholder="124124214" />
+                <input class="fs-anim-lower" id="q4" name="q1" type="number" placeholder="124124214"  style="margin-bottom: 5px" />
                 <label class="fs-field-label fs-anim-upper" for="q5">Client's Email?</label>
-                <input class="fs-anim-lower" id="q5" name="q1" type="email" placeholder="1231@14241" />
+                <input class="fs-anim-lower" id="q5" name="q1" type="email" placeholder="1231@14241"  style="margin-bottom: 5px" />
+                
+                <label class="fs-field-label fs-anim-upper" for="q3">House Photo (Multiple Allowed)</label>
+                <input type="file" multiple style="margin-bottom: 5px;margin-top: 3px; font-size: 15px;" class="up_pic">
+                <div id="pic_list" style="color:white; font-size: 20px;"></div>
               </li>
 
               <li data-part="3" id="form1_list3">
                 <label class="fs-field-label fs-anim-upper ">Address</label>
                 <input class="address" id="q6" name="q5" type="text" placeholder="Street Address" />
                 <input class="address" id="q7" name="q5" type="text" placeholder="Street Address 2" />
-                <input class="address" id="q8" name="q5" type="text" placeholder="Region" style="width: 50%;" />
+                <label class="fs-field-label fs-anim-upper ">Region</label>
+                <select name="sell_type" class="address add_region">
+                    <option value="kl">Kowloon</option>
+                    <option value="hk">Hong Kong Island</option>
+                    <option value="nt">
+New Territories</option>
+                  </select>
               </li>
 
               <li data-part="4" id="form1_list4">
@@ -153,6 +163,8 @@
                 <input type="text" id="q2a" value="New">
                 <label for="q3a">Client's Name</label>
                 <input type="text" id="q3a" value="Ttt">
+                <label for="q9a">Photo list</label>
+                <input type="text" id="q9a" value="mssql.jpg, hi.jpg">
                 <label for="q4a">Phone</label>
                 <input type="text" id="q4a" value="6878 8424">
                 <label for="q5a">Email</label>

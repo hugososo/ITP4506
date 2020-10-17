@@ -347,4 +347,18 @@ $(function () {
       $("#price_or_rent").html("Monthly Rent");
     }
   });
+  
+  $(".up_pic").change(function () {
+  var files = $(this)[0].files;
+$("#pic_list").html("");
+for(var i = 0; i<files.length; i++){
+  if(i == files.length -1){
+    $("#pic_list").append(files[i].name+"  ");
+  }else{
+    $("#pic_list").append(files[i].name+" , ");
+  }
+  
+// console.log(files[i].name+'----'+files[i].size);
+}
+});
 });
