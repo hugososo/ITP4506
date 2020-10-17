@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream House</title>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!-- fontawesome -->
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+
+  <!-- Customized Css -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <!--icon library-->
+  <script src="https://kit.fontawesome.com/91353110a6.js" crossorigin="anonymous"></script>
+
+  <!--  leftlet map-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+</head>
+
+<body data-barba="wrapper">
+
+  <div class="transition-container">
+    <div class="transition"></div>
+  </div>
+
+  <header>
+    <a href="indexAgent.html">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150" height="30">
+    </a>
+    <ul>
+      <li><a href="AgentApartmentSale.html">PROPERTY SALE</a></li>
+      <li>|</li>
+      <li><a href="propertyManagement.html">PROPERTY MANAGEMENT</a></li>
+      <li>|</li>
+      <li><a href="agentInfo.html">PERSONAL INFO</a></li>
+      <li>|</li>
+      <li><a href="index.html" id="logout">LOGOUT</a></li>
+    </ul>
+  </header>
+  <div data-barba="container" data-barba-namespace="house-detail" class="container scroll_con">
+    <div class="hsep1">
+
+      <div class="hseheadingPart">
+        <h1 id="hseh1"></h1>
+        <div class="hseh1_sub">
+          <div class="hseh1_sub_1">
+            <div>
+              <i class="fas fa-map-marked-alt"></i>
+              <span id="hse_span_Address"></span>
+            </div>
+            <div id="hse_block">
+            </div>
+            <div id="hse_span_Region">
+            </div>
+          </div>
+
+
+          <div class="hseheadingContact">
+            <span id="hse_span_agent"></span>
+            <span>agent@email.com</span>
+            <button><i class="fas fa-phone"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hseMainInfoPart">
+        <div class="hsegallery">
+          <ul>
+            <li><a href="#hse_photo" id="photo_list_item">Photo</a></li>
+            <li><a href="#hse_vr" id="vr_list_item">VR</a></li>
+            <li><a href="#hse_floor" id="floor_list_item">Floor Plan</a></li>
+            <!--            <li><a href="#">Map</a></li>-->
+          </ul>
+          <div class="hse_media_list">
+
+            <div class="sp-slideshow" id="hse_vr">
+              <h2>Click Image for VR</h2>
+              <div>
+                <div class="circle"></div>
+              </div>
+
+            </div>
+
+            <div class="sp-slideshow" id="hse_photo">
+              <input id="button-1" type="radio" name="radio-set" class="sp-selector-1" checked value="1" />
+              <label for="button-1" class="button-label-1"></label>
+
+              <input id="button-2" type="radio" name="radio-set" class="sp-selector-2" value="2"  />
+              <label for="button-2" class="button-label-2"></label>
+
+              <input id="button-3" type="radio" name="radio-set" class="sp-selector-3" value="3"  />
+              <label for="button-3" class="button-label-3"></label>
+
+              <input id="button-4" type="radio" name="radio-set" class="sp-selector-4"  value="4" />
+              <label for="button-4" class="button-label-4"></label>
+
+              <input id="button-5" type="radio" name="radio-set" class="sp-selector-5"  value="5" />
+              <label for="button-5" class="button-label-5"></label>
+
+              <label for="button-1" class="sp-arrow sp-a1"></label>
+              <label for="button-2" class="sp-arrow sp-a2"></label>
+              <label for="button-3" class="sp-arrow sp-a3"></label>
+              <label for="button-4" class="sp-arrow sp-a4"></label>
+              <label for="button-5" class="sp-arrow sp-a5"></label>
+
+              <div class="sp-content">
+                <div class="sp-parallax-bg"></div>
+                <ul class="sp-slider clearfix" id="hse_slidelist">
+                  <li><img src="" alt="image01" width="500" height="600" /></li>
+                  <li><img src="" alt="image02" width="500" height="600" /></li>
+                  <li><img src="" alt="image03" width="500" height="600" /></li>
+                  <li><img src="assets/hseInfo/Disa_COURT.jpg" alt="image04" width="500" height="600" /></li>
+                  <li><img src="assets/hseInfo/HONG_WAH_COURT_1.jpg" alt="image05" width="500" height="600" /></li>
+                </ul>
+              </div><!-- sp-content -->
+            </div><!-- sp-slideshow -->
+
+            <div class="sp-slideshow" id="hse_floor">
+              <div class="hse_flip_plan">
+                <div class="front">
+                  <img src="assets/hseInfo/floor_plan.jpg" alt="">
+                </div>
+                <div class="back">
+                  <img src="assets/hseInfo/overall_floor_plan.jpg" alt="">
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hseText">
+          <p><span class="hseText_cross">$10M</span><span class="hseText_dis">-14.5%</span></p>
+          <p><span id="hse_status"></span><span id="hse_actual_price">sdfasdfa</span></p>
+          <div class="hse_size_com">
+            <div id="hse_net_size"></div>
+            <div id="hse_cal_size"></div>
+          </div>
+          <div class="hseText_ul_con">
+            <ul>
+              <li id="hseage"></li>
+              <li>Age</li>
+            </ul>
+            <ul>
+              <li id="hselayout"></li>
+              <li>Layout</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="hse_map_div">
+        <h2>Location</h2>
+        <div id="hse_map">
+        </div>
+      </div>
+
+
+      <div id="hse_stat_past">
+        <h2>Related Transaction</h2>
+        <table class="table table-dark table-hover table-responsive-sm table-responsive ">
+          <thead>
+            <tr>
+              <th>Reg. Date</th>
+              <th>Address</th>
+              <th>Layout</th>
+              <th>Price</th>
+              <th>Area</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10-Sep-2020</td>
+              <td>Block A Flat 12 10/F</td>
+              <td>2 Rooms</td>
+              <td>12M</td>
+              <td>500</td>
+            </tr>
+            <tr>
+              <td>21-Jul-2020</td>
+              <td>Block A Flat 2 17/F</td>
+              <td>4 Rooms</td>
+              <td>18M</td>
+              <td>600</td>
+            </tr>
+            <tr>
+              <td>30-Jun-2020</td>
+              <td>Block D Flat 1 30/F</td>
+              <td>2 Rooms</td>
+              <td>10M</td>
+              <td>600</td>
+            </tr>
+            <tr>
+              <td>04-Jan-2020</td>
+              <td>Block B Flat 4 20/F</td>
+              <td>3 Rooms</td>
+              <td>9M</td>
+              <td>400</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="hse_est_info">
+        <h2>Estate Info</h2>
+        <div>
+          <div>
+            <p class="title">Estate</p>
+            <p id="est"></p>
+          </div>
+          <div>
+            <p class="title">Year Building</p>
+            <p id="yb"></p>
+          </div>
+          <div>
+            <p class="title">Developer</p>
+            <p id="dev"></p>
+          </div>
+          <div>
+            <p class="title">Term Of Years</p>
+            <p id="toy"></p>
+          </div>
+          <div>
+            <p class="title">Facilities</p>
+            <p id="fas"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hse_cm4">
+        <h2>Comments from Agent and Customers</h2>
+
+        <div class="cmbox">
+
+          <div>
+            <h3>Agent's Comment</h3>
+
+            <div class="hse_card_cm">
+              <div class="card_cm_info">
+                <img src="assets/manager.png" alt="">
+                <div>
+                  <p>Agent Clark</p>
+                  <p>Ac.email.com</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hse_actual_cm">
+                Very Economical! The house had a great deal on my 2020 LibTech Goldmember "Blemish" board. Thanks!
+
+              </div>
+            </div>
+
+            <div class="hse_card_cm">
+              <div class="card_cm_info">
+                <img src="assets/manager.png" alt="">
+                <div>
+                  <p>Agent Thomas</p>
+                  <p>AT.email.com</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hse_actual_cm">
+                Good Facility!
+              </div>
+            </div>
+
+            <div class="hse_card_cm">
+              <div class="card_cm_info">
+                <img src="assets/manager.png" alt="">
+                <div>
+                  <p>Agent Hugo</p>
+                  <p>AT.email.com</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hse_actual_cm">
+                Huge area, good vibe, wonderful scenery!
+              </div>
+            </div>
+
+          </div>
+
+          <div>
+            <h3>Customer's Comment</h3>
+
+            <div class="hse_card_cm">
+              <div class="card_cm_info">
+                <img src="assets/customer.png" alt="">
+                <div>
+                  <p>Jotaro Joestar</p>
+                  <p>jj3.email.com</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hse_actual_cm">
+                Beautiful well maintained townhome located in the coveted, gated community of Oxford Chase. Dramatic 2 story foyer with elegant chandelier and open staircase. Spacious kitchen with stainless steel appliances.              </div>
+            </div>
+
+            <div class="hse_card_cm">
+              <div class="card_cm_info">
+                <img src="assets/customer.png" alt="">
+                <div>
+                  <p>Dio Brando</p>
+                  <p>kono.email.com</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hse_actual_cm">
+                This home features plenty of room to seat friends and family in the breakfast nook which faces the large backyard, perfect for children and pets to run around and play.
+              </div>
+            </div>
+
+            <div class="hse_card_cm">
+              <div class="card_cm_info">
+                <img src="assets/customer.png" alt="">
+                <div>
+                  <p>Jean Pierre Polnareff</p>
+                  <p>turtle.email.com</p>
+                </div>
+              </div>
+              <hr>
+              <div class="hse_actual_cm">
+                Very Economical! The house had a great deal on my 2020 LibTech Goldmember "Blemish" board. Thanks!
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="hse_enlarge_img">
+      <img src="" alt="">
+      <button id="en_btn_hse">Close</button>
+    </div>
+  </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+<script src="js/global.js"></script>
+<script src="js/hseDetail.js"></script>
+
+</html>

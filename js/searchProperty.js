@@ -35,6 +35,17 @@ $(document).ready(function () {
 
         var markers = L.markerClusterGroup();
 
+        var fileName = location.href.split("/").slice(-1);
+        var link;
+        if(fileName=="ManagerApartmentSale.html")
+            link = "ManagerHouseDetail.html";
+        else if(fileName=="CustomerApartmentSale.html")
+            link = "CustomerHouseDetail.html";
+        else if(fileName=="AgentApartmentSale.html")
+            link = "AgentHouseDetail.html";
+        else
+            link = "houseDetail.html";
+
         property.forEach(function (item, index, array) {
             count++;
             $("#property-result").append(
@@ -49,7 +60,7 @@ $(document).ready(function () {
                 '<span class="user-card-text-3" style="color:rgb(255, 50, 93);font-size:20pt">$' + item.price + '</span>' +
                 '<span style="margin-left:5px;font-size:12pt">' + item.size + " sq.ft." + '</span>' +
                 '</div>' +
-                '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="houseDetail.html?index=' + index + '"/>' +
+                '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="'+link+'?index=' + index + '"/>' +
                 '</div>'
             );
             $("#total-result").html(count);
@@ -181,5 +192,35 @@ $(document).ready(function () {
             if ($(this).parent().attr("class") == 'filter-selected-container')
                 $(this).appendTo("#item-container-6");
         }
+    });
+
+    $(".searchbtn").click(function () {
+        let count=0;
+        $.getJSON('hseInfo.json', function (data) {
+            $("#property-result").html("");
+            property = data;
+            property.filter(function (item, index, array) {
+                console.log(item.numOfRoom);
+                if (item.numOfRoom == 3 && item.size>800) {
+                    count++;
+                    $("#property-result").append(
+                        '<div class="user-card">' +
+                        '<div class="user-card-img">' +
+                        '<img src="' + item.img1 + '" alt="" width="150px" height="100px">' +
+                        '</div>' +
+                        '<div class="user-card-content" style="margin-left:10px">' +
+                        '<h3 class="user-card-text-1">' + item.name + '</h3>' +
+                        '<p class="user-card-text-2">' + item.address + '</p>' +
+                        '<p style="color: rgb(70, 70, 70);">' + item.numOfRoom + " Room | " + item.type + '</p>' +
+                        '<span class="user-card-text-3" style="color:rgb(255, 50, 93);font-size:20pt">$' + item.price + '</span>' +
+                        '<span style="margin-left:5px;font-size:12pt">' + item.size + " sq.ft." + '</span>' +
+                        '</div>' +
+                        '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="houseDetail.html?index=' + index + '"/>' +
+                        '</div>'
+                    );
+                    $("#total-result").html(count);
+                }
+            });
+        });
     });
 });

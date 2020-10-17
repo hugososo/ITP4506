@@ -23,6 +23,10 @@ $(document).ready(function () {
         let count = 0;
         ac['user'].forEach(function (item, index, array) {
             if (item.role != "manager") {
+                if(item.status=="enable")
+                    var status = "checked";
+                else
+                    status = "";
                 count++;
                 $(".userresult-container").append(
                     '<div class="user-card">' +
@@ -37,11 +41,11 @@ $(document).ready(function () {
                     '<div class="user-card-toggle">' +
                     '<p style="color: #5c5c5c;">Account Status</p>' +
                     '<label class="switch">' +
-                    '<input type="checkbox" checked>' +
+                    '<input type="checkbox"'+status+'>' +
                     '<span class="slider round"></span>' +
                     '</label>' +
                     '</div>' +
-                    '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="personalInfo.html?index=' + index + '"/>' +
+                    '<a style="text-decoration:none;position:absolute;width:100%;height:100%;z-index:1;" href="adminSearchUserInfo.html?index=' + index + '"/>' +
                     '</div>'
                 );
                 $("#total-result").html(count);
@@ -61,6 +65,8 @@ $(document).ready(function () {
                 $(this).parent().appendTo("#item-container-2");
             if ($(this).parent().attr("class") == 'addfilter belongitem3')
                 $(this).parent().appendTo("#item-container-3");
+            if ($(this).parent().attr("class") == 'addfilter belongitem4')
+                $(this).parent().appendTo("#item-container-4");
         }
         if ($("#old2new").is(':checked')) {
             $("#new2old").parent().appendTo("#item-container-3");
@@ -74,6 +80,7 @@ $(document).ready(function () {
         $(".belongitem1").appendTo("#item-container-1");
         $(".belongitem2").appendTo("#item-container-2");
         $(".belongitem3").appendTo("#item-container-3");
+        $(".belongitem4").appendTo("#item-container-4");
         $('.addfilter input:checkbox,input:radio').prop("checked", false);
         $('.searchbar').val("");
         $(".searchbtn").click();
@@ -102,7 +109,22 @@ $(document).ready(function () {
             }
             return item.role == customer || item.role == agent;
         });
-        const sexfilter = rolefilter.filter(function (item, index, array) {
+
+        const statusfilter = rolefilter.filter(function (item, index, array) {
+            if ($("#ava").is(":checked"))
+                var enable = $("#ava").val();
+            if ($("#unava").is(":checked"))
+                var disable = $("#unava").val();
+            if (!$("#unava").is(":checked") && !$("#ava").is(":checked")) {
+                return item;
+            }
+            if($("#unava").is(":checked") && $("#ava").is(":checked")){
+                return item;
+            }
+            return item.status == enable || item.status == disable;
+        });
+
+        const sexfilter = statusfilter.filter(function (item, index, array) {
             if ($("#male").is(":checked"))
                 var male = $("#male").val();
             if ($("#female").is(":checked"))
@@ -149,6 +171,10 @@ $(document).ready(function () {
                 let itemdate = new Date(item.date).getTime();
                 if (itemdate >= sliderleft[0] && itemdate <= sliderright[0]) {
                     count++;
+                        if(item.status=="enable")
+                            var status = "checked";
+                        else
+                            status = "";
                     $(".userresult-container").append(
                         '<div class="user-card">' +
                         '<div class="user-card-img">' +
@@ -162,7 +188,7 @@ $(document).ready(function () {
                         '<div class="user-card-toggle">' +
                         '<p style="color: #5c5c5c;">Account Status</p>' +
                         '<label class="switch">' +
-                        '<input type="checkbox" checked>' +
+                        '<input type="checkbox"'+status+'>' +
                         '<span class="slider round"></span>' +
                         '</label>' +
                         '</div>' +
@@ -173,6 +199,10 @@ $(document).ready(function () {
             });
         } else {
             const dateRangeFilter = orderedArr.filter(function (item, index, array) {
+                    if(item.status=="enable")
+                        var status = "checked";
+                    else
+                        status = "";
                 $(".userresult-container").append(
                     '<div class="user-card">' +
                     '<div class="user-card-img">' +
@@ -186,7 +216,7 @@ $(document).ready(function () {
                     '<div class="user-card-toggle">' +
                     '<p style="color: #5c5c5c;">Account Status</p>' +
                     '<label class="switch">' +
-                    '<input type="checkbox" checked>' +
+                    '<input type="checkbox"'+status+'>' +
                     '<span class="slider round"></span>' +
                     '</label>' +
                     '</div>' +

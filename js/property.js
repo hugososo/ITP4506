@@ -2,11 +2,11 @@ $(function () {
   var background = $("#exchange_area"),
     background2 = $("#exchange_area > *"),
     side_background = $(".side_bar"),
-    tl = gsap.timeline();
+    bgAni = gsap.timeline();
 
-$('#example').DataTable();
+  $('#example').DataTable();
 
-  tl.fromTo(side_background, {
+  bgAni.fromTo(side_background, {
     opacity: 0.5,
     //    backgroundColor: "transparent",
   }, {
@@ -16,7 +16,7 @@ $('#example').DataTable();
     ease: "back.inOut(1.7)",
   });
 
-  tl.fromTo(background2, {
+  bgAni.fromTo(background2, {
     //    y: 50,
     opacity: 0.4,
   }, {
@@ -27,7 +27,7 @@ $('#example').DataTable();
   }, "-=2");
 
 
-  tl.fromTo(background, {
+  bgAni.fromTo(background, {
     opacity: 1,
   }, {
     opacity: 1,
@@ -53,11 +53,11 @@ $('#example').DataTable();
 
     if ($('#exchange_area div:not(div#' + linkID + ')').hasClass('clicked')) {
 
-      //      tl = gsap.timeline({
+      //      bgAni = gsap.timeline({
       //        //              paused: true
       //      })
       //
-      //      tl.set($sectionsNotClicked, {
+      //      bgAni.set($sectionsNotClicked, {
       //          opacity: 0
       //        })
       //
@@ -111,12 +111,12 @@ $('#example').DataTable();
   $("button.prop_close_form1").on("click", function (e) {
     alert("Submitted");
   });
-  
+
   $("#update_form2_up").on("click", function (e) {
-   e.preventDefault(); 
+    e.preventDefault();
     alert("Updated!");
-//   console.log($("#prop_update_form_email").text()); $("#prop_update_form_email").val($("#prop_update_form_email").html());
-//    $("#prop_update_form_phone").val($("#prop_update_form_phone").html());
+    //   console.log($("#prop_update_form_email").text()); $("#prop_update_form_email").val($("#prop_update_form_email").html());
+    //    $("#prop_update_form_phone").val($("#prop_update_form_phone").html());
   });
 
   $(".next").on("click", function (e) {
@@ -130,11 +130,11 @@ $('#example').DataTable();
     var progress = 100 / maxPage * (page + 1);
     $(".form_status").css("width", progress + "%");
     if (page === 4) {
-//      $("#form-sure").css("visibility","visible");
+      //      $("#form-sure").css("visibility","visible");
       return;
     } else if (page === 3) {
       $(this).html("Submit");
-      $(this).attr("href","#form-sure");
+      $(this).attr("href", "#form-sure");
     }
 
 
@@ -153,7 +153,7 @@ $('#example').DataTable();
 
     if (page === 4) {
       $(".next").html("Continue");
-      
+
     } else if (page === 1) {
       //      $(this).disable = true;
       return;
@@ -213,7 +213,7 @@ $('#example').DataTable();
       .appendTo('#slideshow4');
   }, 3000);
 
-$("#slideshow5 > div:gt(0)").hide();
+  $("#slideshow5 > div:gt(0)").hide();
 
   setInterval(function () {
     $('#slideshow5 > div:first')
@@ -224,7 +224,7 @@ $("#slideshow5 > div:gt(0)").hide();
       .appendTo('#slideshow5');
   }, 3000);
 
-$("#slideshow6 > div:gt(0)").hide();
+  $("#slideshow6 > div:gt(0)").hide();
 
   setInterval(function () {
     $('#slideshow6 > div:first')
@@ -235,7 +235,7 @@ $("#slideshow6 > div:gt(0)").hide();
       .appendTo('#slideshow6');
   }, 3000);
 
-$("#slideshow7 > div:gt(0)").hide();
+  $("#slideshow7 > div:gt(0)").hide();
 
   setInterval(function () {
     $('#slideshow7 > div:first')
@@ -246,7 +246,7 @@ $("#slideshow7 > div:gt(0)").hide();
       .appendTo('#slideshow7');
   }, 3000);
 
-$("#slideshow8 > div:gt(0)").hide();
+  $("#slideshow8 > div:gt(0)").hide();
 
   setInterval(function () {
     $('#slideshow8 > div:first')
@@ -261,18 +261,18 @@ $("#slideshow8 > div:gt(0)").hide();
   $(".p3_tab_btn").on("click", function () {
     var flipcard = gsap.timeline();
     var filp = $(this).attr("data-filp");
-    filpcard(flipcard,filp);
+    filpcard(flipcard, filp);
 
     flipcard.play(0);
 
   });
 
-  function filpcard(filpTL,num) {
-    var h = $("#card-slider"+num+" > .card");
+  function filpcard(filpbgAni, num) {
+    var h = $("#card-slider" + num + " > .card");
     console.log(h.length);
 
     for (var i = 0; i < h.length; i++) {
-      filpTL.fromTo(h[i], {
+      filpbgAni.fromTo(h[i], {
         rotationY: 360,
       }, {
         rotationY: 0,

@@ -9,14 +9,14 @@
     "price": "6.88M",
     "size": 456,
     "address": "To Kwa Wan Rd 125 Kowloon",
-    "type": "Private housing estates",
+    "type": "New Blocks",
     "img1": "./assets/hseInfo/WYLER_GARDENS_1.jpg",
     "img2": "./assets/hseInfo/WYLER_GARDENS_2.jpg",
     "img3": "./assets/hseInfo/WYLER_GARDENS_3.jpg",
     "floorPlan": "./assets/hseInfo/floor_plan.jpg",
     "region": "To Kwa Wan",
     "years": 41,
-    "numOfRoom": 2,
+    "numOfRoom": 3,
     "developer": "Sun Hung Kai",
     "TermOfYears": "50 Years Commencing From 12 December, 2014",
     "Facilities": [
@@ -96,7 +96,7 @@
     "floorPlan": "./assets/hseInfo/floor_plan.jpg",
     "region": "Ma On Shan",
     "years": 28,
-    "numOfRoom": 2,
+    "numOfRoom": 3,
     "developer": "Kerry",
     "TermOfYears": "50 Years Commencing From 10 April, 2013",
     "Facilities": [
@@ -177,7 +177,7 @@
     "floorPlan": "./assets/hseInfo/floor_plan.jpg",
     "region": "Chai Wan",
     "years": 28,
-    "numOfRoom": 2,
+    "numOfRoom": 3,
     "developer": "New World",
     "TermOfYears": "50 Years Commencing From 10 April, 2011",
     "Facilities": [
@@ -204,7 +204,7 @@
     "floorPlan": "./assets/hseInfo/floor_plan.jpg",
     "region": "Chai Wan",
     "years": 28,
-    "numOfRoom": 2,
+    "numOfRoom": 3,
     "developer": "New Order",
     "TermOfYears": "50 Years Commencing From 10 April, 2011",
     "Facilities": [

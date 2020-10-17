@@ -20,14 +20,18 @@
     </div>
 
     <header>
-        <a href="indexCustomer.html">
+        <a href="indexManager.html">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
                 height="30">
         </a>
         <ul>
-            <li><a href="apartmentSale.html">PROPERTY</a></li>
+            <li><a href="managerApartmentSale.html">PROPERTY</a></li>
             <li>|</li>
-            <li><a href="personalInfo.html">PERSONAL INFO</a></li>
+            <li><a href="searchUser.html">SEARCH USER</a></li>
+            <li>|</li>
+            <li><a href="createAgentAc.html">CREATE AGENT</a></li>
+            <li>|</li>
+            <li><a href="managerInfo.html">PERSONAL INFO</a></li>
             <li>|</li>
             <li><a href="index.html" id="logout">LOGOUT</a></li>
         </ul>
@@ -47,13 +51,13 @@
                         <p>Full Name</p>
                     </label>
                     <input type="hidden" name="pname" id="pname" class="pinput" value="Hugo">
-                    <input type="text" name="pname" id="pname" class="pinput" value="Hugo">
+                    <input type="text" name="pname" id="pname" class="pinput" value="Manager Hugo">
                 </div>
                 <div class="input-div">
                     <label for="pemail">
                         <p>Email</p>
                     </label>
-                    <input type="email" name="pemail" id="pemail" class="pinput" value="customer@email.com">
+                    <input type="email" name="pemail" id="pemail" class="pinput" value="manager@email.com">
                 </div>
                 <div class="input-div">
                     <label for="ppw">
@@ -66,7 +70,7 @@
                     <label for="ptel">
                         <p>Phone Number</p>
                     </label>
-                    <input type="text" name="ptel" id="ptel" class="pinput" placeholder="Please input" value="852-">
+                    <input type="text" name="ptel" id="ptel" class="pinput" placeholder="Please input" value="852-31826323">
                 </div>
                 <div class="input-div">
                     <label for="pgender">
@@ -74,7 +78,7 @@
                     </label>
                     <select name="pgender" id="pgender" class="pselect">
                         <option value="none">Please Select</option>
-                        <option value="m">Male</option>
+                        <option value="m" selected>Male</option>
                         <option value="f">Female</option>
                     </select>
                 </div>

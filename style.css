@@ -402,6 +402,15 @@ header ul li a:hover:after {
   transform-origin: bottom;
 }
 
+#google,#facebook{
+  cursor: pointer;
+}
+
+#google:hover,#facebook:hover {
+  transform: scale(1.1);
+}
+
+
 .form-container {
   min-width: 400px;
   margin: auto;

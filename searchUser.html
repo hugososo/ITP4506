@@ -21,22 +21,20 @@
     </div>
 
     <header>
-        <a href="index.html ">
+        <a href="indexManager.html">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
                 height="30">
         </a>
         <ul>
-            <li><a href="">WORK</a></li>
+            <li><a href="managerApartmentSale.html">PROPERTY</a></li>
             <li>|</li>
-            <li><a href="propertyManagement.html">PROPERTY</a></li>
+            <li><a href="searchUser.html">SEARCH USER</a></li>
             <li>|</li>
-            <li><a href="">CONTACT</a></li>
+            <li><a href="createAgentAc.html">CREATE AGENT</a></li>
             <li>|</li>
-            <li><a href="personalInfo.html">PERSONAL INFO</a></li>
+            <li><a href="managerInfo.html">PERSONAL INFO</a></li>
             <li>|</li>
-            <li><a href="login.html">LOGIN</a></li>
-            <li>|</li>
-            <li><a href="signup.html">SIGN UP</a></li>
+            <li><a href="index.html" id="logout">LOGOUT</a></li>
         </ul>
     </header>
 
@@ -55,8 +53,9 @@
                 <button class="sbtn searchbtn">Search now</button>
                 <button class="sbtn advancebtn">&#9776</button>
             </div>
-            <div class="filter-selected-container"></div>
+            <div class="filter-selected-container">Filter:</div>
             <div class="filter-container">
+                <h2 style="margin:10px auto;text-align: center;color: #5c5c5c;">Advance Filter</h2>
                 <div class="filteritem-container" id="item-container-1">
                     <span class="filter-title">Type of user</span>
                     <span class="addfilter belongitem1"><input type="checkbox" id="user" value="customer"><label for="user"><span class="filter-option"
@@ -84,6 +83,13 @@
                             style="border:0; color:#ffffff; background-color:transparent; font-size: 11pt;">
                         <div id="slider-range"></div>
                     </span>
+                </div>
+                <div class="filteritem-container" id="item-container-4">
+                    <span class="filter-title">Status</span>
+                    <span class="addfilter belongitem4"><input type="checkbox" id="ava" value="enable"><label for="ava"><span class="filter-option"
+                                id="ava-option"> &#10011 Available</span></label></span>
+                    <span class="addfilter belongitem4"><input type="checkbox" id="unava" value="disable"><label for="unava"><span
+                                class="filter-option" id="unava-option"> &#10011 Unavailable</span></label></span>
                 </div>
             </div>
             <div style="width: 70%; margin:50px auto 30px auto; text-align: center;">

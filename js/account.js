@@ -1,35 +1,35 @@
-let tl = gsap.timeline();
-tl.to("#wave", { scale: 3, duration: 0.5, ease: Back.easeOut.config(1.7), onComplete: function () { tl.pause(); }, })
-    .to("#wave", { scale: 5, duration: 0.5, ease: Back.easeOut.config(1.7), onComplete: function () { tl.pause(); }, })
-    .to("#wave", { scale: 7, duration: 0.5, ease: Back.easeOut.config(1.7), onComplete: function () { tl.pause(); }, })
-    .to("#wave", { scale: 12, duration: 0.5, ease: Back.easeOut.config(1.7), onComplete: function () { tl.pause(); }, });
-
-tl.pause();
-
-let account;
-
-fetch('js/account.json')
-  .then(response => response.json())
-  .then(data => {
-      account = data;
-});
-
-gsap.from(".form-container", {
-    scale: 0,
-    duration: 0.8,
-    ease:Bounce.easeOut
-});
-
-let infotl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.info-container',
-    }
-  });
-  
-  infotl.from(".info-container", {x:-200,opacity: 0,duration: 1})
-  .from(".input-container", {x:-200,opacity: 0,duration: 1},"-=0.5");
-
 $(document).ready(function () {
+    let waveAni = gsap.timeline();
+    waveAni.to("#wave", { scale: 3, duration: 0.5, ease: Back.easeOut.config(1.7), onComplete: function () { waveAni.pause(); }, })
+        .to("#wave", { scale: 5, duration: 0.5, ease: Back.easeOut.config(1.7), onComplete: function () { waveAni.pause(); }, })
+        .to("#wave", { scale: 7, duration: 0.5, ease: Back.easeOut.config(1.7), onComplete: function () { waveAni.pause(); }, })
+        .to("#wave", { scale: 12, duration: 0.5, ease: Back.easeOut.config(1.7), onComplete: function () { waveAni.pause(); }, });
+
+    waveAni.pause();
+
+    let account;
+    
+    fetch('js/account.json')
+        .then(response => response.json())
+        .then(data => {
+            account = data;
+    });
+
+    gsap.from(".form-container", {
+        scale: 0,
+        duration: 0.8,
+        ease: Bounce.easeOut
+    });
+
+    let infowaveAni = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.info-container',
+        }
+    });
+
+    infowaveAni.from(".info-container", { x: -200, opacity: 0, duration: 1 })
+        .from(".input-container", { x: -200, opacity: 0, duration: 1 }, "-=0.5");
+
     let pwpass = false;
 
     $(":password").focus(function () {
@@ -86,11 +86,11 @@ $(document).ready(function () {
         if (stack.length > stack2.length) {
             for (let i = 0; i < 4; i++) {
                 if (stack.length == i + 1)
-                    tl.play(i * 0.5);
+                    waveAni.play(i * 0.5);
             }
         }
         if (stack.length < stack2.length) {
-            tl.timeScale(2).tweenFromTo(tl.time(), stack.length * 0.5);
+            waveAni.timeScale(2).tweenFromTo(waveAni.time(), stack.length * 0.5);
         }
         stack2 = stack;
     });
@@ -109,28 +109,33 @@ $(document).ready(function () {
             $("#warning-msg").slideDown();
         }
 
-            var result = account["user"].find(function (item, index, array) {
-                console.log(item.email);
-                return item.email == $("#loginEmail").val() && item.pw == $("#loginPw").val();
-            });
-
+        var result = account["user"].find(function (item, index, array) {
+            console.log(item.email);
+            return item.email == $("#loginEmail").val() && item.pw == $("#loginPw").val();
+        });
+        console.log(result);
         if (typeof result === 'undefined') {
-            if (tl.time() == 2)
-                tl.tweenFromTo(2, 0).timeScale(2);
+            if (waveAni.time() == 2)
+                waveAni.tweenFromTo(2, 0).timeScale(2);
             else
-                tl.pause(0);
+                waveAni.pause(0);
             $("#loginEmail").css("background-color", "rgb(255, 197, 197)");
             $("#loginPw").css("background-color", "rgb(255, 197, 197)");
             $("#warning-msg2").slideDown();
             $("#success-msg2").slideUp();
         } else {
-            tl.tweenFromTo(0, 2).timeScale(2);
+            waveAni.tweenFromTo(0, 2).timeScale(2);
             $("#loginEmail").css("background-color", "white");
             $("#loginPw").css("background-color", "white");
             $("#warning-msg2").slideUp();
             $("#success-msg2").slideDown();
             setTimeout(function () {
-                window.location.replace("index.html");
+                if(result.role == "customer")
+                    window.location.replace("indexCustomer.html");
+                if(result.role == "agent")
+                    window.location.replace("indexAgent.html");
+                if(result.role == "manager")
+                    window.location.replace("indexManager.html");
             }, 3000);
         }
     });
@@ -172,10 +177,23 @@ $(document).ready(function () {
         e.preventDefault();
         var image = e.originalEvent.dataTransfer.files;
         console.log(e);
-        if(image.length>0){
+        if (image.length > 0) {
             var file = image[0];
-            $("#card-img").attr('src',"assets/"+file.name);
+            $("#card-img").attr('src', "assets/" + file.name);
         }
+    });
+
+    $("#forgetpw").click(function () {
+        gsap.to("#forgetpw-section", { height: "100vh", duration: 1, ease: Bounce.easeOut });
+    });
+
+    $("#closeForgetPw").click(function () {
+        gsap.to("#forgetpw-section", { height: "0vh", duration: 1, ease: Power2.easeOut });
+    });
+
+    $("#forgetpwSend").click(function () {
+        if ($("#loginEmail2").val() != "")
+            $("#success-msg3").slideDown();
     });
 });
 

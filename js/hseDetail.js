@@ -169,5 +169,5 @@ $(function () {
     });
     $("#hse_enlarge_img").removeClass("hse_enlarge_img_click");
     $("#hse_enlarge_img img").attr("src", "");
-  })
-})
+  });
+});

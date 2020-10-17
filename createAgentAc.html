@@ -22,22 +22,20 @@
     </div>
 
     <header>
-        <a href="index.html ">
+        <a href="indexManager.html">
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
                 height="30">
         </a>
         <ul>
-            <li><a href="">WORK</a></li>
+            <li><a href="managerApartmentSale.html">PROPERTY</a></li>
             <li>|</li>
-            <li><a href="propertyManagement.html">PROPERTY</a></li>
+            <li><a href="searchUser.html">SEARCH USER</a></li>
             <li>|</li>
-            <li><a href="">CONTACT</a></li>
+            <li><a href="createAgentAc.html">CREATE AGENT</a></li>
             <li>|</li>
-            <li><a href="personalInfo.html">PERSONAL INFO</a></li>
+            <li><a href="managerInfo.html">PERSONAL INFO</a></li>
             <li>|</li>
-            <li><a href="login.html">LOGIN</a></li>
-            <li>|</li>
-            <li><a href="signup.html">SIGN UP</a></li>
+            <li><a href="index.html" id="logout">LOGOUT</a></li>
         </ul>
     </header>
 
@@ -55,35 +53,35 @@
                         <p>Full Name</p>
                     </label>
                     <input type="hidden" name="pname" id="pname" class="pinput" value="Hugo">
-                    <input type="text" name="pname" id="pname" class="pinput" value="Agent Hugo">
+                    <input type="text" name="pname" id="pname" class="pinput" placeholder="Agent Name">
                 </div>
                 <div class="input-div">
                     <label for="pemail">
                         <p>Email</p>
                     </label>
-                    <input type="email" name="pemail" id="pemail" class="pinput" value="agent@email.com">
+                    <input type="email" name="pemail" id="pemail" class="pinput" placeholder="Email address">
                 </div>
                 <div class="input-div">
                     <label for="ppw">
                         <p>Password</p>
                     </label>
                     <input type="password" name="ppw" id="ppw" class="pinput"
-                        placeholder="Modify here to change password">
+                        placeholder="Password">
                 </div>
                 <div class="input-div">
                     <label for="ptel">
                         <p>Phone Number</p>
                     </label>
                     <input type="text" name="ptel" id="ptel" class="pinput" placeholder="Please input"
-                        value="852-65432123">
+                        value="852-">
                 </div>
                 <div class="input-div">
                     <label for="pgender">
                         <p>Gender</p>
                     </label>
                     <select name="pgender" id="pgender" class="pselect">
-                        <option value="none">Please Select</option>
-                        <option value="m" selected>Male</option>
+                        <option value="none" selected>Please Select</option>
+                        <option value="m">Male</option>
                         <option value="f">Female</option>
                     </select>
                 </div>
@@ -91,7 +89,7 @@
                     <label for="birthday">
                         <p>Birthday</p>
                     </label>
-                    <input type="date" id="pbirthday" name="pbirthday" class="pdate" value="1995-07-22"
+                    <input type="date" id="pbirthday" name="pbirthday" class="pdate"
                         pattern="\d{4}-\d{2}-\d{2}">
                 </div>
 
@@ -114,42 +112,42 @@
                             <p>Company Name</p>
                         </label>
                         <input type="text" id="companyname" name="pbirthdcompanynameay" class="pinput"
-                            value="Agent CC Ltd.">
+                            placeholder="Agent Company Name">
                     </div>
                     <div class="input-div">
                         <label for="companytel">
                             <p>Company Phone</p>
                         </label>
-                        <input type="text" id="companytel" name="companytel" class="pinput" value="3214-1234">
+                        <input type="text" id="companytel" name="companytel" class="pinput" placeholder="Comapny Phone">
                     </div>
                     <div class="input-div">
                         <label for="companyaddress">
                             <p>Company Address</p>
                         </label>
                         <input type="text" id="companyaddress" style="border-bottom: 1px solid rgb(177, 177, 177);"
-                            name="companyaddress" class="pinput" value="Room 123">
+                            name="companyaddress" class="pinput" placeholder="Room">
                         <input type="text" id="companyaddress" style="border-bottom: 1px solid rgb(177, 177, 177);"
-                            name="companyaddress2" class="pinput" value="ABC Street">
+                            name="companyaddress2" class="pinput" placeholder="Road/Aparment">
                         <input type="text" id="companyaddress" style="border-bottom: 1px solid rgb(177, 177, 177);"
-                            name="companyaddress3" class="pinput" value="Kowloon">
+                            name="companyaddress3" class="pinput" placeholder="District">
                     </div>
                     <div class="input-div">
                         <label for="companylicense">
                             <p>Company Agent Licence</p>
                         </label>
-                        <input type="text" id="companylicence" name="companylicence" class="pinput" value="C-024680">
+                        <input type="text" id="companylicence" name="companylicence" class="pinput" placeholder="E.G.: C-123456">
                     </div>
                     <div class="input-div">
                         <label for="agentlicense">
                             <p>Agent Personal Licence</p>
                         </label>
-                        <input type="text" id="agentlicense" name="agentlicense" class="pinput" value="A-024680">
+                        <input type="text" id="agentlicense" name="agentlicense" class="pinput" placeholder="E.G.: A-024680">
                     </div>
                     <div class="input-div">
                         <label for="agentsign">
                             <p>Agent Sign</p>
                         </label>
-                        <input type="text" id="agentsign" name="agentsign" class="pinput" value="Hugo">
+                        <input type="text" id="agentsign" name="agentsign" class="pinput" placeholder="Sign">
                     </div>
                     <div style="flex: 0 0 100%" id="drop-area">
                         <label for="agentcard">

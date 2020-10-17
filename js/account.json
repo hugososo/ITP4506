@@ -1,12 +1,12 @@
 {
     "user": [
         { "email": "customer@email.com", "name": "Hugo", "pw": "Customer1", "date": "2020-09-12","sex":"male" ,"status": "enable","role": "customer"},
-        { "email": "customer2@email.com", "name": "Clark", "pw": "Customer2", "date": "2020-09-16","sex":"female","status": "enable", "role": "customer" },
+        { "email": "customer2@email.com", "name": "Clark", "pw": "Customer2", "date": "2020-09-16","sex":"female","status": "disable", "role": "customer" },
         { "email": "customer3@email.com", "name": "Thomas", "pw": "Customer3", "date": "2020-09-28","sex":"male","status": "enable", "role": "customer" },
         { "email": "manager@email.com", "name": "Manager So", "pw": "Manager1", "date": "2020-09-01","sex":"female", "status": "enable", "role": "manager" },
         { "email": "manager2@email.com", "name": "Manager Chan", "pw": "Manager2", "date": "2020-09-02","sex":"male", "status": "enable", "role": "manager" },
         { "email": "agent@email.com", "name": "Agent Hugo", "pw": "Agent123","date": "2020-09-05","sex":"female", "status": "enable", "role":"agent" },
-        { "email": "agent2@email.com", "name": "Agent Clark", "pw": "Agent456","date": "2020-09-07","sex":"female", "status": "enable", "role":"agent" },
+        { "email": "agent2@email.com", "name": "Agent Clark", "pw": "Agent456","date": "2020-09-07","sex":"female", "status": "disable", "role":"agent" },
         { "email": "agent3@email.com", "name": "Agent Thomas", "pw": "Agent789","date": "2020-09-10","sex":"male", "status": "enable", "role":"agent" }
     ]
 }
