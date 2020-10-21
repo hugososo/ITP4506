@@ -92,7 +92,7 @@ $(function () {
   });
 
   $("#hse_vr .circle").click(function () {
-    window.location.href = "vr.html";
+    window.open("./node_modules/three/examples/vr.html","_blank");
   });
 
   $("#floor_list_item").click(function () {
