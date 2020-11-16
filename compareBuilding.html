@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Compare two building</title>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
+  <!-- Customized Css -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    html {
+      overflow: visible;
+      box-sizing: border-box;
+
+    }
+
+    .compare_container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      background-color: white;
+      margin: 80px auto;
+      margin-bottom: 0;
+    }
+
+    .content-wcontainer {
+      padding: 0 15px;
+      width: 100%;
+    }
+
+    .hket-ui.page [class^="page-"] [class$="-area"]>[class$="-wcontainer"],
+    .hket-ui.page [class^="page-"] .top-banner-area::after {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 750px;
+    }
+
+    .hket-ui.main-right-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #DFDFDF;
+    }
+
+    .color-theme-1,
+    .color-theme-7 {
+      margin-bottom: 15px;
+    }
+
+    .content-main>*:not(.advertisement),
+    .content-main>*.advertisement .adBox>* {
+      margin-bottom: 20px;
+    }
+
+    .hket-ui.section-title-bar.color-theme-1,
+    .hket-ui.section-title-bar.color-theme-2,
+    .hket-ui.section-title-bar.color-theme-6,
+    .hket-ui.section-title-bar.color-theme-7 {
+      background: #023;
+    }
+
+    .content-main {
+      width: 100%;
+    }
+
+    .hket-ui.section-title-bar.color-theme-1,
+    .hket-ui.section-title-bar.color-theme-2,
+    .hket-ui.section-title-bar.color-theme-6,
+    .hket-ui.section-title-bar.color-theme-7 {
+      border-bottom: 1px solid #023;
+      color: #fff;
+    }
+
+    .hket-ui.section-title-bar {
+      display: flex;
+      font-size: 18px;
+    }
+
+    .hket-ui.epc-section-topic-description .section-topic-description-container {
+      display: table;
+      width: 100%;
+      height: 100%;
+      padding: 15px;
+      text-align: center;
+      background-color: #003d66;
+      background: url(/img/epc-section-topic-banner-01.8703ff4….jpg) 65% 0 no-repeat;
+    }
+
+    .hket-ui.epc-section-topic-description .section-topic-content-container {
+      display: table-cell;
+      width: 100%;
+      font-size: 15px;
+      text-align: justify;
+      vertical-align: middle;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hket-ui.epc-section-topic-description:after {
+      float: left;
+      display: block;
+      content: "";
+      width: 100%;
+      margin: 8px 0;
+      border-bottom: 1px solid #dfdfdf;
+      clear: both;
+    }
+
+    .project-comparison {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      padding: 15px 0;
+      background-color: #F5F5F5;
+      font-size: 14px;
+    }
+
+    .project-comparison .carousel-cell {
+      width: 100%;
+    }
+
+    .project-comparison .carousel-cell [class^="select-box-"] {
+      padding: 0 15px;
+    }
+
+    .project-comparison .carousel-cell [class^="select-box-"] label.box-title {
+      /*      padding: 0 5px 15px;*/
+      color: #0066CC;
+      font-size: 20px;
+      display: block;
+    }
+
+    .project-comparison .carousel-cell [class^="select-box-"] label.district-label,
+    .project-comparison .carousel-cell [class^="select-box-"] label.project-label {
+      color: #555555;
+      font-size: 18px;
+      /*      font-weight: 600;*/
+    }
+
+    .project-comparison .carousel-cell [class^="select-box-"] label {
+      display: block;
+      padding: 0 5px 5px;
+    }
+
+    .project-comparison .carousel-cell [class^="select-box-"] .hket-ui.select {
+      margin-bottom: 10px;
+    }
+
+    .Select,
+    .Select div,
+    .Select input,
+    .Select span {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .Select {
+      position: relative;
+    }
+
+    .hket-ui.select .Select .Select-control,
+    .hket-ui.select .Select .Select-menu-outer {
+      border-radius: 0;
+      border: 1px solid #999;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .hket-ui.select .Select .Select-control {
+      min-height: 40px;
+      padding: 0;
+    }
+
+    .Select,
+    .Select div,
+    .Select input,
+    .Select span {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .Select-control {
+      background-color: #fff;
+      border-color: #d9d9d9 #ccc #b3b3b3;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      color: #333;
+      cursor: default;
+      display: table;
+      border-spacing: 0;
+      border-collapse: separate;
+      height: 36px;
+      outline: none;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .Select.has-value.is-clearable.Select--single>.Select-control .Select-value {
+      padding-right: 42px;
+    }
+
+    .Select-placeholder,
+    .Select--single>.Select-control .Select-value {
+      bottom: 0;
+      color: #aaa;
+      left: 0;
+      line-height: 34px;
+      padding-left: 10px;
+      padding-right: 10px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .Select-input {
+      height: 34px;
+      padding-left: 10px;
+      padding-right: 10px;
+      vertical-align: middle;
+    }
+
+    /*
+    .hket-ui.select input {
+    border: none !important;
+}
+*/
+    .Select-input>input {
+      width: 100%;
+      background: none transparent;
+      border: 0 none;
+      box-shadow: none;
+      cursor: default;
+      display: inline-block;
+      font-family: inherit;
+      font-size: inherit;
+      margin: 0;
+      outline: none;
+      line-height: 17px;
+      padding: 8px 0 12px;
+      -webkit-appearance: none;
+    }
+
+    .Select-clear-zone {
+      -webkit-animation: Select-animation-fadeIn 200ms;
+      -o-animation: Select-animation-fadeIn 200ms;
+      animation: Select-animation-fadeIn 200ms;
+      color: #999;
+      cursor: pointer;
+      display: table-cell;
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      width: 17px;
+    }
+
+    .Select-clear {
+      display: inline-block;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .Select-control>*:last-child {
+      padding-right: 5px;
+    }
+
+    .Select-arrow-zone {
+      cursor: pointer;
+      display: table-cell;
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      width: 25px;
+      padding-right: 5px;
+    }
+
+    .Select-arrow {
+      border-color: #999 transparent transparent;
+      border-style: solid;
+      border-width: 5px 5px 2.5px;
+      display: inline-block;
+      height: 0;
+      width: 0;
+      position: relative;
+    }
+
+    .project-comparison .carousel-cell .select-box-1 .hket-ui.select:last-child {
+      border-bottom: 1px solid #DFDFDF;
+      padding-bottom: 20px;
+    }
+
+    .project-comparison .control-panel {
+      width: 100%;
+    }
+
+    .project-comparison .control-panel button.compare-btn {
+      margin: 0 15px 0 8px;
+      border: 1px solid #007ACC;
+      background: #007ACC;
+      color: #FFFFFF;
+    }
+
+    .project-comparison .control-panel button {
+      float: right;
+      padding: 10px 0;
+      width: calc(50% - 23px);
+    }
+
+    button {
+      outline: none;
+      border: none;
+      padding: 0;
+      background: transparent;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .project-comparison .control-panel button.reset-btn {
+      margin: 0 8px 0 15px;
+      border: 1px solid #999999;
+      background: #DFDFDF;
+    }
+
+    .listing-content-container {
+      margin-top: 10px;
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .property-image-container {
+      border: none;
+      width: 100% !important;
+      display: block;
+      padding: 0;
+    }
+
+    .property-image-container img {
+      display: block;
+      width: 120px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lazyloaded {
+      opacity: 1;
+      transition: opacity 300ms;
+    }
+
+    .property-name-container {
+      font-size: 18px;
+      line-height: 20px;
+      overflow: hidden;
+      border: none;
+      text-align: center;
+      width: 100% !important;
+      padding: 10px !important;
+      display: block;
+    }
+
+    .margin-left {
+      border-right: 1px solid #dfdfdf;
+    }
+
+    .margin-left,
+    .margin-right {
+      width: 1.5%;
+      border-top: none;
+      border-bottom: none;
+      padding: 0;
+      background: white;
+    }
+
+
+    .listing-content-container tr td {
+      border-bottom: 1px dotted #dfdfdf;
+      padding: 10px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    header {
+      box-sizing: content-box;
+    }
+
+    header * {
+      box-sizing: content-box;
+    }
+
+    .listing-content-container tr:not(:last-child):not(:first-child):nth-child(even) {
+      background: #f5f5f5;
+    }
+
+    .listing-content-container tr:not(:last-child):not(:first-child) td {
+      vertical-align: top;
+    }
+
+    .listing-content-container tr td.property-label {
+      font-weight: 600;
+      width: 12%;
+    }
+
+    .listing-content-container td.property-label {
+      text-align: center;
+      width: 100% !important;
+      padding-top: 10px;
+      padding-bottom: 5px;
+      border-top: 1px dotted #dfdfdf;
+      border-bottom: none;
+      display: block;
+    }
+
+
+    .listing-content-container td.property-value {
+      text-align: center;
+      width: 100% !important;
+      padding-bottom: 10px;
+      padding-top: 5px;
+      border-bottom: none;
+      display: block;
+    }
+
+    .listing-content-container tr td {
+      padding: 10px;
+    }
+
+    .listing-content-container tr td .red {
+      color: #CC0022;
+    }
+
+    .listing-content-container tr td.new-property-btn-container {
+      padding: 10px 0 0;
+    }
+
+    .listing-content-container td.new-property-btn-container {
+      text-align: center;
+      width: 100% !important;
+      display: block;
+      border-top: 1px dotted #dfdfdf;
+      border-bottom: 1px dotted #dfdfdf;
+    }
+
+    .new-property-btn-container .new-property-details-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #dfdfdf;
+      height: 46px;
+      color: #555;
+    }
+
+    .new-property-details-btn .hket-icon-arrow-right {
+      margin-left: 10px;
+    }
+
+    [class^="hket-icon-"],
+    [class*=" hket-icon-"],
+    [class^="weather-icon-"],
+    [class*=" weather-icon-"] {
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    input[list] {
+      width: 300px;
+    }
+
+    #com_res {
+      /*      visibility: hidden;*/
+      display: none;
+    }
+
+    .rmc-tabs * {
+      box-sizing: border-box;
+    }
+
+    .bAxUpL {
+      /*      max-width: 720px;*/
+    }
+
+    .bAxUpL {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      /*      margin-right: auto;*/
+      /*      margin-left: auto;*/
+    }
+
+    .haZKzd {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+
+    .hOlUaq {
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      /*
+      padding-right: 15px;
+      padding-left: 15px;
+*/
+      flex-basis: 0px;
+      -webkit-box-flex: 1;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+
+    .gNNoOi {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding-bottom: 10px;
+    }
+
+    .jDZoAc {
+      cursor: pointer;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 28px;
+      color: rgb(67, 64, 53);
+      flex-basis: 100%;
+      padding: 20px 8.5px;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+    }
+
+    .dLNAqq {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      font-size: 1rem;
+      font-weight: normal;
+      color: rgb(37, 37, 37);
+    }
+
+    .jDZoAc>* {
+      pointer-events: none;
+    }
+
+    .lhiWGW {
+      height: 7px;
+      width: 7px;
+      position: relative;
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      background-image: url(https://res.midland.com.hk/common/static/assets/stack/svg/icons.svg#arrow_dropmenu_brown);
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-right: 10px;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease-in 0s;
+    }
+
+    .gNNoOi .qjikt0-28 {
+      transform: rotate(-180deg);
+    }
+
+    .bYJtpB {
+      width: 100%;
+      position: relative;
+    }
+
+    .gNNoOi .qjikt0-14 {
+      max-height: 100%;
+    }
+
+    .bmjueU {
+      overflow-x: auto;
+      position: relative;
+      width: 100%;
+    }
+
+    .bnRRSl {
+      display: flex;
+      font-size: 1rem;
+      line-height: 24px;
+      word-break: break-word;
+    }
+
+    .cDnLfs {
+      width: 140px;
+      flex-basis: 140px;
+      min-width: 140px;
+      z-index: 2;
+      border-width: 1px 1px 0px 0px;
+      border-top-style: solid;
+      border-right-style: solid;
+      border-top-color: rgb(229, 229, 229);
+      border-right-color: rgb(229, 229, 229);
+      border-image: initial;
+      border-bottom-style: initial;
+      border-bottom-color: initial;
+      border-left: 1px solid rgb(229, 229, 229);
+      color: rgb(37, 37, 37);
+      background-color: rgb(249, 249, 251);
+      padding: 9.5px 24.5px;
+      position: sticky;
+      left: 0px;
+    }
+
+    .euByyX {
+      width: calc((100% - 140px) / 2);
+      flex-basis: calc((100% - 140px) / 2);
+      min-width: calc((100% - 140px) / 2);
+      border-width: 1px 1px 0px 0px;
+      border-top-style: solid;
+      border-right-style: solid;
+      border-top-color: rgb(229, 229, 229);
+      border-right-color: rgb(229, 229, 229);
+      border-image: initial;
+      border-bottom-style: initial;
+      border-bottom-color: initial;
+      border-left-style: initial;
+      border-left-color: initial;
+      padding: 10px 15px;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html ">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150" height="30">
+    </a>
+
+    <ul>
+      <li><a href="apartmentSale.html">PROPERTY</a></li>
+      <li>|</li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li>|</li>
+      <li><a href="signup.html">SIGN UP</a></li>
+    </ul>
+  </header>
+
+  <div class="compare_container">
+    <div class="content-wcontainer">
+      <div class="hket-ui main-right-container">
+        <div class="content-main">
+          <div class="hket-ui section-title-bar color-theme-7">
+            <div class="leftmost-icon"><span class="hket-icon-channel" data-icon=""></span></div>
+            <div class="section-title"><span>樓盤對對碰</span></div>
+          </div>
+          <div class="hket-ui epc-section-topic-description">
+            <div class="section-topic-description-container">
+              <div class="section-topic-icon-container">
+                <div class="section-topic-icon"><span data-icon="" class="hket-icon-property-card"></span></div>
+              </div>
+              <div class="section-topic-content-container"><span class="section-information">選定兩個樓盤，並按「開始對碰」查看最新呎價、剩餘數量等比較詳情！</span></div>
+            </div>
+          </div>
+          <div class="project-comparison">
+            <div class="carousel-cell">
+              <div class="select-box-1"><label class="box-title">Building <span class="font-en">1</span></label><label class="district-label">Region</label>
+                <select name="com_region" id="" class="hket-ui select Select has-value is-clearable is-searchable Select--single Select-control Select-value" style="padding: 5px 10px; font-size: 16px; width:100%;">
+                  <option value="" style="color: grey">Select Your District</option>
+                  <option value="Eastern">Eastern</option>
+                  <option value="Wong Tai Sin">Wong Tai Sin</option>
+                  <option value="Yau Tsim Mong">Yau Tsim Mong</option>
+                  <option value="Sai Kung">Sai Kung</option>
+                  <option value="Sai Kung">Sham Shui Po</option>
+                  <option value="Sai Kung">Kowloon City</option>
+                  <option value="Sai Kung">Kwun Tong</option>
+                  <option value="Sai Kung">Wong Tai Sin</option>
+                  <option value="Sai Kung">Sha Tin</option>
+                  <option value="Sai Kung">Tai Po</option>
+                </select>
+                <label class="project-label">Building / Estate Name</label>
+
+                <select name="com_building" id="" class="hket-ui select Select has-value is-clearable is-searchable Select--single Select-control Select-value" style="padding: 5px 10px; font-size: 16px; width:100%;">
+                  <option value="" style="color: grey">Select Your Building</option>
+                  <option value="WYLER GARDENS Block C">WYLER GARDENS</option>
+                  <option value="HONG WAH COURT Block E">HONG WAH COURT</option>
+                  <option value="LUNG POON COURT Block F">LUNG POON COURT</option>
+                  <option value="Disa COURT Block A">Disa COURT</option>
+                  <option value="Degree c1.4 Block S">Degree c1.4</option>
+                </select>
+                <hr style="margin-bottom: 20px">
+              </div>
+            </div>
+            <div class="carousel-cell">
+              <div class="select-box-2"><label class="box-title">Building <span class="font-en">2</span></label><label class="district-label">Region</label>
+                <select name="com_region" id="" class="hket-ui select Select has-value is-clearable is-searchable Select--single Select-control Select-value" style="padding: 5px 10px; font-size: 16px; width:100%;">
+                  <option value="" style="color: grey">Select Your District</option>
+                  <option value="Eastern">Eastern</option>
+                  <option value="Wong Tai Sin">Wong Tai Sin</option>
+                  <option value="Yau Tsim Mong">Yau Tsim Mong</option>
+                  <option value="Sai Kung">Sai Kung</option>
+                  <option value="Sai Kung">Sham Shui Po</option>
+                  <option value="Sai Kung">Kowloon City</option>
+                  <option value="Sai Kung">Kwun Tong</option>
+                  <option value="Sai Kung">Wong Tai Sin</option>
+                  <option value="Sai Kung">Sha Tin</option>
+                  <option value="Sai Kung">Tai Po</option>
+                </select>
+
+                <label class="project-label">Building / Estate Name</label>
+                <select name="com_building" id="" class="hket-ui select Select has-value is-clearable is-searchable Select--single Select-control Select-value" style="padding: 5px 10px; font-size: 16px; width:100%;">
+                  <option value="" style="color: grey">Select Your Building</option>
+                  <option value="WYLER GARDENS Block C">WYLER GARDENS</option>
+                  <option value="HONG WAH COURT Block E">HONG WAH COURT</option>
+                  <option value="LUNG POON COURT Block F">LUNG POON COURT</option>
+                  <option value="Disa COURT Block A">Disa COURT</option>
+                  <option value="Degree c1.4 Block S">Degree c1.4</option>
+                </select>
+
+              </div>
+            </div>
+            <div class="control-panel"><button class="compare-btn" type="button" id="com_submit">Compare</button><button class="reset-btn" type="button">Reset</button></div>
+          </div>
+          <div class="compare-result" id="com_res">
+            <div class="property-compare-detail">
+              <table class="listing-content-container">
+                <tbody>
+                  <tr>
+                    <td class="property-image-container"><img id="profileImage1" class=" ls-is-cached lazyloaded" alt="COHO" src="https://wmc.midland.com.hk/mr/img.midland.com.hk/photo_db/outlook/estate/faa86d4c7732df0c0c7ce2eaca5ea225.jpg"></td>
+                    <td class="property-name-container">WYLER GARDENS</td>
+                    <td class="margin-left"></td>
+                    <td class="margin-right"></td>
+                    <td class="property-image-container"><img id="profileImage2" class=" ls-is-cached lazyloaded" src="https://wmc.midland.com.hk/mr/img.midland.com.hk/photo_db/outlook/estate/eb863fbed3840248a4b5d58d6c205622.jpg?versionId=3RQB5mMZDkH6.LKz0AMxqtBZfzy54t0s"></td>
+                    <td class="property-name-container">HONG WAH COURT</td>
+                  </tr>
+
+                  
+                  <tr>
+                    <td colspan="2" class="new-property-btn-container"><a href="newsResult.html?index=WYLER GARDENS" title="" class="new-property-details-btn">Related News<span class="hket-icon-arrow-right" data-icon=""></span></a></td>
+                    <td class="margin-left"></td>
+                    <td class="margin-right"></td>
+                    <td colspan="2" class="new-property-btn-container"><a href="newsResult.html?index=WYLER GARDENS" title="" class="new-property-details-btn">Related News<span class="hket-icon-arrow-right" data-icon=""></span></a></td>
+                  </tr>
+
+                </tbody>
+              </table>
+
+
+              <div class="sc-AxjAm sc-18r0wq9-0 qjikt0-23 bAxUpL">
+                <div class="sc-AxirZ qjikt0-1 haZKzd">
+                  <div class="sc-AxiKw sc-1hk6y9-0 hOlUaq qjikt0-0 bOisSv">
+                    <div class="qjikt0-29 gNNoOi">
+                      <div class="qjikt0-26 jDZoAc"><span>Pricing</span>
+                        <div class="qjikt0-27 dLNAqq"><i height="7px" width="7px" class="xs4x3m-0 qjikt0-28 lhiWGW"></i></div>
+                      </div>
+                      <div class="qjikt0-13 bYJtpB">
+                        <div class="qjikt0-14 bmjueU">
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">Avg. Price</div>
+                            <div class="qjikt0-3 euByyX">6.88M</div>
+                            <div class="qjikt0-3 euByyX">5.1M</div>
+                          </div>
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">Avg. Price (sq. ft.)</div>
+                            <div class="qjikt0-3 euByyX">18k</div>
+                            <div class="qjikt0-3 euByyX">11k</div>
+                          </div>
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">Avg. Rent</div>
+                            <div class="qjikt0-3 euByyX">13.4k</div>
+                            <div class="qjikt0-3 euByyX">13k</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sc-AxjAm sc-18r0wq9-0 qjikt0-23 bAxUpL">
+                <div class="sc-AxirZ qjikt0-1 haZKzd">
+                  <div class="sc-AxiKw sc-1hk6y9-0 hOlUaq qjikt0-0 bOisSv">
+                    <div class="qjikt0-29 gNNoOi">
+                      <div class="qjikt0-26 jDZoAc"><span>Unit Detail</span>
+                        <div class="qjikt0-27 dLNAqq"><i height="7px" width="7px" class="xs4x3m-0 qjikt0-28 lhiWGW"></i></div>
+                      </div>
+                      <div class="qjikt0-13 bYJtpB">
+                        <div class="qjikt0-14 bmjueU">
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">Avg. Size(sq. ft.)</div>
+                            <div class="qjikt0-3 euByyX">380</div>
+                            <div class="qjikt0-3 euByyX">456</div>
+                          </div>
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">No. of Rooms</div>
+                            <div class="qjikt0-3 euByyX">3</div>
+                            <div class="qjikt0-3 euByyX">3</div>
+                          </div>
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">Age</div>
+                            <div class="qjikt0-3 euByyX">20 years</div>
+                            <div class="qjikt0-3 euByyX">31 years</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sc-AxjAm sc-18r0wq9-0 qjikt0-23 bAxUpL">
+                <div class="sc-AxirZ qjikt0-1 haZKzd">
+                  <div class="sc-AxiKw sc-1hk6y9-0 hOlUaq qjikt0-0 bOisSv">
+                    <div class="qjikt0-29 gNNoOi">
+                      <div class="qjikt0-26 jDZoAc"><span>Estate</span>
+                        <div class="qjikt0-27 dLNAqq"><i height="7px" width="7px" class="xs4x3m-0 qjikt0-28 lhiWGW"></i></div>
+                      </div>
+                      <div class="qjikt0-13 bYJtpB">
+                        <div class="qjikt0-14 bmjueU">
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">Developer</div>
+                            <div class="qjikt0-3 euByyX">Sun Hung Kai</div>
+                            <div class="qjikt0-3 euByyX">Kai Sun Hung</div>
+                          </div>
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">District</div>
+                            <div class="qjikt0-3 euByyX">To Kwa Wan</div>
+                            <div class="qjikt0-3 euByyX">Tsuen Wan</div>
+                          </div>
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">Term Of Years</div>
+                            <div class="qjikt0-3 euByyX">50 Years Commencing From 12 December, 2014</div>
+                            <div class="qjikt0-3 euByyX">40 Years Commencing From 12 December, 2016</div>
+                          </div>
+                          <div class="qjikt0-8 bnRRSl">
+                            <div class="qjikt0-4 cDnLfs">Facilities</div>
+                            <div class="qjikt0-3 euByyX">Club house,
+                              Swimming pool,
+                              Gym room</div>
+                            <div class="qjikt0-3 euByyX">Club house,
+                              Swimming pool</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+<script>
+  var btn = document.querySelector("#com_submit");
+  btn.addEventListener("click", function() {
+    document.querySelector("#com_res").style.display = "initial";
+  });
+
+  var list = document.querySelectorAll(".jDZoAc");
+  list.forEach(item => {
+    item.addEventListener('click', function(e) {
+      var state = e.currentTarget.parentNode.querySelector('.bYJtpB').style.display;
+      
+        var h = e.target; 
+      if (state === 'none') {
+        e.currentTarget.parentNode.querySelector('.bYJtpB').style.display = "initial";
+        
+        h.querySelector(".qjikt0-28").style.transform = "rotate(-180deg)";
+      } else {
+        e.currentTarget.parentNode.querySelector('.bYJtpB').style.display = "none";
+        h.querySelector(".qjikt0-28").style.transform = "rotate(360deg)";
+      }
+
+    });
+  });
+</script>
+
+</html>
