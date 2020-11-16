@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Property News</title>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
+
+
+  <!-- Customized Css -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    html {
+      overflow: scroll;
+      box-sizing: border-box;
+      /*      -ms-overflow-style: auto*/
+    }
+
+    /*
+
+  ::-webkit-scrollbar {
+      all:unset;
+  }
+*/
+    body {
+      box-sizing: border-box;
+    }
+
+    .news_container {
+      background-color: white;
+      margin: 80px 0;
+      margin-bottom: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .menu li a {
+      display: block;
+      padding: 5px 15px;
+      height: 100%;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    .menu {
+      margin: 10px 0px;
+    }
+
+    .category-panel .menu li {
+      display: block;
+      height: 100%;
+    }
+
+    .menu li a:hover {
+      background-color: white;
+      color: rgb(250, 64, 64);
+    }
+
+    .menu ul {
+      display: flex;
+      justify-content: space-around;
+      background-color: rgba(163, 158, 158, 0.24);
+      /*      padding: 30px;*/
+      height: 50px;
+      align-items: center
+    }
+
+    .news_head {
+      margin: 0px;
+      /*      text-align: center;*/
+      width: 1200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0.9;
+    }
+
+    .news_head h1 {
+      color: #333f48;
+      font-weight: 900;
+      margin: 10px;
+    }
+
+    .news_head p {
+      color: #697684;
+      margin: 10px;
+    }
+
+    #new-body {
+      background-color: white;
+      width: 1200px;
+      margin: 0px auto;
+    }
+
+    .news_1 {
+      display: flex;
+      margin: 10px 0px;
+      justify-content: space-between;
+      width: 1200px;
+    }
+
+    .news_1_1 div {
+      background-color: rgba(7, 5, 5, 0.33);
+      margin: 5px 0px;
+      padding: 5px;
+      margin-bottom: 0px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .news_1_1 div:hover {
+      background-color: rgba(11, 8, 8, 0.46);
+    }
+
+    .news_1_1,
+    .news_1_2 {
+      margin: 5px;
+    }
+
+    .news_1_1 {
+      /*      background-attachment: fixed;*/
+      background-repeat: no-repeat;
+      background-image: url('https://static.hkej.com/eji/images/2020/08/03/2538726_ac18e23d8044cfaca0e2c5090bc794a7.jpg');
+      background-size: 100% 100%;
+      width: 70%;
+      max-width: 800px;
+      min-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: pointer;
+      color: white;
+    }
+
+    .news_1_1:hover div {
+      background-color: rgba(11, 8, 8, 0.46);
+      padding: 10px 5px;
+      margin: 5px 0px;
+      margin-bottom: 0px;
+    }
+
+    .news_1_2 {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      min-width: 300px;
+    }
+
+    .news_1_2>div {
+      display: flex;
+      margin: 6px;
+      /*      justify-content: space-between;*/
+      cursor: pointer;
+    }
+
+    .news_1_2_1 {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+    }
+
+    .sp_1 {
+      color: rgb(105, 118, 132);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .sp_2 {
+      color: rgb(51, 63, 72);
+      font-size: 16px;
+      text-decoration: none;
+      height: 40px;
+      overflow: hidden;
+      line-height: 1.25;
+    }
+
+    #slider {
+      margin: 0 0 40px;
+      overflow: hidden;
+      position: relative;
+      width: 50%;
+      float: left;
+      box-sizing: border-box;
+      border-right: 2px solid #fff;
+    }
+
+    .featured_area .section-title,
+    .widget.carousel-slider h3.title-color-green,
+    .wpzoom-featured-cat h3.title-color-green a {
+      background-color: #22bdbf !important;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: inline-block;
+      color: #fff;
+      background-color: #212425;
+      padding: 0 15px;
+      line-height: 33px;
+      font-family: "Roboto Condensed";
+      font-size: 1.75rem;
+      line-height: 1.214;
+    }
+    .title-color-orange{
+      margin: 0;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: bold;
+      display: inline-block;
+      color: #fff;
+/*      background-color: #212425;*/
+      padding: 0 15px;
+      line-height: 33px;
+      font-family: "Roboto Condensed";
+      font-size: 1.75rem;
+      line-height: 1.214;
+    }
+
+    .slider_widgets {
+      float: right;
+      width: 50%;
+      position: relative;
+    }
+
+    .slider_widgets .widget.wpzoom-featured-cat {
+      margin: 0;
+    }
+
+    .slider_widgets .widget {
+      margin: 0;
+      float: left;
+      width: 50%;
+    }
+
+    .wpzoom-featured-cat {
+      font-size: 14px;
+    }
+
+    .slider_widgets .wpzoom-featured-cat .featured-grid-2>div {
+      width: 100%;
+      float: none;
+      max-height: 231px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .format-video .post-thumb {
+      position: relative;
+    }
+
+    .slider_widgets .wpzoom-featured-cat .featured-grid-2>div h3.entry-title {
+      font-size: 20px;
+    }
+
+    .wpzoom-featured-cat h3.entry-title {
+      line-height: 1.3;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .post-item .entry-title {
+      position: absolute;
+      bottom: 7%;
+      left: 0;
+      z-index: 21;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.2;
+      max-width: 90%;
+      transition: all .2s ease;
+      margin-left: 15px;
+      color: #fff;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .post-item .post-thumb {
+      margin: 0;
+      position: relative;
+      background: #000;
+      transition: transform 0.3s ease, opacity 0.3s;
+      -webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s;
+    }
+
+    /*
+    @media (min-width: 1030px)
+.slider_widgets .wpzoom-featured-cat .featured-grid-2 > div .post-thumb img {
+    max-width: 350px;
+    min-height: 230px;
+}
+*/
+    .slider_widgets .wpzoom-featured-cat .featured-grid-2>div .post-thumb img {
+      height: 231px;
+      width: auto;
+    }
+
+    .post-item .post-thumb img {
+      opacity: .9;
+      transition: transform 0.3s ease, opacity 0.3s;
+      transition-timing-function: ease !important;
+    }
+
+    .post-thumb img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .wpzoom-featured-cat .format-video.has-post-thumbnail h3.entry-title:before,
+    .wpzoom-featured-cat .format-gallery.has-post-thumbnail h3.entry-title:before,
+    .wpzoom-featured-cat .format-audio.has-post-thumbnail h3.entry-title:before {
+      display: block;
+      font-family: 'dashicons';
+      margin: 0 0 4px;
+      color: #fff;
+    }
+
+    .wpzoom-featured-cat .format-video h3.entry-title:before {
+      content: "";
+    }
+
+    constructed stylesheet *,
+    ::before,
+    ::after {
+      box-sizing: inherit;
+    }
+
+    .post-item .post-item-content {
+      z-index: 21;
+    }
+
+    .post-item .background-overlay {
+
+      position: absolute;
+      opacity: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 20;
+      border-color: #fff;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+    }
+
+    .post-item:hover .post-thumb img {
+      transform: scale(1.3);
+      opacity: 0.6;
+    }
+
+    .post-item:hover .entry-title {
+      transform: translateY(-50px);
+    }
+
+    .post-item:hover .entry-meta {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .post-item .entry-meta {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      padding: 30px 0 10px;
+      width: 100%;
+      bottom: 0;
+      right: 0;
+      color: #fff;
+      margin: 0;
+      z-index: 23;
+      transition: all .5s ease;
+      margin-bottom: 15px;
+    }
+
+    .post-item .entry-meta span {
+      float: right;
+      margin: 0px 15px;
+      color: #fff;
+    }
+
+    .euNkpR {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0px auto;
+    }
+
+    .bfOUrn {
+      clear: both;
+      width: 100%;
+      margin-top: 40px;
+      padding: 0px;
+    }
+
+    .jfjOnH {
+      padding: 0px;
+      font-size: 24px;
+      color: rgb(51, 63, 72);
+      font-weight: bold;
+      line-height: normal;
+      margin-bottom: 24px;
+    }
+
+    .cRMkHm {
+      min-height: 360px;
+      position: relative;
+    }
+
+    .jWcChC {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .jnihck {
+      width: 475px;
+      margin: 0px 0px 30px !important;
+      display: inline-block;
+      padding: 2px;
+      vertical-align: middle;
+    }
+
+    .euNkpR .post-container .card1 {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .cdOJZv {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      background-color: rgb(243, 244, 246);
+      overflow: hidden;
+    }
+
+    .gZkciX {
+      display: block;
+      background-color: rgb(255, 255, 255);
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 2px 0px;
+    }
+
+    .jlsyoK {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .jlsyoK img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .hfGcMe {
+      min-height: 149px;
+      overflow: hidden;
+      padding: 16px 16px 24px;
+      text-align: left;
+    }
+
+    .hDPfoQ {
+      margin: 0px 0px 4px;
+    }
+
+    .bogvTK {
+      margin: 0px 0px 7px;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .iVwXq {
+      height: 60px;
+      margin: 8px 0px 0px;
+      font-size: 14px;
+      font-weight: 300;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: left;
+      color: rgb(51, 63, 72);
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .sp-parallax-bg {
+      background: url('https://www.debbieadventure.com/wp-content/uploads/2020/06/000018550028-scaled.jpg') repeat-x scroll 0 0;
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      opacity: 0.6;
+    }
+
+    #hse_slidelist li {
+      color: white;
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      margin: auto;
+    }
+    #hse_slidelist li p{
+      font-weight: bold;
+      margin: 5px;
+      font-size: 25px;
+      transition: all 0.5 ;
+    }
+    #hse_slidelist li span{
+/*      visibility: hidden;*/
+/*    opacity: 0;*/
+/*    position: absolute;*/
+/*      bottom: 0;*/
+/*      right: 0;*/
+      margin:20px;
+/*      width:30%;*/
+      font-size: 12px;
+      transition: all 0.5 ;
+    }
+    #hse_photo{
+      height: 450px;
+    }
+    .sp-slideshow{
+      margin: 0;
+    }
+    .sp-slider > li img{
+    box-sizing: border-box;
+    display: block;
+    margin: 10px auto;
+    max-height: 30%;
+    max-width: 30%;
+    opacity:1;
+    border-radius: 5px;
+    transition: all 0.5 ease-in;
+}
+    .sp-slider > li div{
+      position: relative;
+    }
+    .sp-slider > li div:hover img{
+/*      text-decoration: underline;*/
+      transform: scale(1.1);
+      opacity: 0.9;
+    }
+    #hse_slidelist > li div:hover p{
+      font-size: 21px;
+    }
+    #hse_slidelist > li div:hover span{
+      font-size: 16px;
+    }
+    .sp-slider > li>div:hover {
+      background-color: rgba(74, 69, 69, 0.38);
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html ">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150" height="30">
+    </a>
+
+    <ul>
+      <li><a href="apartmentSale.html">PROPERTY</a></li>
+      <li>|</li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li>|</li>
+      <li><a href="signup.html">SIGN UP</a></li>
+    </ul>
+  </header>
+  <div class="news_container">
+    <div class="menu sub-menu ">
+      <ul class="rui-grid">
+        <li><a href="newsResult.html?index=Lastest Property">Lastest Property</a></li>
+        <li><a href="newsResult.html?index=Local sales">Local sales</a></li>
+        <li><a href="newsResult.html?index=International trends">International trends</a></li>
+      </ul>
+    </div>
+    <div id="new-body">
+      <div class="news_head">
+        <h1>Hottest topic</h1>
+        <p>All you need to know about property including market trends, major property and celebrity news.</p>
+      </div>
+      <div id="slider">
+        <h3 class="section-title">Hottest</h3>
+        <div class="sp-slideshow" id="hse_photo">
+          <input id="button-1" type="radio" name="radio-set" class="sp-selector-1" checked value="1" />
+          <label for="button-1" class="button-label-1"></label>
+
+          <input id="button-2" type="radio" name="radio-set" class="sp-selector-2" value="2" />
+          <label for="button-2" class="button-label-2"></label>
+
+          <input id="button-3" type="radio" name="radio-set" class="sp-selector-3" value="3" />
+          <label for="button-3" class="button-label-3"></label>
+
+          <input id="button-4" type="radio" name="radio-set" class="sp-selector-4" value="4" />
+          <label for="button-4" class="button-label-4"></label>
+
+          <input id="button-5" type="radio" name="radio-set" class="sp-selector-5" value="5" />
+          <label for="button-5" class="button-label-5"></label>
+
+          <label for="button-1" class="sp-arrow sp-a1"></label>
+          <label for="button-2" class="sp-arrow sp-a2"></label>
+          <label for="button-3" class="sp-arrow sp-a3"></label>
+          <label for="button-4" class="sp-arrow sp-a4"></label>
+          <label for="button-5" class="sp-arrow sp-a5"></label>
+
+          <div class="sp-content">
+            <div class="sp-parallax-bg"></div>
+            <ul class="sp-slider clearfix" id="hse_slidelist">
+              <li>
+              <div style="display: flex; flex-direction: row; margin: 0px 20px; font-size: 18px;">
+                <img src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/05/Webp.net-resizeimage-24.jpg" alt="">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Recovery for the Retail Property Market</p>
+                <span>
+                  Subsequent to the elaboration of residential property market development in the previous issue...
+                </span>
+                </div>
+                
+              </div>
+              
+              </li>
+              <li><div style="display: flex; flex-direction: row; margin: 0px 20px; font-size: 18px;">
+                <img src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/%E8%97%8D%E5%A1%98%E5%82%B2-786x500.jpg" alt="">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>2019 Q1 Hong Kong Deal</p>
+                <span>
+                  As the key project of the latest Internet Audio...
+                </span>
+                </div>
+                
+              </div></li>
+              <li><div style="display: flex; flex-direction: row; margin: 0px 20px; font-size: 18px;">
+                <img src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/bkn-20201113111749571-1113_00842_001_01p.jpg" alt="">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Chengdu Hi-tech Zone</p>
+                <span>
+                  Subsequent to the elaboration of residential property market development in the previous issue...
+                </span>
+                </div>
+              </div></li>
+              <li><div style="display: flex; flex-direction: row; margin: 0px 20px; font-size: 18px;">
+                <img src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/1-1536x864.jpg" alt="">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Recovery for the Retail Property Market</p>
+                <span>
+                  As the key project of the latest Internet Audio...
+                </span>
+                </div>
+              </div></li>
+              <li><div style="display: flex; flex-direction: row; margin: 0px 20px; font-size: 18px;">
+                <img src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/3.jpeg" alt="">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <p>Joseph Ng Goon-Lau: It Takes Patience</p>
+                <span>
+                  Subsequent to the elaboration of residential property market development in the previous issue...
+                </span>
+                </div>
+                
+              </div></li>
+            </ul>
+          </div><!-- sp-content -->
+        </div><!-- sp-slideshow -->
+      </div>
+      <div class="slider_widgets">
+       
+        <div id="wpzoom-featured-cat-3" class="widget wpzoom-featured-cat">
+<!--          <h3 class="title title-color-green">Other </h3>-->
+          <h3 data-brackets-id="20519" class="section-title">Other</h3>
+          <div class="featured-grid-2 featured-style-style_block">
+            <div id="post-65766" class="post-item post-65766 post type-post status-publish format-video has-post-thumbnail category-3426 category-1404 category-5728 tag-138 tag-252 tag-8894 tag-371 tag-149 tag-251 tag-8913 tag-657 tag-133 tag-460 tag-show tag-6091 tag-155 tag-3400 post_format-post-format-video"><a href="" title="【你想做業主】40萬首期揸手 460萬樓有冇得諗？">
+                <div class="background-overlay"></div>
+                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-500x329.png" data-src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-500x329.png" alt="" loading="lazy" srcset="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-500x329.png 500w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-200x131.png 200w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-350x230.png 350w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-334x219.png 334w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-165x109.png 165w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-700x460.png 700w" sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
+                <div class="post-item-content">
+                  <h3 class="entry-title">4.6 Mil Houses, is it worth it for the couples?</h3>
+                  <div class="entry-meta">
+                    <span class="entry-date">2020-11-14</span></div>
+                </div>
+              </a></div>
+            <div id="post-65757" class="post-item post-65757 post type-post status-publish format-video has-post-thumbnail category-5222 category-5752 category-3426 category-1606 category-1609 tag-254 tag-97 tag-256 tag-1330 tag-7825 tag-8912 tag-405 tag-155 tag-7641 post_format-post-format-video"><a href="" title="【新盤追擊】實地睇青山灣臨海豪宅新盤瑧譽　">
+                <div class="background-overlay"></div>
+                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-500x329.jpg" data-src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-500x329.jpg" alt="" loading="lazy" srcset="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-500x329.jpg 500w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-200x131.jpg 200w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-350x230.jpg 350w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-334x219.jpg 334w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-165x109.jpg 165w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-700x460.jpg 700w" sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
+                <div class="post-item-content">
+                  <h3 class="entry-title">The most wonderful beach with  good vibe</h3>
+                  <div class="entry-meta">
+                    <span class="entry-date">2020-11-13</span></div>
+                </div>
+              </a></div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div id="wpzoom-featured-cat-8" class="widget wpzoom-featured-cat">
+          <h3 class="title title-color-orange">&nbsp;</h3>
+          <div class="featured-grid-2 featured-style-style_block">
+            <div id="post-65719" class="post-item post-65719 post type-post status-publish format-standard has-post-thumbnail category-1399 category-3426 category-1404 category-5728 tag-lucy tag-138 tag-6798 tag-8626 tag-371 tag-141 tag-553 tag-176 tag-6377 tag-6751 tag-460 tag-4859 tag-7653 tag-155"><a href="" title="【樓巿蔣門人Lucy】香港樓市跟疫情一齊進入第四波？">
+                <div class="background-overlay"></div>
+                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-500x329.jpg" data-src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-500x329.jpg" alt="" loading="lazy" srcset="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-500x329.jpg 500w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-200x131.jpg 200w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-350x230.jpg 350w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-334x219.jpg 334w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-165x109.jpg 165w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-700x460.jpg 700w" sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
+                <div class="post-item-content">
+                  <h3 class="entry-title">Covid-19, is it a chance? Or is it a fall?</h3>
+                  <div class="entry-meta">
+                    <span class="entry-date">2020-11-13</span></div>
+                </div>
+              </a></div>
+            <div id="post-65533" class="post-item post-65533 post type-post status-publish format-video has-post-thumbnail category-5750 category-5730 category-5619 category-3426 category-5729 category-1404 category-5753 category-1609 category-5728 category-7719 tag-354 tag-58 tag-8275 tag-8885 tag-8886 tag-6181 tag-6654 tag-6104 tag-1086 tag-155 tag-352 post_format-post-format-video"><a href="" title="復甦大時代至？選後樓股新部署！｜特別嘉賓：黃德几">
+                <div class="background-overlay"></div>
+                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-500x329.jpeg" data-src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-500x329.jpeg" alt="復甦大時代至？選後樓股新部署！｜特別嘉賓：黃德几" loading="lazy" srcset="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-500x329.jpeg 500w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-200x131.jpeg 200w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-350x230.jpeg 350w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-334x219.jpeg 334w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-165x109.jpeg 165w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-700x460.jpeg 700w" sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
+                <div class="post-item-content">
+                  <h3 class="entry-title">Deal or not? Let's find out!</h3>
+                  <div class="entry-meta">
+                    <span class="entry-date">2020-11-11</span></div>
+                </div>
+              </a></div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="news_1">
+        <div class="news_1_1">
+          <div>
+            <p>Latest International</p>
+            <h2>Vigers : The prospect of the Mainland </h2>
+          </div>
+        </div>
+
+        <div class="news_1_2">
+          <h3 style="margin: 6px; color: #333f48">Other articles</h3>
+          <div>
+            <div><img src="https://img.rea-asia.com/squarefoot-content/126x78-crop/wp-content/uploads/2019/05/19114651/cq5dam.web_.1280.1280.jpeg" alt=""></div>
+            <div class="news_1_2_1">
+              <p class="sp_1">International trends</p>
+              <p class="sp_2">Siemens Smart Manufacturing...</p>
+            </div>
+          </div>
+          <div>
+            <div><img src="https://img.rea-asia.com/squarefoot-content/126x78-crop/wp-content/uploads/2019/07/04135502/D1.jpg" alt=""></div>
+            <div class="news_1_2_1">
+              <p class="sp_1">Local sales</p>
+              <p class="sp_2">Highest Sales in Kowloon Bay...</p>
+            </div>
+          </div>
+          <div>
+            <div><img src="https://img.rea-asia.com/squarefoot-content/126x78-crop/wp-content/uploads/2019/06/19144900/Po_Lai-Court_CMYK.jpg" alt=""></div>
+            <div class="news_1_2_1">
+              <p class="sp_1">Lastest Property</p>
+              <p class="sp_2">TKO Newest Property near ...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="commonStyledComponent__Wrapper-s9u92b-0 euNkpR">
+        <div class="LatestPoststyle__LatestPostWrapper-sc-1l5j44e-0 bfOUrn">
+          <h2 class="LatestPoststyle__SectionTitle-sc-1l5j44e-1 jfjOnH">More Local sales articles</h2>
+          <div class="PostContainerstyle__PostContainerWrapper-jocv1a-0 cRMkHm post-container">
+            <ul class="PostContainerstyle__PostContentWrapper-jocv1a-1 jWcChC">
+              <li class="PostContainerstyle__PostWrapper-jocv1a-2 jnihck">
+                <div class="Cardstyle__CardWrapper-yt9jce-0 gZkciX card1">
+                  <div class="Cardstyle__CardImage-yt9jce-1 cdOJZv"><a class="Cardstyle__ImageLink-yt9jce-2 jlsyoK">
+                      <div class="lazyImagestyle__LazyImageWrapper-sc-1w3tuze-0 obOFf lazy-image"><img src="https://img.rea-asia.com/squarefoot-content/365x220-crop/wp-content/uploads/2019/11/21164807/GettyImages-1171762054_CMYK.jpg" alt="2019 Policy Address: Course Correction"></div>
+                    </a></div>
+                  <div class="Cardstyle__CardContent-yt9jce-3 hfGcMe">
+                    <div class="Cardstyle__CardCategory-yt9jce-4 hDPfoQ">
+                      <p>Local sales</p>
+                    </div>
+                    <div>
+                      <h3 class="Cardstyle__CardTitle-yt9jce-5 bogvTK"><a class="card-title-link" href=""><span style="overflow: hidden;"><span>2019 Policy Address: Course Correction</span></span></a></h3>
+                    </div>
+                    <div height="60px" class="Cardstyle__CardDescription-yt9jce-6 iVwXq">The latest policy address put the Hong Kong property market on a course  far from the direction it has been heading in.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="PostContainerstyle__PostWrapper-jocv1a-2 jnihck">
+                <div class="Cardstyle__CardWrapper-yt9jce-0 gZkciX card1">
+                  <div class="Cardstyle__CardImage-yt9jce-1 cdOJZv"><a class="Cardstyle__ImageLink-yt9jce-2 jlsyoK">
+                      <div class="lazyImagestyle__LazyImageWrapper-sc-1w3tuze-0 obOFf lazy-image"><img src="https://img.rea-asia.com/squarefoot-content/365x220-crop/wp-content/uploads/2019/11/20173935/Screenshot-2019-10-16-at-10.30.52-AM.jpg" alt="Don’t Be a Silent Victim of Bogus Listings"></div>
+                    </a></div>
+                  <div class="Cardstyle__CardContent-yt9jce-3 hfGcMe">
+                    <div class="Cardstyle__CardCategory-yt9jce-4 hDPfoQ">
+                      <p>Local sales</p>
+                    </div>
+                    <div>
+                      <h3 class="Cardstyle__CardTitle-yt9jce-5 bogvTK"><a class="card-title-link" href=""><span style="overflow: hidden;"><span>Don’t Be a Silent Victim of Bogus Listings</span></span></a></h3>
+                    </div>
+                    <div height="60px" class="Cardstyle__CardDescription-yt9jce-6 iVwXq">Back in August 2018, Centaline founder Shih Wing-ching made headlines by saying that of the 160,000 property listings online, only 10,000 were real.
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="commonStyledComponent__Wrapper-s9u92b-0 euNkpR">
+        <div class="LatestPoststyle__LatestPostWrapper-sc-1l5j44e-0 bfOUrn">
+          <h2 class="LatestPoststyle__SectionTitle-sc-1l5j44e-1 jfjOnH">More International trends articles</h2>
+          <div class="PostContainerstyle__PostContainerWrapper-jocv1a-0 cRMkHm post-container">
+            <ul class="PostContainerstyle__PostContentWrapper-jocv1a-1 jWcChC">
+              <li class="PostContainerstyle__PostWrapper-jocv1a-2 jnihck">
+                <div class="Cardstyle__CardWrapper-yt9jce-0 gZkciX card1">
+                  <div class="Cardstyle__CardImage-yt9jce-1 cdOJZv"><a class="Cardstyle__ImageLink-yt9jce-2 jlsyoK">
+                      <div class="lazyImagestyle__LazyImageWrapper-sc-1w3tuze-0 obOFf lazy-image"><img src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-916288786.jpg" alt="2019 Policy Address: Course Correction"></div>
+                    </a></div>
+                  <div class="Cardstyle__CardContent-yt9jce-3 hfGcMe">
+                    <div class="Cardstyle__CardCategory-yt9jce-4 hDPfoQ">
+                      <p>International trends</p>
+                    </div>
+                    <div>
+                      <h3 class="Cardstyle__CardTitle-yt9jce-5 bogvTK"><a class="card-title-link" href=""><span style="overflow: hidden;"><span>Donald Trump adds touch of New York glitz to Houses</span></span></a></h3>
+                    </div>
+                    <div height="60px" class="Cardstyle__CardDescription-yt9jce-6 iVwXq">In the first quarter of this year, the mainland property market was hit by the epidemic
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="PostContainerstyle__PostWrapper-jocv1a-2 jnihck">
+                <div class="Cardstyle__CardWrapper-yt9jce-0 gZkciX card1">
+                  <div class="Cardstyle__CardImage-yt9jce-1 cdOJZv"><a class="Cardstyle__ImageLink-yt9jce-2 jlsyoK">
+                      <div class="lazyImagestyle__LazyImageWrapper-sc-1w3tuze-0 obOFf lazy-image"><img src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/10/HV4_Day_0111-1-1024x732.jpg" alt="Don’t Be a Silent Victim of Bogus Listings"></div>
+                    </a></div>
+                  <div class="Cardstyle__CardContent-yt9jce-3 hfGcMe">
+                    <div class="Cardstyle__CardCategory-yt9jce-4 hDPfoQ">
+                      <p>International trends</p>
+                    </div>
+                    <div>
+                      <h3 class="Cardstyle__CardTitle-yt9jce-5 bogvTK"><a class="card-title-link" href=""><span style="overflow: hidden;"><span>Overview of the office market in Macao</span></span></a></h3>
+                    </div>
+                    <div height="60px" class="Cardstyle__CardDescription-yt9jce-6 iVwXq">Normally regarded as a wind vane for the nation’s real estate market .
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
