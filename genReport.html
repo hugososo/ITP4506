@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Generate Report</title>
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
+  <!-- Customized Css -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    *,
+    *::before,
+    *::after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    header {
+      box-sizing: content-box;
+    }
+
+    header * {
+      box-sizing: content-box;
+    }
+
+    .gen_container {
+      background-color: white;
+      margin: 80px auto;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gen_container>div {
+      margin: 0px 10px;
+      padding: 5px 0px;
+    }
+
+
+    #re_ui {
+      display: flex;
+      flex-direction: column;
+      /*      background-color: rgb(244, 241, 241);*/
+    }
+
+    #re_ui h1 {
+      color: rgba(51, 57, 69, 0.85);
+      font-size: 44px;
+    }
+
+    .gen_container>div>div:not(.re_btn_container),
+    .gen_container>div {
+/*      margin: 10px 10px 0px;*/
+    }
+
+    #re_ui ui {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    .pre_heading {
+      color: rgb(104, 108, 118);
+      font-weight: 600;
+      font-size: 15px;
+      margin: 10px 0px;
+      
+    }
+
+    .re_btn_container {
+      display: flex;
+      justify-content: flex-end;
+      background-color: rgb(216, 218, 222);
+/*      margin: 0 10px;*/
+    }
+
+    .re_btn_container>button {
+      margin: 10px;
+      padding: 10px 15px;
+      border-radius: 5px;
+      border-style: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .re_btn_container>button:first-child {
+      color: #09a5a8;
+      background-color: white;
+    }
+
+    .re_btn_container>button:nth-child(2) {
+      color: white;
+      background-color: #09a5a8;
+    }
+
+    .date_re {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .date_re>* {
+      margin: 5px 0px;
+    }
+
+    .date_re label {
+      font-size: 20px;
+    }
+
+    .date_re select {
+      padding: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    #input_re>* {
+      margin: 20px 0 0;
+    }
+
+    .plus-minus {
+      --primary: #1e2235;
+      --secondary: #fafbff;
+      --duration: 0.5s;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      perspective: 240px;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      border: 4px solid var(--primary);
+      background-size: 300% 300%;
+      transition: transform 0.3s;
+      transform: scale(var(--scale, 1)) translateZ(0);
+      animation: var(--name, unchecked) var(--duration) ease forwards;
+    }
+
+    .plus-minus:before,
+    .plus-minus:after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: var(--height, 16px);
+      left: 6px;
+      top: var(--top, 6px);
+      background: var(--background, var(--primary));
+      animation: var(--name-icon-b, var(--name-icon, unchecked-icon)) var(--duration) ease forwards;
+    }
+
+    .plus-minus:before {
+      clip-path: polygon(0 6px, 6px 6px, 6px 0, 10px 0, 10px 6px, 16px 6px, 16px 10px, 10px 10px, 10px 16px, 6px 16px, 6px 10px, 0 10px);
+    }
+
+    .plus-minus:after {
+      --height: 4px;
+      --top: 12px;
+      --background: var(--secondary);
+      --name-icon-b: var(--name-icon-a, checked-icon);
+    }
+
+    .plus-minus:active {
+      --scale: 0.95;
+    }
+
+    .plus-minus:checked {
+      --name: checked;
+      --name-icon-b: checked-icon;
+      --name-icon-a: unchecked-icon;
+    }
+
+    @keyframes checked-icon {
+      from {
+        transform: translateZ(12px);
+      }
+
+      to {
+        transform: translateX(16px) rotateY(90deg) translateZ(12px);
+      }
+    }
+
+    @keyframes unchecked-icon {
+      from {
+        transform: translateX(-16px) rotateY(-90deg) translateZ(12px);
+      }
+
+      to {
+        transform: translateZ(12px);
+      }
+    }
+
+    @keyframes checked {
+      from {
+        background-image: radial-gradient(ellipse at center, var(--primary) 0%, var(--primary) 25%, var(--secondary) 25.1%, var(--secondary) 100%);
+        background-position: 100% 50%;
+      }
+
+      to {
+        background-image: radial-gradient(ellipse at center, var(--primary) 0%, var(--primary) 25%, var(--secondary) 25.1%, var(--secondary) 100%);
+        background-position: 50% 50%;
+      }
+    }
+
+    @keyframes unchecked {
+      from {
+        background-image: radial-gradient(ellipse at center, var(--secondary) 0%, var(--secondary) 25%, var(--primary) 25.1%, var(--primary) 100%);
+        background-position: 100% 50%;
+      }
+
+      to {
+        background-image: radial-gradient(ellipse at center, var(--secondary) 0%, var(--secondary) 25%, var(--primary) 25.1%, var(--primary) 100%);
+        background-position: 50% 50%;
+      }
+    }
+
+    input[type="checkbox"]:checked~label::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .re_checklist label {
+      position: relative;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      padding: 0 0.25em 15px;
+      margin-bottom: 5px;
+      user-select: none;
+      height: 36px;
+    }
+
+    .re_checklist label::before {
+      position: absolute;
+      content: attr(data-content);
+      color: #9c9e9f;
+      clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+      text-decoration: line-through;
+      text-decoration-thickness: 3px;
+      text-decoration-color: #363839;
+      transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .re_checklist {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .re_checklist>div>div {
+      display: flex;
+      /*            margin-left: 30%;*/
+      margin: 10px;
+
+    }
+
+    .re_checklist>div {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin: 10px 20px;
+    }
+
+    .re_checklist>div:nth-child(3) {}
+
+    .accordions__button {
+      border: none;
+      background: none;
+      font-size: inherit;
+      color: inherit;
+      font-family: inherit;
+      padding: 0;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .accordions__controls {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 38px;
+      padding-bottom: 19px;
+    }
+
+    .accordions__control {
+      font-weight: 600;
+      font-size: 18px;
+      color: #00a5a9;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .accordions__control:hover,
+    .accordions__control:focus {
+      color: #031d3d;
+    }
+
+    .accordions__header {
+      font-size: 32px;
+      font-weight: 600;
+      background-color: #f0f0f0;
+      position: relative;
+      border-bottom: solid 1px #d3d3d3;
+    }
+
+    .accordions__container {
+      display: flex;
+      cursor: pointer;
+    }
+
+    .accordions__title {
+      position: relative;
+      padding: 28px 0;
+      padding-right: 38px;
+      flex: 1;
+      z-index: 2;
+      background-color: #f0f0f0;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      font-size: 25px;
+    }
+
+    .accordions__title::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      border-bottom: solid 1px #d3d3d3;
+      z-index: 1;
+      /*   display: none;*/
+    }
+
+    .accordions__button {
+      color: white;
+      padding-left: 38px;
+      line-height: 1;
+      transition: padding 0.3s ease-in-out;
+    }
+
+    .accordions__button::before {
+      content: '';
+      background-color: #08ced2;
+      position: absolute;
+      top: 0;
+      left: 70%;
+      right: 0;
+      bottom: 0;
+      /*	 bottom: -1px;*/
+      z-index: 1;
+      border-bottom: solid 1px #09a5a8;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    }
+
+    .accordions__container:hover .accordions__button,
+    .accordions__button:hover {
+      padding-right: 38px;
+    }
+
+    .accordions__container:hover .accordions__button::before,
+    .accordions__button:hover::before {
+      background-color: #09a5a8;
+    }
+
+    .accordions__button:focus::before {
+      background-color: #09a5a8;
+    }
+
+    .accordions__button:active,
+    .accordions__button--active {
+      padding-right: 38px;
+    }
+
+    .accordions__button:active::before,
+    .accordions__button--active::before {
+      background-color: #031d3d !important;
+      border-bottom: solid 1px #031730;
+    }
+
+    .accordions__button:active .accordions__icon,
+    .accordions__button--active .accordions__icon {
+      transform: rotate(45deg);
+    }
+
+    .accordions__icon {
+      position: relative;
+      z-index: 2;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .accordions__content {
+      background-color: white;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.6s ease-in-out, opacity 0.6s ease-in-out 0.6s, transform 0.6s ease-in-out 0.6s;
+      transform: translateY(38px);
+      display: flex;
+    }
+
+    .accordions__content--expanded {
+      max-height: 200vh;
+      opacity: 1;
+      /*      padding-bottom: 76px;*/
+      transform: none;
+    }
+
+    .rich-text {
+      font-size: 18px;
+      line-height: 32px;
+    }
+
+    .rich-text p {
+      margin-top: 38px;
+    }
+
+    .container {
+      width: 100%;
+      /*      max-width: 960px;*/
+      margin: 0 auto;
+      padding: 0 38px;
+      box-sizing: border-box;
+    }
+
+    .option-group {
+      width: 100%;
+      /*      max-width: 400px;*/
+      /*      height: 150px;*/
+      /*      position: relative;*/
+      overflow: hidden;
+      /*      border-radius: 0.25em;*/
+      font-size: 4rem;
+      /*      margin: 0.2em auto;*/
+      transform: translateZ(0);
+    }
+
+    .option-container {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      width: 120%;
+      height: 100%;
+      margin: 0 -10%;
+    }
+
+    .option {
+      overflow: hidden;
+      flex: 1;
+      display: block;
+      padding: 0.5em;
+      background: #fff;
+      position: relative;
+      margin: 0em;
+      margin-right: 0.2em;
+      /*      border-radius: 0.25em;*/
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+      flex-direction: column;
+      cursor: pointer;
+      opacity: 0.5;
+      transition-duration: 0.8s, 0.6s;
+      transition-property: transform, opacity;
+      transition-timing-function: cubic-bezier(0.98, 0, 0.22, 0.98), linear;
+      will-change: transform, opacity;
+    }
+
+    .option:hover {
+      background: rgba(126, 126, 126, 0.22);
+    }
+
+    .option:last-child {
+      margin-right: 0;
+    }
+
+    .option__indicator {
+      display: block;
+      transform-origin: left bottom;
+      transition: inherit;
+      will-change: transform;
+      position: absolute;
+      top: 0.5em;
+      right: 0.5em;
+      left: 0.5em;
+      display: none;
+    }
+
+    .option__indicator:before,
+    .option__indicator:after {
+      content: '';
+      display: block;
+      border: solid 2px #64d6ee;
+      border-radius: 50%;
+      width: 0.25em;
+      height: 0.25em;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .option__indicator:after {
+      background: #64d6ee;
+      transform: scale(0);
+      transition: inherit;
+      will-change: transform;
+    }
+
+    .option-input {
+      position: absolute;
+      top: 0;
+      z-index: -1;
+      visibility: hidden;
+    }
+
+    .option__label {
+      display: block;
+      width: 100%;
+      text-transform: uppercase;
+      font-size: 0.5em;
+      font-weight: bold;
+      transform-origin: left bottom;
+      transform: translateX(20%) scale(0.7);
+      transition: inherit;
+      will-change: transform;
+    }
+
+    .option__label sub {
+      margin-left: 0.25em;
+      font-size: 0.4em;
+      display: inline-block;
+      vertical-align: 0.3em;
+    }
+
+    .option__label:after {
+      content: '';
+      display: block;
+      /*      border: solid 2px #64d6ee;*/
+      width: 100%;
+      transform-origin: 0 0;
+      transform: scaleX(0.2);
+      transition: inherit;
+      will-change: transform;
+    }
+
+    .option:last-child .option__label {
+      transform: translateX(0%) scale(0.7);
+    }
+
+    .option:last-child .option__indicator {
+      transform: translateX(-20%);
+    }
+
+    .option-input:checked~.option {
+      transform: translateX(-20%) translateX(0.2em);
+    }
+
+    .option-input:checked~.option .option__indicator {
+      transform: translateX(0%);
+    }
+
+    .option-input:checked~.option .option__label {
+      transform: translateX(40%) scale(0.7);
+    }
+
+    .option-input:first-child:checked~.option {
+      transform: translateX(20%) translateX(-0.2em);
+    }
+
+    .option-input:first-child:checked~.option .option__indicator {
+      transform: translateX(-40%);
+    }
+
+    .option-input:first-child:checked~.option .option__label {
+      transform: translateX(0%) scale(0.7);
+    }
+
+    .option-input:nth-child(1):checked~.option:nth-of-type(1),
+    .option-input:nth-child(2):checked~.option:nth-of-type(2) {
+      opacity: 1;
+    }
+
+    .option-input:nth-child(1):checked~.option:nth-of-type(1) .option__indicator,
+    .option-input:nth-child(2):checked~.option:nth-of-type(2) .option__indicator {
+      transform: translateX(0);
+    }
+
+    .option-input:nth-child(1):checked~.option:nth-of-type(1) .option__indicator::after,
+    .option-input:nth-child(2):checked~.option:nth-of-type(2) .option__indicator::after {
+      transform: scale(1);
+    }
+
+    .option-input:nth-child(1):checked~.option:nth-of-type(1) .option__label,
+    .option-input:nth-child(2):checked~.option:nth-of-type(2) .option__label,
+    .option-input:nth-child(1):checked~.option:nth-of-type(1) .option__label::after,
+    .option-input:nth-child(2):checked~.option:nth-of-type(2) .option__label::after {
+      transform: scale(1);
+    }
+
+    .dateIn_ {
+      display: flex;
+      width: 100%;
+    }
+
+    .dateIn_>div {
+      padding: 15px 10px;
+      width: 50%;
+      font-size: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dateIn_>div:first-child {
+      border-right: 3px solid grey;
+    }
+
+    .dateIn_ p {
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+
+    .dateIn_ input[type=date] {
+      cursor: pointer;
+    }
+
+    .set_re_1 {
+      width: 100%;
+    }
+
+    .set_re_1 p {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .set_re_1>div {
+      width: 50%;
+      margin: 10px;
+      /*      text-align: center;*/
+    }
+
+    .set_re_1>div:first-child div {
+      margin-bottom: 30px;
+    }
+
+    .set_re_1 input[type=text] {
+      padding: 0px 10px;
+      width: 60%;
+      margin: 5px 0px;
+      border-style: none;
+      border-bottom: 2px solid #031d3d;
+      transition: all 0.2s ease-in;
+      font-size: 18px;
+    }
+
+    .set_re_1 input[type=text]:hover {
+      border-bottom: 2px solid rgb(101, 23, 159);
+    }
+
+    .set_re_1 input[type=text]:focus {
+      width: 80%;
+    }
+
+    .set_re_1 select {
+      width: 50%;
+      font-size: 16px;
+    }
+
+    .checkbox {
+      --background: #fff;
+      --border: #d1d6ee;
+      --border-hover: #bbc1e1;
+      --border-active: #1e2235;
+      --tick: #fff;
+      position: relative;
+    }
+
+    .checkbox input,
+    .checkbox svg {
+      width: 21px;
+      height: 21px;
+      display: block;
+    }
+
+    .checkbox input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      position: relative;
+      outline: none;
+      background: var(--background);
+      border: none;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: box-shadow 0.3s;
+      box-shadow: inset 0 0 0 var(--s, 1px) var(--b, var(--border));
+    }
+
+    .checkbox input:hover {
+      --s: 2px;
+      --b: var(--border-hover);
+    }
+
+    .checkbox input:checked {
+      --b: var(--border-active);
+    }
+
+    .checkbox svg {
+      pointer-events: none;
+      fill: none;
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: var(--stroke, var(--border-active));
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 21px;
+      height: 21px;
+      transform: scale(var(--scale, 1)) translateZ(0);
+    }
+
+    .checkbox.path input:checked {
+      --s: 2px;
+      transition-delay: 0.4s;
+    }
+
+    .checkbox.path input:checked+svg {
+      --a: 16.1 86.12;
+      --o: 102.22;
+    }
+
+    .checkbox.path svg {
+      stroke-dasharray: var(--a, 86.12);
+      stroke-dashoffset: var(--o, 86.12);
+      transition: stroke-dasharray 0.6s, stroke-dashoffset 0.6s;
+    }
+
+    .checkbox.bounce {
+      --stroke: var(--tick);
+    }
+
+    .checkbox.bounce input:checked {
+      --s: 11px;
+    }
+
+    .checkbox.bounce input:checked+svg {
+      animation: bounce 0.4s linear forwards 0.2s;
+    }
+
+    .checkbox.bounce svg {
+      --scale: 0;
+    }
+
+    @keyframes bounce {
+      50% {
+        transform: scale(1.2);
+      }
+
+      75% {
+        transform: scale(0.9);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .grid>div {
+      display: flex;
+      margin: 10px;
+      align-items: center;
+    }
+
+    .grid>div span {
+      /*      margin: 10px;*/
+      display: inline-block;
+      padding: 0 0 5px 10px;
+    }
+    #re_preview{
+/*      margin:10px;*/
+      display:flex;
+      flex-direction: column;
+      display:none;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html ">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150" height="30">
+    </a>
+    <ul>
+      <li><a href="apartmentSale.html">PROPERTY</a></li>
+      <li>|</li>
+      <li><a href="login.html">LOGIN</a></li>
+      <li>|</li>
+      <li><a href="signup.html">SIGN UP</a></li>
+    </ul>
+  </header>
+
+  <div class="gen_container">
+
+    <div id="re_ui">
+      <div>
+        <h1>Market Report</h1>
+      </div>
+      <div id="input_re">
+
+        <div class="app" id="app">
+          <div class="accordions">
+            <section class="accordions__accordion">
+              <div class="accordions__header">
+                <div class="accordions__container container">
+                  <h3 class="accordions__title">Date</h3><button class="accordions__button" v-on:click="toggleAccordion('Experience')" v-bind:class="{ 'accordions__button--active': isOpen('Experience') }">
+                    <div class="accordions__icon">+</div>
+                  </button>
+                </div>
+              </div>
+              <div class="container">
+                <div class="accordions__content rich-text" v-bind:class="{ 'accordions__content--expanded': isOpen('Experience') }">
+
+                  <div class="dateIn_">
+                    <div>
+                      <p>From:</p>
+                      <input type="date" name="" id="from">
+                    </div>
+                    <div>
+                      <p>To:</p>
+                      <input type="date" name="" id="to">
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+            <section class="accordions__accordion">
+              <div class="accordions__header">
+                <div class="accordions__container container">
+                  <h3 class="accordions__title">Report Setting</h3><button class="accordions__button" v-on:click="toggleAccordion('Insights')" v-bind:class="{ 'accordions__button--active': isOpen('Insights') }">
+                    <div class="accordions__icon">+</div>
+                  </button>
+                </div>
+              </div>
+              <div class="container">
+                <div class="accordions__content rich-text" v-bind:class="{ 'accordions__content--expanded': isOpen('Insights') }">
+                  <div style="display: flex;" class="set_re_1">
+                    <div style="display: flex;flex-direction: column">
+                      <div>
+                        <p>Report Title:</p>
+                        <input type="text" placeholder="Default as Date">
+                      </div>
+                      <div>
+                        <p>Pull Rate:</p>
+                        <select name="" id="">
+                          <option value="">Every Day</option>
+                          <option value="">Every Week</option>
+                          <option value="">Every Month</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p>Data Source:</p>
+                      <div>
+                        <div class="grid">
+                          <div>
+                            <label class="checkbox path">
+
+                              <input type="checkbox">
+                              <svg viewBox="0 0 21 21">
+                                <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
+                              </svg>
+                            </label>
+                            <span>Our business </span>
+                          </div>
+
+                          <div>
+
+                            <label class="checkbox path">
+                              <input type="checkbox" checked>
+                              <svg viewBox="0 0 21 21">
+                                <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
+                              </svg>
+                            </label>
+                            <span>The Land Registry</span>
+                          </div>
+
+                          <div>
+
+                            <label class="checkbox path">
+                              <input type="checkbox" checked>
+                              <svg viewBox="0 0 21 21">
+                                <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
+                              </svg>
+                            </label>
+                            <span>The Government Property Agency</span>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+
+            <section class="accordions__accordion">
+              <div class="accordions__header">
+                <div class="accordions__container container">
+                  <h3 class="accordions__title">Graphs</h3><button class="accordions__button" v-on:click="toggleAccordion('Credentials')" v-bind:class="{ 'accordions__button--active': isOpen('Credentials') }">
+                    <div class="accordions__icon">+</div>
+                  </button>
+                </div>
+              </div>
+              <div class="container">
+                <div class="accordions__content rich-text" v-bind:class="{ 'accordions__content--expanded': isOpen('Credentials') }">
+                  <div class="re_checklist">
+                    <div>
+                      <h3>Indices:</h3>
+                      <div>
+                        <input type="checkbox" class="plus-minus" id="s1">
+                        <label for="s1" data-content="Price Indices">Price Indices</label>
+                      </div>
+
+                      <div>
+                        <input type="checkbox" class="plus-minus" id="s2">
+                        <label for="s2" data-content="Rental Indices">Rental Indices</label>
+
+                      </div>
+                    </div>
+
+                    <div>
+                      <h3>Registry Records:</h3>
+                      <div>
+                        <input type="checkbox" class="plus-minus" id="s3" checked>
+                        <label for="s3" data-content="Registry Records in Estate">Registry Records in Estate</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="plus-minus" id="e2" checked>
+                        <label for="e2" data-content="Registry Records in District">Registry Records in District</label>
+                      </div>
+
+                    </div>
+
+                    <div>
+                      <h3>Unit Price:</h3>
+                      <div>
+                        <input type="checkbox" class="plus-minus" id="s4" checked>
+                        <label for="s4" data-content="Unit Price in HK Island">Unit Price in HK Island</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="plus-minus" id="s5" checked>
+                        <label for="s5" data-content="Unit Price in Kowloon">Unit Price in Kowloon</label>
+                      </div>
+                      <div>
+                        <input type="checkbox" class="plus-minus" id="s6" checked>
+                        <label for="s6" data-content="Unit Price in New Territories">Unit Price in New Territories</label>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+
+      </div>
+      <div class="re_btn_container">
+        <button id="re_pre">Preview</button>
+        <button onclick=""><a href="assets/report/26-11-2020.pdf" style="text-decoration: none;" download="date">Create Report</a></button>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="re_preview">
+      <div class="pre_heading">Report Preview</div>
+      
+<!--      <iframe src="https://datastudio.google.com/embed/reporting/5d9e1fba-0a77-4b34-81ff-88650589a6b9/page/JOVpB" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+
+      <iframe src="https://datastudio.google.com/embed/reporting/5d9e1fba-0a77-4b34-81ff-88650589a6b9/page/JOVpB" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+    </div>
+
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      labels: {
+        expand: 'Expand all +',
+        collapse: 'Collapse all -'
+      },
+      accordions: {
+        'Experience': {
+          isOpen: false
+        },
+        'Insights': {
+          isOpen: false
+        },
+        'Credentials': {
+          isOpen: false
+        }
+      }
+    },
+    computed: {
+      toggleAllLabel() {
+        return this.showCollapseAll ?
+          this.labels.collapse :
+          this.labels.expand
+      },
+      areAllAccordionsOpen() {
+        return Object.keys(this.accordions)
+          .every(key => this.accordions[key].isOpen)
+      },
+      showCollapseAll() {
+        return this.areAllAccordionsOpen
+      },
+      showExpandAll() {
+        return this.showCollapseAll === false
+      }
+    },
+    methods: {
+      toggleAll() {
+        const newIsOpen = this.showExpandAll
+        Object.keys(this.accordions)
+          .forEach(key => {
+            this.accordions[key].isOpen = newIsOpen
+          })
+      },
+      toggleAccordion(label) {
+        const accordion = this.accordions[label]
+
+        if (accordion) {
+          accordion.isOpen = !accordion.isOpen
+        } else {
+          console.error(`Could not find accordion '${label}'`)
+        }
+      },
+      isOpen(label) {
+        const accordion = this.accordions[label]
+        return accordion ? accordion.isOpen : false
+      }
+    }
+  })
+
+  var list = document.querySelectorAll(".accordions__container");
+  list.forEach(item => {
+    item.addEventListener("click", function(e) {
+      console.log("hi");
+      item.querySelector(".accordions__button").click();
+    });
+  });
+
+  var btn = document.querySelectorAll(".accordions__button");
+  btn.forEach(b => {
+    b.addEventListener("click", function(e) {
+      //    b.click();
+      e.stopPropagation();
+    });
+  });
+  document.getElementById('from').valueAsDate = new Date();
+  document.getElementById('to').valueAsDate = new Date();
+  
+  var btn2 = document.querySelector("#re_pre");
+  btn2.addEventListener("click", function(e) {
+    document.querySelector("#re_preview").style.display = "block";
+  });
+</script>
+
+</html>

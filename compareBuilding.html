@@ -491,6 +491,7 @@
     #com_res {
       /*      visibility: hidden;*/
       display: none;
+      transition: all 0.3s ease-in;
     }
 
     .rmc-tabs * {
@@ -655,6 +656,17 @@
       justify-content: center;
       align-items: center;
     }
+
+    #profileImage1,
+    #profileImage2 {
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    #profileImage1:hover,
+    #profileImage2:hover {
+      transform: scale(1.5);
+    }
   </style>
 </head>
 
@@ -681,7 +693,7 @@
             <div class="leftmost-icon"><span class="hket-icon-channel" data-icon=""></span></div>
             <div class="section-title"><span>Compare Two Buildings</span></div>
           </div>
-<!--
+          <!--
           <div class="hket-ui epc-section-topic-description">
             <div class="section-topic-description-container">
               <div class="section-topic-icon-container">
@@ -763,7 +775,7 @@
                     <td class="property-name-container">HONG WAH COURT</td>
                   </tr>
 
-                  
+
                   <tr>
                     <td colspan="2" class="new-property-btn-container"><a href="newsResult.html?index=WYLER GARDENS" title="" class="new-property-details-btn">Related News<span class="hket-icon-arrow-right" data-icon=""></span></a></td>
                     <td class="margin-left"></td>
@@ -896,11 +908,11 @@
   list.forEach(item => {
     item.addEventListener('click', function(e) {
       var state = e.currentTarget.parentNode.querySelector('.bYJtpB').style.display;
-      
-        var h = e.target; 
+
+      var h = e.target;
       if (state === 'none') {
         e.currentTarget.parentNode.querySelector('.bYJtpB').style.display = "initial";
-        
+
         h.querySelector(".qjikt0-28").style.transform = "rotate(-180deg)";
       } else {
         e.currentTarget.parentNode.querySelector('.bYJtpB').style.display = "none";
