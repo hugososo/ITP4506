@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dream House</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <!-- Customized Css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<style>
+    .first-section {
+        margin-top: 120px;
+        text-align: center;
+    }
+
+    hr {
+        width: 70%;
+        margin: 60px auto 30px auto;
+    }
+
+    .selectTime {
+        border: 1px rgb(70, 70, 255) solid;
+        background-color: white;
+        color: rgb(70, 70, 255);
+        margin: auto 10px;
+        padding: 5px 50px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .selectTime:hover {
+        background-color: rgb(168, 168, 168);
+    }
+
+    #submitbtn {
+        padding: 10px 50px;
+        background-color: rgb(128, 150, 185);
+        cursor: pointer;
+        border: none;
+        color: white;
+    }
+
+    #submitbtn:hover {
+        background-color: rgb(15, 50, 148);
+    }
+
+    #submitbtn2 {
+        padding: 10px 50px;
+        background-color: rgb(20, 87, 196);
+        cursor: pointer;
+        border: none;
+        color: white;
+    }
+
+    #submitbtn2:hover {
+        background-color: rgb(15, 50, 148);
+    }
+</style>
+
+<body>
+    <header>
+        <a href="index.html ">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
+                height="30">
+        </a>
+        <ul>
+            <li><a href="apartmentSale.html">PROPERTY</a></li>
+            <li>|</li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li>|</li>
+            <li><a href="signup.html">SIGN UP</a></li>
+        </ul>
+    </header>
+
+    <div class="first-section">
+        <h2>Agent Appointment</h2>
+        <hr>
+        <label for="datalist">Choose your Agent from the list:</label>
+        <input list="datalist" name="option" id="input" autocomplete="off">
+
+        <datalist id="datalist">
+            <option value="Agent Hugo" label="Grand Property Agency Company">
+            <option value="Agent Thomas" label="Hong Kong Home Company">
+            <option value="Agent Clark" label="Hong Kong Home Company">
+            <option value="Agent Mary" label="Hong Kong Home Company">
+            <option value="Agent Berry" label="Grand Property Agency Company">
+        </datalist>
+        <div id="agentinfo" style="display: flex; justify-content: center; margin-top: 50px;">
+            <img width="180px" src="https://i.hongkonghomes.com/staff-photo/1925-portrait-256.jpg" alt="">
+            <div style="margin:30px 0 0 30px">
+                <a href="" style="color: rgb(17, 0, 255);">
+                    <h3>Agent Berry</h3>
+                </a>
+                <p>Assistant Manager</p>
+                <p>Licence No.: S-599157</p>
+                <p>Language: Cantonese, English, Putonghua</p>
+                <p>Tel: 28210929 Mobile: 97944355</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <label for="datalist2">Meeting location:</label>
+        <input list="datalist2" name="option" id="input2" autocomplete="off" style="margin-bottom: 30px;">
+
+        <datalist id="datalist2">
+            <option value="Causeway Bay" label="Rent conference room">
+            <option value="Wan Chai" label="Cosy workshop room">
+            <option value="Tsim Sha Tsui" label="Grand Property Agency Company">
+        </datalist>
+        <p id="addressinfo"
+            style="font-size: larger; border-left: 3px solid rgb(53, 53, 53); width: 400px;margin:auto;background-color: rgb(224, 224, 224);">
+            Address: 118 Nathan Road, Tsim Sha Tsui</p>
+        <br>
+        <span style="font-size: larger; margin-right: 10px;">Choose Meeting Date & Time:</span>
+        <input type="date" id="dateselect">
+        <br>
+        <div style="margin:30px 30px 0 0;">
+            <span class="selectTime">10:30</span>
+            <span class="selectTime">11:30</span>
+            <span class="selectTime">14:30</span>
+            <span class="selectTime">15:30</span>
+            <span class="selectTime">16:30</span>
+        </div>
+        <br>
+        <p id="datetimestr"
+            style="font-size: larger; border-left: 3px solid rgb(53, 53, 53); width: 400px;margin:auto;background-color: rgb(224, 224, 224);">
+            Date&Time:</p>
+        <br>
+        <button id="submitbtn">Submit</button>
+    </div>
+    <div id="confirmmsg" style="position: absolute; top:50%;right:25%; border: 1px black solid;background-color: rgb(128, 150, 185);; z-index: 99999;color: white;width: 50%;text-align: center;">
+        <div id="closeconfirm" style="position: absolute;right: 20px;font-size: 18pt;cursor: pointer;">X</div>
+        <br>
+        <br>
+        <h3 style="text-decoration: underline;">Appointment Infomation Confirmation</h3>
+        <br>
+        <p>Agent: Agent Berry</p>
+        <br>
+        <p>Meeting location: Grand Property Agency Company</p>
+        <p>18 Nathan Road, Tsim Sha Tsui</p>
+        <br>
+        <p>Meeting Date: 31-Dec</p>
+        <br>
+        <p>Meeting Time: 15:30</p>
+        <br>
+        <button id="submitbtn2">Confirm&Submit</button>
+        <br>
+        <br>
+    </div>
+</body>
+<script>
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+<script src="js/appointment.js"></script>
+<script src="js/global.js"></script>
+
+</html>

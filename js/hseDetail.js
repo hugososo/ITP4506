@@ -92,7 +92,7 @@ $(function () {
   });
 
   $("#hse_vr .circle").click(function () {
-    window.open("./vr.html","_blank");
+    window.open("./vr.html", "_blank");
   });
 
   $("#floor_list_item").click(function () {
@@ -170,8 +170,8 @@ $(function () {
     $("#hse_enlarge_img").removeClass("hse_enlarge_img_click");
     $("#hse_enlarge_img img").attr("src", "");
   });
-  
-  $("#hse_enlarge_img img").click(function (){
+
+  $("#hse_enlarge_img img").click(function () {
     $("#en_btn_hse").css({
       display: "none"
     });
@@ -181,34 +181,34 @@ $(function () {
     $("#hse_enlarge_img img").css({
       cursor: "pointer"
     });
-    
+
     $("#hse_enlarge_img").removeClass("hse_enlarge_img_click");
     $("#hse_enlarge_img img").attr("src", "");
   })
 
-  var fw="normal",fs="normal",size="12",color="black";
+  var fw = "normal", fs = "normal", size = "12", color = "black";
   $(".btn_bold").click(function () {
-    fw="bolder";
+    fw = "bolder";
     $("#cm_textarea").css({
       fontWeight: "bolder"
     })
   });
-  
+
   $(".btn_ital").click(function () {
-    fs="italic";
+    fs = "italic";
     $("#cm_textarea").css({
       fontStyle: "italic"
     });
   });
-  
+
   $(".cm_fontsize").change(function () {
     size = $(this).val();
     console.log(size);
     $("#cm_textarea").css({
-      fontSize: size+"px"
+      fontSize: size + "px"
     });
   });
-  
+
   $(".color_picker").change(function () {
     color = $(this).val();
     console.log(color);
@@ -216,53 +216,60 @@ $(function () {
       color: color
     });
   });
-  
-  $(".cm_reset").click(function (){
+
+  $(".cm_reset").click(function () {
     $("#cm_textarea").val("");
   });
-  
-  $(".cm_agent_submit").click(function (){
+
+  $(".cm_agent_submit").click(function () {
     var r = confirm("Submit?");
-    if(r === true){
+    if (r === true) {
       var txt = $("#cm_textarea").val();
-//    console.log(txt);
-    $("#agent_cm_area").append(
-"      <div class=\"hse_card_cm\">"+   "<div class=\"card_cm_info\">"+
- "<img src=\"assets/manager.png\" >"+
-                "<div>"+
-                  "<p>Agent Clark</p>"+
-                  "<p>Ac.email.com</p>"+
-                "</div>"+
-              "</div>"+
-              "<hr>"+
-              "<div class=\"hse_actual_cm\" style=\"color:"+color+";font-size:"+size+"px"+";font-style:"+fs+";font-weight:"+fw+";"+"\">"+
-                txt+"</div></div>");
-    }else{
+      //    console.log(txt);
+      $("#agent_cm_area").append(
+        "      <div class=\"hse_card_cm\">" + "<div class=\"card_cm_info\">" +
+        "<img src=\"assets/manager.png\" >" +
+        "<div>" +
+        "<p>Agent Clark</p>" +
+        "<p>Ac.email.com</p>" +
+        "</div>" +
+        "</div>" +
+        "<hr>" +
+        "<div class=\"hse_actual_cm\" style=\"color:" + color + ";font-size:" + size + "px" + ";font-style:" + fs + ";font-weight:" + fw + ";" + "\">" +
+        txt + "</div></div>");
+    } else {
       return;
     }
-    
+
   });
-  
-  $(".cm_cust_submit").click(function (){
+
+  $(".cm_cust_submit").click(function () {
     var r = confirm("Submit?");
-    if(r === true){
-    var txt = $("#cm_textarea").val();
-//    console.log(txt);
-    $("#cust_cm_area").append(
-"      <div class=\"hse_card_cm\">"+   "<div class=\"card_cm_info\">"+
- "<img src=\"assets/customer.png\" >"+
-                "<div>"+
-                  "<p>Hugo</p>"+
-                  "<p>customer@email.com</p>"+
-                "</div>"+
-              "</div>"+
-              "<hr>"+
-              "<div class=\"hse_actual_cm\" style=\"color:"+color+";font-size:"+size+"px"+";font-style:"+fs+";font-weight:"+fw+";"+"\">"+
-                txt+"</div></div>");
-    }else{
+    if (r === true) {
+      var txt = $("#cm_textarea").val();
+      //    console.log(txt);
+      $("#cust_cm_area").append(
+        "      <div class=\"hse_card_cm\">" + "<div class=\"card_cm_info\">" +
+        "<img src=\"assets/customer.png\" >" +
+        "<div>" +
+        "<p>Hugo</p>" +
+        "<p>customer@email.com</p>" +
+        "</div>" +
+        "</div>" +
+        "<hr>" +
+        "<div class=\"hse_actual_cm\" style=\"color:" + color + ";font-size:" + size + "px" + ";font-style:" + fs + ";font-weight:" + fw + ";" + "\">" +
+        txt + "</div></div>");
+    } else {
       return;
     }
   });
-  
-  
+
+  $(".center").hide();
 });
+
+function openForm(){
+  $(".center").toggle();
+}
+
+var chat = document.getElementById('chat');
+   chat.scrollTop = chat.scrollHeight - chat.clientHeight;
