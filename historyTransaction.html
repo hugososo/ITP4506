@@ -1642,7 +1642,9 @@
   });
 
 
-  var mymap = L.map('map-container').setView([22.400130, 114.149119], 11);
+  var mymap = L.map('map-container', {
+    scrollWheelZoom: false
+}).setView([22.400130, 114.149119], 11);
 
   L.tileLayer('https://mapapi.geodata.gov.hk/gs/api/v1.0.0/xyz/basemap/wgs84/{z}/{x}/{y}.png', {
     attribution: '<u href="https://api.portal.hkmapservice.gov.hk/disclaimer" target="_blank" class="copyrightDiv">&copy; The Government of the Hong Kong SAR</u><div style="width:28px;height:28px;display:inline-flex;background:url(https://api.hkmapservice.gov.hk/mapapi/landsdlogo.jpg);background-size:28px;"></div>',

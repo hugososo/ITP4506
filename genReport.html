@@ -20,6 +20,20 @@
       box-sizing: border-box;
     }
 
+    html {
+      font-family: Karla, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      overflow-y: scroll;
+      /*
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+*/
+    }
+
+    html::-webkit-scrollbar {
+      all: unset;
+    }
+
     header {
       box-sizing: content-box;
     }
@@ -55,7 +69,7 @@
 
     .gen_container>div>div:not(.re_btn_container),
     .gen_container>div {
-/*      margin: 10px 10px 0px;*/
+      /*      margin: 10px 10px 0px;*/
     }
 
     #re_ui ui {
@@ -70,14 +84,14 @@
       font-weight: 600;
       font-size: 15px;
       margin: 10px 0px;
-      
+
     }
 
     .re_btn_container {
       display: flex;
       justify-content: flex-end;
       background-color: rgb(216, 218, 222);
-/*      margin: 0 10px;*/
+      /*      margin: 0 10px;*/
     }
 
     .re_btn_container>button {
@@ -254,6 +268,7 @@
       display: flex;
       flex-direction: row;
       width: 100%;
+      flex-wrap: wrap;
     }
 
     .re_checklist>div>div {
@@ -266,7 +281,7 @@
     .re_checklist>div {
       display: flex;
       flex-direction: column;
-      width: 50%;
+      width: 40%;
       margin: 10px 20px;
     }
 
@@ -784,11 +799,12 @@
       display: inline-block;
       padding: 0 0 5px 10px;
     }
-    #re_preview{
-/*      margin:10px;*/
-      display:flex;
+
+    #re_preview {
+      /*      margin:10px;*/
+      display: flex;
       flex-direction: column;
-      display:none;
+      display: none;
     }
   </style>
 </head>
@@ -986,7 +1002,7 @@
       </div>
       <div class="re_btn_container">
         <button id="re_pre">Preview</button>
-        <button onclick=""><a href="assets/report/26-11-2020.pdf" style="text-decoration: none;" download="date">Create Report</a></button>
+        <button onclick=""><a href="assets/report/indices.pdf" style="text-decoration: none;" download="date">Create Report</a></button>
       </div>
     </div>
 
@@ -996,10 +1012,12 @@
 
     <div id="re_preview">
       <div class="pre_heading">Report Preview</div>
-      
-<!--      <iframe src="https://datastudio.google.com/embed/reporting/5d9e1fba-0a77-4b34-81ff-88650589a6b9/page/JOVpB" frameborder="0" style="border:0" allowfullscreen></iframe>-->
 
-<iframe src="assets/report/26-11-2020.pdf" style="width: 100%;height: 500px;border: none;" allowfullscreen></iframe> 
+      <!--      <iframe src="https://datastudio.google.com/embed/reporting/5d9e1fba-0a77-4b34-81ff-88650589a6b9/page/JOVpB" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+
+      <iframe src="assets/report/indices.pdf" style="width: 100%;height: 500px;border: none;" allowfullscreen id="if1"></iframe>
+
+
     </div>
 
   </div>
@@ -1083,10 +1101,19 @@
   });
   document.getElementById('from').valueAsDate = new Date();
   document.getElementById('to').valueAsDate = new Date();
-  
+
   var btn2 = document.querySelector("#re_pre");
   btn2.addEventListener("click", function(e) {
     document.querySelector("#re_preview").style.display = "block";
+
+    var d = document.getElementById('s4');
+    var i = document.querySelector("#if1");
+    if (d.checked) {
+      i.src = "assets/report/indices.pdf";
+    } else {
+      
+      i.src = "assets/report/all.pdf";
+    }
   });
 </script>
 
