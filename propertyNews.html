@@ -77,7 +77,7 @@
     .news_head {
       margin: 0px;
       /*      text-align: center;*/
-      width: 1200px;
+/*      width: 1200px;*/
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -97,15 +97,16 @@
 
     #new-body {
       background-color: white;
-      width: 1200px;
-      margin: 0px auto;
+      min-width: 700px;
+      margin: 0px 50px;
     }
 
     .news_1 {
       display: flex;
       margin: 10px 0px;
       justify-content: space-between;
-      width: 1200px;
+width: 100%;
+    float: left;
     }
 
     .news_1_1 div {
@@ -190,7 +191,7 @@
       margin: 0 0 40px;
       overflow: hidden;
       position: relative;
-      width: 50%;
+      width: 100%;
       float: left;
       box-sizing: border-box;
       border-right: 2px solid #fff;
@@ -233,7 +234,7 @@
 
     .slider_widgets {
       float: right;
-      width: 50%;
+      width: 100%;
       position: relative;
     }
 
@@ -253,6 +254,8 @@
 
     .slider_widgets .wpzoom-featured-cat .featured-grid-2>div {
       width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
       float: none;
       max-height: 231px;
       overflow: hidden;
@@ -265,6 +268,9 @@
 
     .slider_widgets .wpzoom-featured-cat .featured-grid-2>div h3.entry-title {
       font-size: 20px;
+      background-color: rgba(139, 108, 126, 0.28);
+      width: 100%;
+/*      color:rgb(237, 165, 165);*/
     }
 
     .wpzoom-featured-cat h3.entry-title {
@@ -304,8 +310,8 @@
 }
 */
     .slider_widgets .wpzoom-featured-cat .featured-grid-2>div .post-thumb img {
-      height: 231px;
-      width: auto;
+/*      height: 231px;*/
+      width: 100%;
     }
 
     .post-item .post-thumb img {
@@ -420,7 +426,7 @@
 
     .jWcChC {
       display: flex;
-      flex-flow: row wrap;
+/*      flex-flow: row wrap;*/
       justify-content: space-between;
       margin: 0px;
       padding: 0px;
@@ -521,8 +527,10 @@
     #hse_slidelist li p{
       font-weight: bold;
       margin: 5px;
-      font-size: 25px;
+      font-size: 2em;
       transition: all 0.5 ;
+      color: rgb(248, 248, 248);
+/*      background-color: rgba(157, 156, 156, 0.26);*/
     }
     #hse_slidelist li span{
 /*      visibility: hidden;*/
@@ -532,8 +540,9 @@
 /*      right: 0;*/
       margin:20px;
 /*      width:30%;*/
-      font-size: 12px;
+      font-size: 16px;
       transition: all 0.5 ;
+/*      color: rgb(255, 255, 255);*/
     }
     #hse_photo{
       height: 450px;
@@ -544,7 +553,7 @@
     .sp-slider > li img{
     box-sizing: border-box;
     display: block;
-    margin: 10px auto;
+    margin: 0px auto;
     max-height: 30%;
     max-width: 30%;
     opacity:1;
@@ -553,21 +562,48 @@
 }
     .sp-slider > li div{
       position: relative;
+        transition: all 0.3s ease-out;
+      background-color: rgba(11, 8, 8, 0.46)
+      
+/*      background-color: rgba(74, 69, 69, 0.38);*/
     }
     .sp-slider > li div:hover img{
 /*      text-decoration: underline;*/
-      transform: scale(1.1);
-      opacity: 0.9;
+/*      transform: scale(1.1);*/
+/*      opacity: 0.9;*/
     }
     #hse_slidelist > li div:hover p{
-      font-size: 21px;
+      font-size: 2.3em;
     }
     #hse_slidelist > li div:hover span{
-      font-size: 16px;
+      font-size: 20px;
     }
     .sp-slider > li>div:hover {
       background-color: rgba(74, 69, 69, 0.38);
+/*      opacity: 0.9;*/
+    }
+    #hse_photo{
+      max-width: 100%;
+      height: 400px;
+    }
+    .sp-slider > li img:hover{
+      transform: scale(1);
       opacity: 0.9;
+    }
+    @media screen and (max-width: 1100px){
+      .news_1{
+        max-width: 100%;
+      }.news_1_1, .news_1_2 {
+    margin: 0;
+}
+      .news_1_2{
+        display: none;
+      }
+      .news_1_1{
+        width: 100%;
+        min-width: 100%;
+        height: 500px;
+      }
     }
   </style>
 </head>
@@ -630,7 +666,7 @@
               <div style="display: flex; flex-direction: row; margin: 0px 20px; font-size: 18px;">
                 <img src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/05/Webp.net-resizeimage-24.jpg" alt="">
                 <div style="display: flex; flex-direction: column; align-items: center;">
-                  <p>Recovery for the Retail Property Market</p>
+                  <p>Recovery for Property Market</p>
                 <span>
                   Subsequent to the elaboration of residential property market development in the previous issue...
                 </span>
@@ -687,18 +723,18 @@
 <!--          <h3 class="title title-color-green">Other </h3>-->
           <h3 data-brackets-id="20519" class="section-title">Other</h3>
           <div class="featured-grid-2 featured-style-style_block">
-            <div id="post-65766" class="post-item post-65766 post type-post status-publish format-video has-post-thumbnail category-3426 category-1404 category-5728 tag-138 tag-252 tag-8894 tag-371 tag-149 tag-251 tag-8913 tag-657 tag-133 tag-460 tag-show tag-6091 tag-155 tag-3400 post_format-post-format-video"><a href="" title="【你想做業主】40萬首期揸手 460萬樓有冇得諗？">
+            <div id="post-65766" class="post-item post-65766 post type-post status-publish format-video has-post-thumbnail category-3426 category-1404 category-5728 tag-138 tag-252 tag-8894 tag-371 tag-149 tag-251 tag-8913 tag-657 tag-133 tag-460 tag-show tag-6091 tag-155 tag-3400 post_format-post-format-video"><a href="" >
                 <div class="background-overlay"></div>
-                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-500x329.png" data-src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-500x329.png" alt="" loading="lazy" srcset="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-500x329.png 500w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-200x131.png 200w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-350x230.png 350w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-334x219.png 334w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-165x109.png 165w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/vlcsnap-2020-11-12-17h51m02s470-1-700x460.png 700w" sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
+                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://media.timeout.com/images/105644673/630/472/image.jpg"  loading="lazy"  sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
                 <div class="post-item-content">
                   <h3 class="entry-title">4.6 Mil Houses, is it worth it for the couples?</h3>
                   <div class="entry-meta">
                     <span class="entry-date">2020-11-14</span></div>
                 </div>
               </a></div>
-            <div id="post-65757" class="post-item post-65757 post type-post status-publish format-video has-post-thumbnail category-5222 category-5752 category-3426 category-1606 category-1609 tag-254 tag-97 tag-256 tag-1330 tag-7825 tag-8912 tag-405 tag-155 tag-7641 post_format-post-format-video"><a href="" title="【新盤追擊】實地睇青山灣臨海豪宅新盤瑧譽　">
+            <div id="post-65757" class="post-item post-65757 post type-post status-publish format-video has-post-thumbnail category-5222 category-5752 category-3426 category-1606 category-1609 tag-254 tag-97 tag-256 tag-1330 tag-7825 tag-8912 tag-405 tag-155 tag-7641 post_format-post-format-video"><a href="" >
                 <div class="background-overlay"></div>
-                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-500x329.jpg" data-src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-500x329.jpg" alt="" loading="lazy" srcset="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-500x329.jpg 500w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-200x131.jpg 200w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-350x230.jpg 350w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-334x219.jpg 334w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-165x109.jpg 165w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/保利CMS-700x460.jpg 700w" sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
+                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://www.housingauthority.gov.hk/common/image/about-us/publications-and-statistics/housing-dimensions/article/20120525_fundeck_Lg7.jpg"  sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
                 <div class="post-item-content">
                   <h3 class="entry-title">The most wonderful beach with  good vibe</h3>
                   <div class="entry-meta">
@@ -711,18 +747,18 @@
         <div id="wpzoom-featured-cat-8" class="widget wpzoom-featured-cat">
           <h3 class="title title-color-orange">&nbsp;</h3>
           <div class="featured-grid-2 featured-style-style_block">
-            <div id="post-65719" class="post-item post-65719 post type-post status-publish format-standard has-post-thumbnail category-1399 category-3426 category-1404 category-5728 tag-lucy tag-138 tag-6798 tag-8626 tag-371 tag-141 tag-553 tag-176 tag-6377 tag-6751 tag-460 tag-4859 tag-7653 tag-155"><a href="" title="【樓巿蔣門人Lucy】香港樓市跟疫情一齊進入第四波？">
+            <div id="post-65719" class="post-item post-65719 post type-post status-publish format-standard has-post-thumbnail category-1399 category-3426 category-1404 category-5728 tag-lucy tag-138 tag-6798 tag-8626 tag-371 tag-141 tag-553 tag-176 tag-6377 tag-6751 tag-460 tag-4859 tag-7653 tag-155"><a href="" >
                 <div class="background-overlay"></div>
-                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-500x329.jpg" data-src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-500x329.jpg" alt="" loading="lazy" srcset="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-500x329.jpg 500w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-200x131.jpg 200w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-350x230.jpg 350w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-334x219.jpg 334w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-165x109.jpg 165w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/iStock-1277253132-700x460.jpg 700w" sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
+                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://3er1viui9wo30pkxh1v2nh4w-wpengine.netdna-ssl.com/wp-content/uploads/prod/sites/427/2019/07/hong-kong.jpg" alt="" loading="lazy"  sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
                 <div class="post-item-content">
                   <h3 class="entry-title">Covid-19, is it a chance? Or is it a fall?</h3>
                   <div class="entry-meta">
                     <span class="entry-date">2020-11-13</span></div>
                 </div>
               </a></div>
-            <div id="post-65533" class="post-item post-65533 post type-post status-publish format-video has-post-thumbnail category-5750 category-5730 category-5619 category-3426 category-5729 category-1404 category-5753 category-1609 category-5728 category-7719 tag-354 tag-58 tag-8275 tag-8885 tag-8886 tag-6181 tag-6654 tag-6104 tag-1086 tag-155 tag-352 post_format-post-format-video"><a href="" title="復甦大時代至？選後樓股新部署！｜特別嘉賓：黃德几">
+            <div id="post-65533" class="post-item post-65533 post type-post status-publish format-video has-post-thumbnail category-5750 category-5730 category-5619 category-3426 category-5729 category-1404 category-5753 category-1609 category-5728 category-7719 tag-354 tag-58 tag-8275 tag-8885 tag-8886 tag-6181 tag-6654 tag-6104 tag-1086 tag-155 tag-352 post_format-post-format-video"><a href="" >
                 <div class="background-overlay"></div>
-                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-500x329.jpeg" data-src="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-500x329.jpeg" alt="復甦大時代至？選後樓股新部署！｜特別嘉賓：黃德几" loading="lazy" srcset="https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-500x329.jpeg 500w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-200x131.jpeg 200w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-350x230.jpeg 350w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-334x219.jpeg 334w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-165x109.jpeg 165w, https://res-cms.midland.com.hk/property-news/wp-content/uploads/2020/11/WhatsApp-Image-2020-11-10-at-13.49.57-700x460.jpeg 700w" sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
+                <div class="post-thumb"><img class="lazy loaded" width="500" height="329" src="https://www.discoverhongkong.com/content/dam/dhk/intl/plan/guided-tour/explore-hong-kong-tour/historical-housing-estates-tour/08182327_hero_640x480.jpg" loading="lazy"  sizes="(max-width: 500px) 100vw, 500px" data-was-processed="true"></div>
                 <div class="post-item-content">
                   <h3 class="entry-title">Deal or not? Let's find out!</h3>
                   <div class="entry-meta">

@@ -615,9 +615,6 @@
       }
     }
 
-    input[type=text], input[type=number],.chosen-container-single .chosen-single span{
-      color:black;
-    }
     .container {
       margin-right: auto;
       margin-left: auto;
@@ -755,7 +752,11 @@
       padding: 1.5em 1em;
       font-size: 18px;
       color: black;
-    }@media (min-width: 768px){
+    }
+    input[type=text], input[type=number],.chosen-container-single .chosen-single span{
+      color:black;
+    }
+    @media (min-width: 768px){
 .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
     float: left;
   margin-bottom: 30px;
@@ -789,30 +790,20 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-md-9 col-sm-12 col-xs-12">
+        <div class="col-md-9  col-sm-12 col-xs-12">
           <div class="submit-page">
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Property Basic Information</h3>
+              <h3>Update Basic Information</h3>
               <div class="content with-padding">
                 <div class="col-md-12">
-                  <h5>Choose Property Title</h5>
-                  <select class="utf-chosen-select-single-item" style="display: none;" id="pro_este" placeholder="Property Title">
-                    <option label="blank"></option>
-                    <option>Disa COURT</option>
-                    <option>WYLER GARDENS</option>
-                    <option>LUNG POON COURT</option>
-                    <option>HONG WAH COURT</option>
-                  </select>
-                </div>
-                <div class="col-md-12">
-                  <h5>Or Type Property Title</h5>
-                  <input class="search-field" placeholder="Click here to type" type="text" value="" list="pro_este" id="bi_re">
+                  <h5>Property Title</h5>
+                  <input class="search-field" placeholder="Click here to type" type="text" value="WYLER GARDENS Block C 12/F" list="pro_este" id="bi_re" readonly>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6">
                   <h5>Status</h5>
                   <select class="utf-chosen-select-single-item" style="display: none;">
-                    <option label="blank"></option>
+<!--                    <option label="blank"></option>-->
                     <option>For Sale</option>
                     <option>For Rent</option>
                   </select>
@@ -822,13 +813,8 @@
                 <div class="col-md-6 col-sm-6 col-xs-6">
                   <h5>Type</h5>
                   <select class="utf-chosen-select-single-item" style="display: none;">
-                    <option label="blank"></option>
-                    <option>Public housing </option>
-                    <option>Home ownership scheme</option>
+                    
                     <option>Secondhand Private</option>
-                    <option>Firsthand Private</option>
-                    <option>Commercial</option>
-                    <option>Car Parking</option>
                   </select>
 
                 </div>
@@ -836,27 +822,21 @@
                 <div class="col-md-4 col-sm-4 col-xs-4">
                   <h5>Price</h5>
                   <div class="select-input disabled-first-option">
-                    <i class="data-unit">HKD</i><input type="text" placeholder="00000" data-unit="HKD">
+                    <i class="data-unit">HKD</i><input type="text"  data-unit="HKD" value="5.5 M">
                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-4">
                   <h5>Area</h5>
                   <div class="select-input disabled-first-option">
-                    <i class="data-unit">Sq Ft</i><input type="text" placeholder="00000" data-unit="Sq Ft">
+                    <i class="data-unit">Sq Ft</i><input type="number" placeholder="00000" data-unit="Sq Ft" value="356">
                   </div>
                 </div>
 
                 <div class="col-md-4 col-sm-4 col-xs-4">
                   <h5>Rooms</h5>
                   <select class="utf-chosen-select-single-item" style="display: none;">
-                    <option label="blank"></option>
-                    <option>1</option>
-                    <option>2</option>
                     <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>More than 5</option>
                   </select>
 
                 </div>
@@ -866,7 +846,7 @@
 
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Property Gallery</h3>
+              <h3>Update Gallery</h3>
               <div class="content with-padding">
                 <div class="col-md-12 submit-section">
                   <form action="file-upload" class="dropzone dz-clickable">
@@ -879,7 +859,7 @@
 
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Property Location</h3>
+              <h3>Update Location</h3>
               <div class="content with-padding">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <h5>Address</h5>
@@ -905,7 +885,7 @@
 
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Property Information</h3>
+              <h3>Update Information</h3>
               <div class="content with-padding">
                 <div class="col-md-12">
                   <h5>Property Description</h5>
@@ -975,19 +955,19 @@
 
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Property Contact Details</h3>
+              <h3>Update Contact Details</h3>
               <div class="content with-padding">
                 <div class="col-md-4">
                   <h5>Full Name</h5>
-                  <input type="text" placeholder="Name">
+                  <input type="text" placeholder="Name" value="Josh Jo">
                 </div>
                 <div class="col-md-4">
                   <h5>Email Address</h5>
-                  <input type="text" placeholder="Email Address">
+                  <input type="text" placeholder="Email Address" value="gaga@vtc.edu.hk">
                 </div>
                 <div class="col-md-4">
                   <h5>Phone Number</h5>
-                  <input type="text" placeholder="Phone Number">
+                  <input type="text" placeholder="Phone Number" value="1231 2312">
                 </div>
               </div>
             </div>
@@ -1015,8 +995,8 @@
             <div class="user-smt-account-menu-container">
 
               <ul class="user-account-nav-menu">
-                <li><a href="#" class="current">New Property</a></li>
-                <li><a href="updateProperty.html">Update Property</a></li>
+                <li><a href="AgentPropertyManagement.html">New Property</a></li>
+                <li><a href="updateProperty.html" class="current">Update Property</a></li>
               </ul>
 
 
@@ -1024,7 +1004,6 @@
           </div>
         </div>
 
-      
       </div>
     </div>
 
@@ -1078,12 +1057,7 @@
           h3.trigger("click");
         }
       });
-      $("#bi_re").prop('readonly', true);
-      $("#bi_re").click(function() {
-        $("#bi_re").prop('readonly', false);
-        $("#bi_re").css("background-color", "#DC143C");
-        $("#bi_re").css("color", "#FFFFFF");
-      });
+      
       var inputList = $("input[type=text]");
       inputList.each(function(index, ele) {
         $(ele).mousedown(function() {
