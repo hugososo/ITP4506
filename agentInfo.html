@@ -15,6 +15,27 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
+<style>
+.infopage{
+    display: inline-block;
+    padding: 2px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(134, 190, 255);
+    color: rgb(58, 58, 58);
+}
+
+.infopage:hover {
+    background-color: rgb(107, 107, 253);
+    color: white;
+}
+
+#selectedpage {
+    background-color: rgb(107, 107, 253);
+    color: white;
+}
+</style>
+
 <body data-barba="wrapper">
 
     <div class="transition-container">
@@ -40,19 +61,27 @@
     <div data-barba="container" data-barba-namespace="agent-info">
         <div class="info-container">
             <hr style="opacity: 0.5;">
+            <ul style="list-style: none;">
+                <li class="infopage" id="selectedpage"><a href="agentInfo.html" style="text-decoration: none;">Personal Info</a></li>
+                <li class="infopage"><a href="appointmentlist.html" style="text-decoration: none;">Appointment List</a></li>
+                <li class="infopage"><a href="Agentrating.html" style="text-decoration: none;">Rating&Comment</a></li>
+            </ul>
             <div style="background-color:antiquewhite; margin:30px auto; padding:8px 20px; border-radius: 12px;">
                 <img src="assets/personal-information.png" alt="" width="40" style="float:left;margin-right: 10px;">
                 <h2 style="float: right;">Remember to save at the bottom</h2>
                 <h1>Personal information</h1>
             </div>
             <h2>About You</h2>
+            <div style="text-align: center;">
+                <img src="assets/thomasicon.png" alt="" width="200px">
+            </div>
             <div class="input-container">
                 <div class="input-div">
                     <label for="pname">
                         <p>Full Name</p>
                     </label>
-                    <input type="hidden" name="pname" id="pname" class="pinput" value="Hugo">
-                    <input type="text" name="pname" id="pname" class="pinput" value="Agent Hugo">
+                    <input type="hidden" name="pname" id="pname" class="pinput" value="Thomas">
+                    <input type="text" name="pname" id="pname" class="pinput" value="Agent Thomas">
                 </div>
                 <div class="input-div">
                     <label for="pemail">
@@ -146,17 +175,17 @@
                         <label for="agentsign">
                             <p>Agent Sign</p>
                         </label>
-                        <input type="text" id="agentsign" name="agentsign" class="pinput" value="Hugo">
+                        <input type="text" id="agentsign" name="agentsign" class="pinput" value="Thomas">
                     </div>
                     <div style="flex: 0 0 100%" id="drop-area">
-                            <label for="agentcard">
-                                <div class="agentcard-img">
-                                    <img id="card-img" src="#"
-                                        alt="&#10011 Drag/Drop or Upload Your Estate-Agent-Card Here" />
-                                </div>
-                            </label>
-                            <input type="file" id="agentcard" name="agentcard" accept="image/*"
-                                style="display: none;">
+                        <label for="agentcard">
+                            <div class="agentcard-img">
+                                <img id="card-img"
+                                    src="./assets/agentcard.png"
+                                    alt="&#10011 Drag/Drop or Upload Your Estate-Agent-Card Here" />
+                            </div>
+                        </label>
+                        <input type="file" id="agentcard" name="agentcard" accept="image/*" style="display: none;">
                     </div>
                 </div>
                 <div class="pbtn-div">

@@ -63,27 +63,40 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   text-rendering: optimizelegibility;
 }
 
 header {
-  margin-bottom: 150px;
+  margin-bottom: 150px !important;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around !important;
   position: fixed;
-  width: 100%;
+  width: 100% !important;
   top: 5px;
   z-index: 99999;
 }
 
 header a img {
-  padding-top: 10px;
+  padding-top: 10px !important;
+}
+
+.btnstyle {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(4, 182, 182);
+  color: white;
+  cursor: pointer;
+}
+
+.btnstyle:hover {
+  background-color: aquamarine;
+  color: black;
 }
 
 header ul {
   display: flex;
-  width: 500px;
   justify-content: space-around;
   list-style: none;
   align-items: center;

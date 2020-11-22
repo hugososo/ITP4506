@@ -1,0 +1,21 @@
+$(document).ready(function () {
+    $("#acceptbox").hide();
+    $(".waitingap").click(function(){
+        $("#acceptbox").show();
+    });
+    $("#closeaccept").click(function(){
+        $("#acceptbox").hide();
+    });
+    $("#nobtn").click(function(){
+        $("#modifyp").removeClass("waitingap");
+        $("#modifyp").addClass("rejected");
+        $("#modifyp").html("Cancel");
+        $("#acceptbox").hide();
+    });
+    $("#yesbtn").click(function(){
+        $("#modifyp").removeClass("waitingap");
+        $("#modifyp").addClass("accepted");
+        $("#modifyp").html("Accepted");
+        $("#acceptbox").hide();
+    });
+});

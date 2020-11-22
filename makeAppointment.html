@@ -16,12 +16,15 @@
 <style>
     .first-section {
         margin-top: 120px;
-        text-align: center;
+        margin-left: 200px;
+        width: auto;
+        min-height: 200vh;
     }
 
     hr {
         width: 70%;
-        margin: 60px auto 30px auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     .selectTime {
@@ -61,6 +64,46 @@
     #submitbtn2:hover {
         background-color: rgb(15, 50, 148);
     }
+
+    .buildcard {
+        text-align: center;
+        padding: 15px;
+        background-color: rgb(49, 49, 49);
+        color: white;
+        border-radius: 10px;
+        display: inline-block;
+        margin-right: 30px;
+        width: 200px;
+        cursor: pointer;
+    }
+
+    .buildcard:hover {
+        background-color: rgb(151, 151, 151);
+    }
+
+    #buildcard-con {
+        white-space: nowrap;
+        margin-top: 20px;
+        width: 70%;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .btnstyle {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(4, 182, 182);
+        color: white;
+        cursor: pointer;
+    }
+
+    .btnstyle:hover {
+        background-color: aquamarine;
+        color: black;
+    }
 </style>
 
 <body>
@@ -80,30 +123,82 @@
 
     <div class="first-section">
         <h2>Agent Appointment</h2>
-        <hr>
-        <label for="datalist">Choose your Agent from the list:</label>
+        <progress id="progressbar" value="0" max="5" style="width:70%;margin: 10px 0 20px 0;"></progress>
+        <h3>1 - Choose Agent information</h3>
+        <br>
+        <label for="datalist">Choose your Agent: </label>
         <input list="datalist" name="option" id="input" autocomplete="off">
 
         <datalist id="datalist">
             <option value="Agent Hugo" label="Grand Property Agency Company">
-            <option value="Agent Thomas" label="Hong Kong Home Company">
+            <option value="Agent Thomas" label="Agent CC Ltd.">
             <option value="Agent Clark" label="Hong Kong Home Company">
             <option value="Agent Mary" label="Hong Kong Home Company">
             <option value="Agent Berry" label="Grand Property Agency Company">
         </datalist>
-        <div id="agentinfo" style="display: flex; justify-content: center; margin-top: 50px;">
-            <img width="180px" src="https://i.hongkonghomes.com/staff-photo/1925-portrait-256.jpg" alt="">
+        <div id="agentinfo" style="display: flex; margin-top: 50px;">
+            <img width="180px" src="assets/thomasicon.png" alt="">
             <div style="margin:30px 0 0 30px">
                 <a href="" style="color: rgb(17, 0, 255);">
-                    <h3>Agent Berry</h3>
+                    <h3>Agent Thomas</h3>
                 </a>
                 <p>Assistant Manager</p>
                 <p>Licence No.: S-599157</p>
                 <p>Language: Cantonese, English, Putonghua</p>
-                <p>Tel: 28210929 Mobile: 97944355</p>
+                <p>Tel: 28210929 Mobile: 65432123</p>
             </div>
         </div>
-        <br>
+        <hr>
+        <div style="width: 70%;">
+            <h3 style="display: inline-block;">2 - Choose Building Infomation</h3>
+            <button class="btnstyle" id="morebtn" style="float: right;">List Item</button>
+        </div>
+        <div id="buildcard-con">
+            <div class="buildcard">
+                <img src="./assets/hseInfo/LUNG_POON_COURT_1.jpg" alt="" width="160px;" height="200px;"
+                    style="border-radius: 10px;">
+                <p>LUNG POON COURT Block F</p>
+                <p>8 LUNG POON STREET</p>
+                <p>Public housing estates</p>
+            </div>
+            <div class="buildcard">
+                <img src="./assets/hseInfo/IFC.jpg" alt="" width="160px;" height="200px;" style="border-radius: 10px;">
+                <p>IFC Building Block C</p>
+                <p>10 Central</p>
+                <p>Private Business Office</p>
+            </div>
+            <div class="buildcard">
+                <img src="./assets/hseInfo/yuenlong.jpg" alt="" width="160px;" height="200px;"
+                    style="border-radius: 10px;">
+                <p>Degree c1.4 Block S</p>
+                <p>7 LUNG POON STREET</p>
+                <p>Ownership Scheme Courts</p>
+            </div>
+            <div class="buildcard">
+                <img src="./assets/hseInfo/HONG_WAH_COURT_1.jpg" alt="" width="160px;" height="200px;"
+                    style="border-radius: 10px;">
+                <p>HONG WAH COURT Block E</p>
+                <p>2 LIN TAK ROAD</p>
+                <p>Ownership Scheme Courts</p>
+            </div>
+        </div>
+        <div id="buildlist" style="padding:30px;background-color: rgb(107, 106, 106);color: white; width: 50%; height: auto;margin-left: 10%; position: absolute; top: 15%;">
+            <div id="closebuilding" style="position: relative;left:100%;font-size: 18pt;cursor: pointer;">X</div>
+            <h3>Choose Building</h3>
+            <br>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 10px;"><input type="checkbox" checked style="margin-right: 5px;">LUNG POON COURT
+                    Block F</li>
+                <li style="margin-bottom: 10px;"><input type="checkbox" style="margin-right: 5px;">IFC Building
+                    Block C</li>
+                <li style="margin-bottom: 10px;"><input type="checkbox" style="margin-right: 5px;">Degree c1.4 Block
+                    S</li>
+                <li style="margin-bottom: 10px;"><input type="checkbox" style="margin-right: 5px;">HONG WAH COURT
+                    Block E</li>
+            </ul>
+        </div>
+        <hr>
+        <h3>3 - Choose Meeting information</h3>
         <br>
         <label for="datalist2">Meeting location:</label>
         <input list="datalist2" name="option" id="input2" autocomplete="off" style="margin-bottom: 30px;">
@@ -114,13 +209,13 @@
             <option value="Tsim Sha Tsui" label="Grand Property Agency Company">
         </datalist>
         <p id="addressinfo"
-            style="font-size: larger; border-left: 3px solid rgb(53, 53, 53); width: 400px;margin:auto;background-color: rgb(224, 224, 224);">
+            style="font-size: larger; border-left: 3px solid rgb(53, 53, 53); width: 400px;margin:0;padding:10px;background-color: rgb(209, 221, 248);">
             Address: 118 Nathan Road, Tsim Sha Tsui</p>
         <br>
         <span style="font-size: larger; margin-right: 10px;">Choose Meeting Date & Time:</span>
         <input type="date" id="dateselect">
         <br>
-        <div style="margin:30px 30px 0 0;">
+        <div style="margin:30px 30px 0 0;" id="timeslot">
             <span class="selectTime">10:30</span>
             <span class="selectTime">11:30</span>
             <span class="selectTime">14:30</span>
@@ -129,25 +224,28 @@
         </div>
         <br>
         <p id="datetimestr"
-            style="font-size: larger; border-left: 3px solid rgb(53, 53, 53); width: 400px;margin:auto;background-color: rgb(224, 224, 224);">
+            style="font-size: larger; border-left: 3px solid rgb(53, 53, 53); width: 400px;margin:0;padding:10px;background-color: rgb(209, 221, 248);">
             Date&Time:</p>
         <br>
         <button id="submitbtn">Submit</button>
     </div>
-    <div id="confirmmsg" style="position: absolute; top:50%;right:25%; border: 1px black solid;background-color: rgb(128, 150, 185);; z-index: 99999;color: white;width: 50%;text-align: center;">
+    <div id="confirmmsg"
+        style="position: absolute; top:90%;right:25%; border: 1px black solid;background-color: rgb(128, 150, 185);; z-index: 99999;color: white;width: 50%;text-align: center;">
         <div id="closeconfirm" style="position: absolute;right: 20px;font-size: 18pt;cursor: pointer;">X</div>
         <br>
         <br>
         <h3 style="text-decoration: underline;">Appointment Infomation Confirmation</h3>
         <br>
-        <p>Agent: Agent Berry</p>
+        <p>Agent: Agent Thomas</p>
+        <br>
+        <p>Selected Building: LUNG POON COURT Block F</p>
         <br>
         <p>Meeting location: Grand Property Agency Company</p>
         <p>18 Nathan Road, Tsim Sha Tsui</p>
         <br>
-        <p>Meeting Date: 31-Dec</p>
+        <p>Meeting Date: <b style="color: rgb(255, 214, 80);">31-Dec</b></p>
         <br>
-        <p>Meeting Time: 15:30</p>
+        <p>Meeting Time: <b style="color: rgb(255, 214, 80);">15:30</b></p>
         <br>
         <button id="submitbtn2">Confirm&Submit</button>
         <br>

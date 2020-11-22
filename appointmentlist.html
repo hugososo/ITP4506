@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream House</title>
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'>
+    </link>
+    <!-- Customized Css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<style>
+    .infopage {
+        display: inline-block;
+        padding: 2px 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: rgb(134, 190, 255);
+        color: rgb(58, 58, 58);
+    }
+
+    .infopage:hover {
+        background-color: rgb(107, 107, 253);
+        color: white;
+    }
+
+    #selectedpage {
+        background-color: rgb(107, 107, 253);
+        color: white;
+    }
+
+    /* ------------------------------------ */
+    a {
+        margin: 0px;
+        transition: all 0.4s;
+        -webkit-transition: all 0.4s;
+        -o-transition: all 0.4s;
+        -moz-transition: all 0.4s;
+    }
+
+    a:focus {
+        outline: none !important;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    /* ------------------------------------ */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0px;
+    }
+
+    p {
+        margin: 0px;
+    }
+
+    ul,
+    li {
+        margin: 0px;
+        list-style-type: none;
+    }
+
+
+    /* ------------------------------------ */
+    input {
+        display: block;
+        outline: none;
+        border: none !important;
+    }
+
+    textarea {
+        display: block;
+        outline: none;
+    }
+
+    textarea:focus,
+    input:focus {
+        border-color: transparent !important;
+    }
+
+    /* ------------------------------------ */
+    button {
+        outline: none !important;
+        border: none;
+        background: transparent;
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    iframe {
+        border: none !important;
+    }
+
+
+
+    /*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+    .limiter {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .container-table100 {
+        width: 100%;
+        min-height: 100vh;
+        background: #d1d1d1;
+
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 33px 30px;
+    }
+
+    .wrap-table100 {
+        width: 1300px;
+    }
+
+    /*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+    table {
+        width: 100%;
+        background-color: #fff;
+    }
+
+    th,
+    td {
+        font-weight: unset;
+        padding-right: 10px;
+    }
+
+    .column100 {
+        width: 130px;
+        padding-left: 25px;
+    }
+
+    .column100.column1 {
+        width: 265px;
+        padding-left: 42px;
+    }
+
+    .row100.head th {
+        padding-top: 24px;
+        padding-bottom: 20px;
+    }
+
+    .row100 td {
+        padding-top: 18px;
+        padding-bottom: 14px;
+    }
+
+
+    /*==================================================================
+[ Ver1 ]*/
+    .table100.ver1 td {
+        font-size: 14px;
+        color: #808080;
+        line-height: 1.4;
+    }
+
+    .table100.ver1 th {
+        font-size: 12px;
+        color: #fff;
+        line-height: 1.4;
+        text-transform: uppercase;
+        background-color: #36304a;
+    }
+
+    .table100.ver1 .row100:hover {
+        background-color: #f2f2f2;
+    }
+
+    .table100.ver1 .hov-column-ver1 {
+        background-color: #f2f2f2;
+    }
+
+    .table100.ver1 .hov-column-head-ver1 {
+        background-color: #484848 !important;
+    }
+
+    .table100.ver1 .row100 td:hover {
+        background-color: #6c7ae0;
+        color: #fff;
+    }
+
+    .waitingap {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: rgb(250, 140, 51);
+        color: white;
+        cursor: pointer;
+    }
+
+    .waitingap:hover {
+        background-color: rgb(44, 175, 44);
+    }
+
+    .rejected {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: rgb(250, 51, 51);
+        color: white;
+        cursor: pointer;
+    }
+
+    .accepted {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        background-color: rgb(44, 175, 44);
+        color: white;
+    }
+</style>
+
+<body data-barba="wrapper">
+
+    <div class="transition-container">
+        <div class="transition"></div>
+    </div>
+
+    <header>
+        <a href="indexAgent.html ">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
+                height="30">
+        </a>
+        <ul>
+            <li><a href="AgentApartmentSale.html">PROPERTY SALE</a></li>
+            <li>|</li>
+            <li><a href="AgentPropertyManagement.html">PROPERTY MANAGEMENT</a></li>
+            <li>|</li>
+            <li><a href="agentInfo.html">PERSONAL INFO</a></li>
+            <li>|</li>
+            <li><a href="index.html" id="logout">LOGOUT</a></li>
+        </ul>
+    </header>
+
+    <div data-barba="container" data-barba-namespace="agent-info">
+        <div class="info-container">
+            <hr style="opacity: 0.5;">
+            <ul style="list-style: none;">
+                <li class="infopage"><a href="agentInfo.html" style="text-decoration: none;">Personal Info</a></li>
+                <li class="infopage" id="selectedpage"><a href="appointmentlist.html" style="text-decoration: none;">Appointment List</a></li>
+                <li class="infopage"><a href="Agentrating.html" style="text-decoration: none;">Rating&Comment</a></li>
+            </ul>
+            <br>
+            <h3>Appointment List</h3>
+            <br>
+            <div id="acceptbox"
+                style="position: absolute; padding:30px;width:250px; background-color: rgb(48, 48, 48); color:white;border-radius: 10px;text-align: center;left:40%;top:20%;">
+                <p id="closeaccept" style="float: right;cursor: pointer;">X</p>
+                <p>Accept the appointment?</p>
+                <br>
+                <button id="nobtn"
+                    style="padding:5px 10px;margin-right: 10px;border:none;border-radius:5px;background-color:red;color:white;">NO</button>
+                <button id="yesbtn"
+                    style="padding:5px 10px;border:none;border-radius:5px;background-color:green;color:white;">YES</button>
+            </div>
+            <div class="table100 ver1 m-b-110">
+                <table data-vertable="ver1">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1" data-column="column1">Customer</th>
+                            <th class="column100 column2" data-column="column2">Building Info</th>
+                            <th class="column100 column3" data-column="column3">Meeting Location</th>
+                            <th class="column100 column4" data-column="column4">Date&Time</th>
+                            <th class="column100 column5" data-column="column5">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Mary</td>
+                            <td class="column100 column2" data-column="column2">LUNG POON COURT Block F</td>
+                            <td class="column100 column3" data-column="column3">Tsim Sha Tsui | GPA Company</td>
+                            <td class="column100 column4" data-column="column4">31-Dec-2020 15:30</td>
+                            <td class="column100 column5" data-column="column5">
+                                <p class="waitingap" id="modifyp">Waiting Accept</p>
+                            </td>
+                        </tr>
+
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Clark</td>
+                            <td class="column100 column2" data-column="column2">Degree c1.4 Block S</td>
+                            <td class="column100 column3" data-column="column3">Wan Chai | Cosy Workshop Room</td>
+                            <td class="column100 column4" data-column="column4">5-Dec-2020 11:30</td>
+                            <td class="column100 column5" data-column="column5">
+                                <p class="accepted">Accepted</p>
+                            </td>
+                        </tr>
+
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Shark Lam</td>
+                            <td class="column100 column2" data-column="column2">HONG WAH COURT Block E</td>
+                            <td class="column100 column2" data-column="column2">Causeway Bay | Conference Room</td>
+                            <td class="column100 column3" data-column="column3">1-Dec-2020 14:30</td>
+                            <td class="column100 column4" data-column="column4">
+                                <p class="accepted">Accepted</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <br>
+            <hr>
+            <br>
+            <h3>Appointment History</h3>
+            <br>
+            <div class="table100 ver1 m-b-110">
+                <table data-vertable="ver1">
+                    <thead>
+                        <tr class="row100 head">
+                            <th class="column100 column1" data-column="column1">Customer</th>
+                            <th class="column100 column2" data-column="column2">Building Info</th>
+                            <th class="column100 column3" data-column="column3">Meeting Location</th>
+                            <th class="column100 column4" data-column="column4">Date&Time</th>
+                            <th class="column100 column5" data-column="column5">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Hugo</td>
+                            <td class="column100 column2" data-column="column2">LUNG POON COURT Block F</td>
+                            <td class="column100 column3" data-column="column3">Tsim Sha Tsui | GPA Company</td>
+                            <td class="column100 column4" data-column="column4">31-Nov-2020 15:30</td>
+                            <td class="column100 column5" data-column="column5">
+                                <p class="accepted">Completed</p>
+                            </td>
+                        </tr>
+
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Lawrence</td>
+                            <td class="column100 column2" data-column="column2">IFC Building Block C</td>
+                            <td class="column100 column3" data-column="column3">Wan Chai | Cosy Workshop Room</td>
+                            <td class="column100 column4" data-column="column4">20-Nov-2020 11:30</td>
+                            <td class="column100 column5" data-column="column5">
+                                <p class="rejected">Cancel</p>
+                            </td>
+                        </tr>
+
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Ily</td>
+                            <td class="column100 column2" data-column="column2">IFC Building Block C</td>
+                            <td class="column100 column3" data-column="column3">Wan Chai | Cosy Workshop Room</td>
+                            <td class="column100 column4" data-column="column4">20-Nov-2020 14:30</td>
+                            <td class="column100 column5" data-column="column5">
+                                <p class="accepted">Completed</p>
+                            </td>
+                        </tr>
+
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Jordan</td>
+                            <td class="column100 column2" data-column="column2">HONG WAH COURT Block E</td>
+                            <td class="column100 column2" data-column="column2">Causeway Bay | Conference Room</td>
+                            <td class="column100 column3" data-column="column3">10-Nov-2020 10:30</td>
+                            <td class="column100 column4" data-column="column4">
+                                <p class="accepted">Completed</p>
+                            </td>
+                        </tr>
+
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Oppa</td>
+                            <td class="column100 column2" data-column="column2">HONG WAH COURT Block E</td>
+                            <td class="column100 column2" data-column="column2">Tsim Sha Tsui | GPA Company</td>
+                            <td class="column100 column3" data-column="column3">7-Nov-2020 11:30</td>
+                            <td class="column100 column4" data-column="column4">
+                                <p class="accepted">Completed</p>
+                            </td>
+                        </tr>
+
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Kelly</td>
+                            <td class="column100 column2" data-column="column2">HONG WAH COURT Block E</td>
+                            <td class="column100 column2" data-column="column2">Causeway Bay | Conference Room</td>
+                            <td class="column100 column3" data-column="column3">2-Nov-2020 14:30</td>
+                            <td class="column100 column4" data-column="column4">
+                                <p class="accepted">Completed</p>
+                            </td>
+                        </tr>
+
+                        <tr class="row100">
+                            <td class="column100 column1" data-column="column1">Berry</td>
+                            <td class="column100 column2" data-column="column2">HONG WAH COURT Block E</td>
+                            <td class="column100 column2" data-column="column2">Tsim Sha Tsui | GPA Company</td>
+                            <td class="column100 column3" data-column="column3">14-Nov-2020 14:30</td>
+                            <td class="column100 column4" data-column="column4">
+                                <p class="accepted">Completed</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/Draggable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+<script src="js/acceptappointment.js"></script>
+<script src="js/account.js"></script>
+<script src="js/global.js"></script>
+
+</html>
