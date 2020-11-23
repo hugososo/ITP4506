@@ -541,6 +541,13 @@
       display: block;
       display: initial;
     }
+    
+    td button{
+      margin: 5px 0;
+    }
+    td button:last-child{
+      background-color: grey;
+    }
   </style>
   <link rel="stylesheet" href="style.css">
   <!-- Google fonts -->
@@ -822,7 +829,9 @@
                 <td>13-19 San Kwai St, Kwai Fong</td>
                 
                 <td>Sale</td>
-                <td><button>Update</button></td>
+                <td><button>Update</button>
+                <button>Delete</button>
+                </td>
             </tr>  
                <tr>
                 <td>Amy Fung</td>
@@ -830,28 +839,36 @@
                 <td>Rm 812 Blk A Ming Pao Industrial , Kwai Fong</td>
                
                 <td>Sale</td>
-                <td><button>Update</button></td>
+                <td><button>Update</button>
+                <button>Delete</button>
+                </td>
             </tr> <tr>
                 <td>Sam Tin</td>
                 <td>LUNG POON COURT Blk F 5/F</td>
                 <td>Lung Wan House, 8 Fung Tak Rd, Diamond Hill</td>
                
                 <td>Sale</td>
-                <td><button>Update</button></td>
+                <td><button>Update</button>
+                <button>Delete</button>
+                </td>
             </tr> <tr>
                 <td>Yoyo Wong</td>
                 <td>Disa COURT Blk A 6/F</td>
                 <td> 2 Lin Tak Rd, Lam Tin</td>
                
                 <td>Rent</td>
-                <td><button>Update</button></td>
+                <td><button>Update</button>
+                <button>Delete</button>
+                </td>
             </tr> <tr>
                 <td>Lily Lee</td>
                 <td>HONG WAH COURT Block E</td>
                 <td>8 Chui Chuk St, Chuk Un</td>
                
                 <td>Rent</td>
-                <td><button>Update</button></td>
+                <td><button>Update</button>
+                <button>Delete</button>
+                </td>
             </tr>   
                   </tbody></table>
                 
@@ -866,8 +883,8 @@
 
         <div class="col-md-3 col-sm-12 col-xs-12">
           <div class="margin-bottom-20">
-            <div class="utf-edit-profile-photo-area"> <img src="https://miro.medium.com/max/2480/0*X5piaBrEzcP29IhB.jpg" alt="">
-              <p style="text-align: center;color: black;font-size: 20px;padding: 15px;">Agent Clark</p>
+            <div class="utf-edit-profile-photo-area"> <img src="assets/thomasicon.png" alt="">
+              <p style="text-align: center;color: black;font-size: 20px;padding: 15px;">Agent Thomas</p>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -983,10 +1000,13 @@
       
       $('#example').DataTable();
       
-      $("td button").on('click', function(event) {
+      $("td button:first-child").on('click', function(event) {
         window.location.href = 'changePropertyInfo.html';
       });
       
+      $("td button:last-child").on('click', function(event) {
+        $(this).parent().parent().hide();
+      });
     });
   </script>
 </body>

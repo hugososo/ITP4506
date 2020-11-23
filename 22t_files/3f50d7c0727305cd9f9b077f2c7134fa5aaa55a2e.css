@@ -7719,7 +7719,7 @@ img.ImageWithExpand__image {
   }
 
   .ListingDescription[data-v-376c07f0]:before {
-    background: #f2f2f2;
+    background: rgb(217, 255, 252);
     content: "";
     height: calc(100% - 150px);
     position: absolute;
