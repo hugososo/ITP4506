@@ -794,7 +794,7 @@
           <div class="submit-page">
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Update Basic Information</h3>
+              <h3>Update Basic Information<span class="col_head_form" style="text-align: right;display: inline-block;float: right;">-</span></h3>
               <div class="content with-padding">
                 <div class="col-md-12">
                   <h5>Property Title</h5>
@@ -853,7 +853,7 @@
 
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Update Gallery</h3>
+              <h3>Update Gallery<span class="col_head_form" style="text-align: right;display: inline-block;float: right;">-</span></h3>
               <div class="content with-padding">
                 <div class="col-md-12 submit-section">
                   <form action="file-upload" class="dropzone dz-clickable">
@@ -866,7 +866,7 @@
 
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Update Location</h3>
+              <h3>Update Location<span class="col_head_form" style="text-align: right;display: inline-block;float: right;">-</span></h3>
               <div class="content with-padding">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <h5>Address</h5>
@@ -892,7 +892,7 @@
 
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Update Information</h3>
+              <h3>Update Information<span class="col_head_form" style="text-align: right;display: inline-block;float: right;">-</span></h3>
               <div class="content with-padding">
                 <div class="col-md-12">
                   <h5>Property Description</h5>
@@ -962,7 +962,7 @@
 
             <!-- Section -->
             <div class="utf-submit-page-inner-box">
-              <h3>Update Contact Details</h3>
+              <h3>Update Contact Details<span class="col_head_form" style="text-align: right;display: inline-block;float: right;">-</span></h3>
               <div class="content with-padding">
                 <div class="col-md-4">
                   <h5>Full Name</h5>
@@ -1059,9 +1059,16 @@
         var h3 = $(ele).find("h3");
         h3.click(function() {
           $(ele).find(".with-padding").toggle();
+          var sign = $(ele).find(".col_head_form");
+          if(sign.html() === "+"){
+            sign.html("-");
+          }else{
+            sign.html("+");
+          }
         });
         if (index !== 0) {
           h3.trigger("click");
+          
         }
       });
       
