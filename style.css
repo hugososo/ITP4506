@@ -22,7 +22,10 @@ body {
   padding: 0;
   background-color: rgb(217, 255, 252);
 }
-
+/*added by clark to test width*/
+header li {
+    margin-left: 10px;
+}
 /* scale center */
 /* .transition {
     position: fixed;

@@ -3447,7 +3447,7 @@ p {
 }
 
 .u-bg-white {
-  background-color: #fff
+  background-color: rgb(217, 255, 252)
 }
 
 .u-bg-very-light-grey {
@@ -3845,7 +3845,7 @@ p {
 }
 
 .btn--white {
-  background-color: #fff;
+  background-color: rgb(217, 255, 252);;
   color: #002349
 }
 

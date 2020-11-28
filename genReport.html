@@ -43,7 +43,7 @@
     }
 
     .gen_container {
-      background-color: white;
+      background-color: rgb(217, 255, 252);;
       margin: 80px auto;
       margin-bottom: 0;
       display: flex;
@@ -64,7 +64,7 @@
 
     #re_ui h1 {
       color: rgba(51, 57, 69, 0.85);
-      font-size: 44px;
+      font-size: 33px;
     }
 
     .gen_container>div>div:not(.re_btn_container),
@@ -811,17 +811,24 @@
 
 <body>
   <header>
-    <a href="index.html ">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150" height="30">
-    </a>
-    <ul>
-      <li><a href="apartmentSale.html">PROPERTY</a></li>
-      <li>|</li>
-      <li><a href="login.html">LOGIN</a></li>
-      <li>|</li>
-      <li><a href="signup.html">SIGN UP</a></li>
-    </ul>
-  </header>
+        <a href="indexManager.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/House_logo.svg" alt="Logo" width="150"
+                height="30">
+        </a>
+        <ul>
+            <li><a href="managerApartmentSale.html">PROPERTY</a></li>
+            <li>|</li>
+            <li><a href="searchUser.html">SEARCH USER</a></li>
+            <li>|</li>
+            <li><a href="createAgentAc.html">CREATE AGENT</a></li>
+            <li>|</li>
+            <li><a href="managerInfo.html">PERSONAL INFO</a></li>
+            <li>|</li>
+            <li><a href="genReport.html">GENERATE REPORT</a></li>
+            <li>|</li>
+            <li><a href="index.html" id="logout">LOGOUT</a></li>
+        </ul>
+    </header>
 
   <div class="gen_container">
 
@@ -883,6 +890,13 @@
                           <option value="">Every Month</option>
                         </select>
                       </div>
+                      <div>
+                        <p>Recipient</p>
+                        <select name="" id="">
+                          <option value="">Manager Only</option>
+                          <option value="">Every Agent</option>
+                        </select>
+                      </div>
                     </div>
 
                     <div>
@@ -892,7 +906,7 @@
                           <div>
                             <label class="checkbox path">
 
-                              <input type="checkbox">
+                              <input type="checkbox" checked>
                               <svg viewBox="0 0 21 21">
                                 <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
                               </svg>
@@ -914,7 +928,7 @@
                           <div>
 
                             <label class="checkbox path">
-                              <input type="checkbox" checked>
+                              <input type="checkbox" >
                               <svg viewBox="0 0 21 21">
                                 <path d="M5,10.75 L8.5,14.25 L19.4,2.3 C18.8333333,1.43333333 18.0333333,1 17,1 L4,1 C2.35,1 1,2.35 1,4 L1,17 C1,18.65 2.35,20 4,20 L17,20 C18.65,20 20,18.65 20,17 L20,7.99769186"></path>
                               </svg>
@@ -928,6 +942,7 @@
 
                       </div>
                     </div>
+                  
                   </div>
 
                 </div>
